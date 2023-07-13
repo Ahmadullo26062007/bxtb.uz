@@ -55,28 +55,28 @@
                     <div class="col-lg-8 col-md-7">
                         <div class="comment-area">
                             <h3>Kamentariya Qo'shish</h3>
-                            <form id="contact-form" method="post" action="../../../../routes/send.php">
+                            <form id="contact-form" method="post" action="contacts.html#">
                                 <div class="response"></div>
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <div class="form-group"><input id="name" type="text" name="name" class="name"
+                                        <div class="form-group"><input type="text" name="name" class="name"
                                                                        placeholder="Ism" required>
                                         </div>
                                         <!--form-group end-->
                                     </div>
                                     <div class="col-lg-6">
-                                        <div class="form-group"><input id="number" type="number" name="number" class="number"
+                                        <div class="form-group"><input type="number" name="number" class="number"
                                                                        placeholder="Telefon raqam" required></div>
                                         <!--form-group end-->
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <textarea id="message" name="message" placeholder="Xabar"></textarea>
+                                            <textarea name="message" placeholder="Xabar"></textarea>
                                         </div>
                                         <!--form-group end-->
                                     </div>
                                     <div class="col-lg-12">
-                                        <div class="form-submit"><button type="submit" id="submit"
+                                        <div class="form-submit"><button type="button" id="submit"
                                                                          class="btn-default">Yuborish <i
                                                     class="fa fa-long-arrow-alt-right"></i></button></div>
                                         <!--form-submit end-->

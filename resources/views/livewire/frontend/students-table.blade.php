@@ -4,7 +4,8 @@
             @foreach ($students as $student)
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="classes-col">
-                        <div class="class-thumb"><img src="{{ asset('images/' . $student->class->image) }}" alt="Student's class image"
+{{--                        @dd($student)--}}
+                        <div class="class-thumb"><img src="{{ asset('images/' . $student->image) }}" alt="Student's class image"
                                 class="w-100">
                         </div>
                         <div class="class-info">

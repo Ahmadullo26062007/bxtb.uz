@@ -4,16 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Student extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory;
 
     protected $fillable=[
         'fullname',
         'class_id',
-        'school_id'
+        'school_id',
+        'image'
     ];
     const TYPES=[
         '0'=>null,
@@ -41,5 +41,6 @@ class Student extends Model
     public function class()
     {
         return $this->belongsTo(Classes::class);
+
     }
 }

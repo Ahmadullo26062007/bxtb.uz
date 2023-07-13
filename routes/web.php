@@ -56,16 +56,16 @@ Route::get('/class-detail/{id}', function ($id) {
 })->name('class.detail');
 
 // courses
-Route::get('/kurslar', function () {
-    $courses = Course::where('school_id', env('SCHOOL_ID'))->get();
-    return view('frontend.course.index', compact('courses'));
-})->name('course.index');
+Route::get('/schools', function () {
+    $schools = Course::where('school_id', env('SCHOOL_ID'))->get();
+    return view('frontend.schools.index', compact('schools'));
+})->name('schools.index');
 
-// courses single
-Route::get('/course-detail/{id}', function ($id) {
-    $course = Course::find($id);
-    return view('frontend.course.detail', compact('course'));
-})->name('course.detail');
+// schoolss single
+Route::get('/schools-detail/{id}', function ($id) {
+    $schools = Course::find($id);
+    return view('frontend.schools.detail', compact('schools'));
+})->name('schools.detail');
 
 
 // Teacher
@@ -120,6 +120,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/students', \App\Http\Controllers\StudentController::class);
     Route::resource('/certificate', \App\Http\Controllers\CertificateController::class);
     Route::resource('/users', \App\Http\Controllers\UserController::class);
+
 });
 Route::get('login', function () {
     return view('admin.login');
@@ -128,4 +129,3 @@ Route::get('/logout', function () {
     Auth::logout();
     return view('admin.login');
 })->name('logout');
-

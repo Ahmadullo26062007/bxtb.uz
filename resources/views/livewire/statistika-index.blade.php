@@ -1,56 +1,73 @@
 @php
-    function GreatTeachers($a)
-       {
-           $c=0;
+    $a = \App\Models\About::find(env('SCHOOL_ID'));
 
-           foreach ($a->teachers as $t){
-            if (count($t->degrees)!==0){
-           if($t->degrees[0]->type_id ==1){
-                if($c++ == 1)continue;
-           }
-            }
+       function GreatTeachers($a)
+          {
+              $c=0;
 
-           }
+              foreach ($a->teachers as $t){
+                  if($t->degrees){
 
-           return $c;
-       }
-       function GreatStudents($a)
-       {
-           $c=0;
 
-           foreach ($a->students as $s){
-            if ($s->certificate){
-               if ($s->certificate->type==1 &&  (int) $s->certificate->ball >=5 || $s->certificate->type==2  ){
-                   if ($c ++ ==1)continue;
+               if (count($t->degrees)!==0){
+              if($t->degrees[0]->type_id ==1){
+                   if($c++ == 1)continue;
+              }
                }
-            }
+                }
+              }
+              if($c==0){
+                  return 1;
+              }else{
+              return $c;
+              }
+          }
+          function GreatStudents($a)
+          {
+              $c=0;
 
-           }
-
-           return $c;
-       }
- function ItStudents($a)
-       {
-           $c=0;
-
-           foreach ($a->students as $s){
-            if ($s->certificate){
-               if ( $s->certificate->type==3 ){
-                   if ($c ++ ==1)continue;
+              foreach ($a->students as $s){
+               if ($s->certificate){
+                  if ($s->certificate->type==1 &&  (int) $s->certificate->ball >=5 || $s->certificate->type==2  ){
+                      if ($c ++ ==1)continue;
+                  }
                }
-            }
 
-           }
+              }
+   if($c==0){
+                  return 1;
+              }else{
+              return $c;
+              }
+          }
+    function ItStudents($a)
+          {
+              $c=0;
 
-           return $c;
-       }
-           $r=[];
-           foreach(\App\Models\About::all() as $c=>$a){
-               $r[$a->id]=((int)GreatTeachers($a))+((int)GreatTeachers($a))+((int)GreatTeachers($a));
-           }
+              foreach ($a->students as $s){
+               if ($s->certificate){
+                  if ( $s->certificate->type==3 ){
+                      if ($c ++ ==1)continue;
+                  }
+               }
+
+              }
+
+                if($c==0){
+                  return 1;
+              }else{
+              return $c;
+              }
+          }
+
+              $r=[];
+              foreach(\App\Models\About::all() as $c=>$a){
+                  $r[$a->id]=((int) GreatTeachers($a))+((int)GreatTeachers($a))+((int)GreatTeachers($a));
+              }
 
 
- @endphp
+@endphp
+
 
 
 
@@ -110,14 +127,16 @@
             <div class="sidebar">
 
                 <div class="widget widget-categories">
-                    <h3 class="widget-title">Eng yacshi maktab</h3>
+                    <h3 class="widget-title">Eng yaxshi maktab</h3>
                     <ul>
+                        @foreach($r as $c=>$b)
+                            @php
+                                $a=\App\Models\About::find($c);
 
-                            <li><a href="blog.html#" title=""> 1-maktab</a> <span>N 1</span></li>
-                            <li><a href="blog.html#" title=""> 12-dimi</a> <span>N 2</span></li>
-                            <li><a href="blog.html#" title=""> 6-dimi </a> <span>N 3</span></li>
+                            @endphp
+                            <li><a href="blog.html#" title=""> {{$a->name}}</a> <span>N {{$c}}</span></li>
 
-
+                        @endforeach
 
 
                     </ul>

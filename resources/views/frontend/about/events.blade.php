@@ -29,7 +29,7 @@
                                             Kern</a></div>
                                     <span class="locat"><img src="assets/img/loct.png" alt="">43 castle road 517 district</span>
                                 </div>
-                            </div><!--course-card end--></div>
+                            </div><!--schools-card end--></div>
                         <div class="col-lg-6">
                             <div class="course-card">
                                 <div class="d-flex flex-wrap align-items-center">
@@ -45,7 +45,7 @@
                                             Doleschall</a></div>
                                     <span class="locat"><img src="assets/img/loct.png" alt="">43 castle road 517 district</span>
                                 </div>
-                            </div><!--course-card end--></div>
+                            </div><!--schools-card end--></div>
                         <div class="col-lg-6">
                             <div class="course-card">
                                 <div class="d-flex flex-wrap align-items-center">
@@ -61,7 +61,7 @@
                                             Brauer</a></div>
                                     <span class="locat"><img src="assets/img/loct.png" alt="">43 castle road 517 district</span>
                                 </div>
-                            </div><!--course-card end--></div>
+                            </div><!--schools-card end--></div>
                         <div class="col-lg-6">
                             <div class="course-card">
                                 <div class="d-flex flex-wrap align-items-center">
@@ -77,7 +77,7 @@
                                             Kern</a></div>
                                     <span class="locat"><img src="assets/img/loct.png" alt="">43 castle road 517 district</span>
                                 </div>
-                            </div><!--course-card end--></div>
+                            </div><!--schools-card end--></div>
                         <div class="col-lg-6">
                             <div class="course-card">
                                 <div class="d-flex flex-wrap align-items-center">
@@ -93,7 +93,7 @@
                                             Doleschall</a></div>
                                     <span class="locat"><img src="assets/img/loct.png" alt="">43 castle road 517 district</span>
                                 </div>
-                            </div><!--course-card end--></div>
+                            </div><!--schools-card end--></div>
                         <div class="col-lg-6">
                             <div class="course-card">
                                 <div class="d-flex flex-wrap align-items-center">
@@ -109,7 +109,7 @@
                                             Brauer</a></div>
                                     <span class="locat"><img src="assets/img/loct.png" alt="">43 castle road 517 district</span>
                                 </div>
-                            </div><!--course-card end--></div>
+                            </div><!--schools-card end--></div>
                     </div>
                 </div><!--courses-list end--></div>
             <div class="mdp-pagiation">
