@@ -42,10 +42,7 @@ class About extends Model
     {
         return $this->hasMany(Student::class,'school_id');
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main
     public function users()
     {
         return $this->hasMany(User::class,'school_id');
