@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\About;
 use App\Models\Blog;
 use App\Models\Classes;
 use App\Models\Course;
@@ -24,11 +25,12 @@ use Illuminate\Support\Facades\Route;
 // Front
 Route::get('/', function () {
     $blogs = Blog::take(3)->where('school_id', env('SCHOOL_ID'))->orderByDesc('id')->get();
-    $teachers = Teacher::take(4)->where('school_id', env('SCHOOL_ID'))->orderByDesc('id')->get();
+    $teachers = Teacher::take(4)->with('about')->orderByDesc('id')->get();
     $classes = Classes::take(7)->where('school_id', env('SCHOOL_ID'))->orderByDesc('id')->get();
+    $schools = About::take(7)->with('teachers')->orderByDesc('id')->get();
     $allClasses = Classes::take(7)->where('school_id', env('SCHOOL_ID'))->orderByDesc('id')->get();
     $courses = Course::take(3)->where('school_id', env('SCHOOL_ID'))->orderByDesc('id')->get();
-    return view('frontend.home.index', compact('blogs', 'teachers', 'classes', 'allClasses', 'courses'));
+    return view('frontend.home.index', compact('blogs', 'teachers', 'classes', 'allClasses', 'courses','schools'));
 })->name('home');
 
 // About

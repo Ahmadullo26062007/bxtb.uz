@@ -99,7 +99,7 @@
 
                 @foreach($r as $c=>$b)
                     @php
-                    $a=\App\Models\About::find($c);
+                        $a=\App\Models\About::find($c);
                     @endphp
                     <tr class="text-dark">
                         <td>{{$c}}</td>
@@ -142,8 +142,8 @@
                     </ul>
                 </div>
 
-             </div>
+            </div>
         </div>
 
 
-</div>
+    </div>

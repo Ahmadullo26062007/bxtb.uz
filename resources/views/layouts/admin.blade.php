@@ -238,17 +238,17 @@
                         <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
                             <i class="align-middle" data-feather="settings"></i>
                         </a>
-<<<<<<< HEAD
+
                         @php
                             $a=env('SCHOOL_ID');
                             $user=\App\Models\About::find($a);
                         @endphp
-=======
+
 @php
 $a=env('SCHOOL_ID');
 $user=\App\Models\About::find($a);
  @endphp
->>>>>>> origin/main
+
                         <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
                             <img src="{{asset("images/$user->image")}}" class="avatar img-fluid rounded me-1" alt="{{$user->name}} rasimi" /> <span class="text-dark">{{$user->name}}</span>
                         </a>
