@@ -46,7 +46,6 @@
                             <div class="classes-col wow fadeInUp" data-wow-duration="1000ms">
                                 <div class="class-thumb"><img src="{{ asset('images/' . $school->image) }}" alt=""
                                                               class="w-100">
-
                                 </div>
                                 <div class="class-info">
                                     <h3><a href="http://{{$school->name}}.bxtb.uz"
