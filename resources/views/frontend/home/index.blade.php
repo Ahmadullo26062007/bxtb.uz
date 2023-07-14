@@ -13,7 +13,7 @@
                         <div class="section-title">
                             <h2><span>Andijon viloyati Baliqchi tumani Xalq talimi bo'limi</span>
                             <p class="mw-100">
-                                Bu yerda siz Andijon viloyatida baliqchi yumanidagi maktablarni topishingiz mumkin
+                                Bu yerda siz Andijon viloyatida baliqchi tumanidagi maktablarni topishingiz mumkin
                             </p><a href="{{ route('schools.index') }}" title=""
                                    class="btn-default">Maktablar <i class="fa fa-long-arrow-alt-right"></i></a>
                         </div>
