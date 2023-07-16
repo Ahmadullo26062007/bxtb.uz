@@ -338,14 +338,14 @@
                             <li><a class="{{ request()->is('schools*') ? 'active' : '' }}"
                                    href="{{ route('schools.index') }}" title="">Maktablar</a>
                             </li>
-                            <li><a class="{{ request()->is('statistika*') ? 'active' : '' }}"
+                            <li><a class="{{ request()->is('statistika') ? 'active' : '' }}"
                                    href="{{ route('statistika') }}" title="">Statistika</a>
                             </li>
                             <li><a class="{{ request()->is('teachers*') ? 'active' : '' }}"
                                    href="{{ route('teachers.index') }}" title="">O'qtuvchilar</a>
                             </li>
 
-                            <li><a class="{{ request()->is('students*') ? 'active' : '' }}"
+                            <li><a class="{{ request()->is('front/students') ? 'active' : '' }}"
                                    href="{{ route('front.students') }}" title="">O'quvchilar</a>
                             </li>
                             <li>
