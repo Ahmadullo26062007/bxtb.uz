@@ -15,7 +15,7 @@ class AboutSeeder extends Seeder
     {
         About::insert([
             'name'=>'1-maktab',
-            'image'=>'school.png',
+            'image'=>'64bd413413d17bxtb.jpeg',
             'description'=>'Maktab haqida yozing',
             'phone_number'=>'999999999',
             'start_time'=>'08:00',
