@@ -10,7 +10,7 @@
     <meta name="description" content="Shelly - Website">
     <meta name="author" content="merkulove">
     <meta name="keywords" content="">
-    <link rel="icon" href="{{ asset('assets/img/favicon.png') }}">
+    <link rel="icon" href="{{ asset('assets/img/webking.jpg') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/button.min.css') }}">
     <link rel="stylesheet" href="{{asset('st.css')}}">
@@ -105,8 +105,8 @@
             <div class="container">
                 <div class="header-content d-flex flex-wrap align-items-center">
                     <div class="logo"><a href="{{ route('home') }}" title=""><img
-                                src="{{ asset('images/logo.png') }}" alt=""
-                                srcset="assets/img/01_Logo_2x.png 2x"></a>
+                                width=200px" src="{{ asset('assets/img/webking2.png') }}" alt=""
+                                srcset="assets/img/webking.jpg 2x"></a>
                     </div>
                     @php
 
