@@ -34,7 +34,9 @@
     <div class="mdp-pagiation">
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-
+{{--                @if((count( \App\Models\Course::where('school_id',env('SCHOOL_ID'))->get()->ToArray() )>8))--}}
+                    <li class="page-item"><a style="color:#f37335 " class="page-link" wire:click="pilus()">Yana+</a></li>
+{{--                @endif--}}
             </ul>
         </nav>
     </div>
