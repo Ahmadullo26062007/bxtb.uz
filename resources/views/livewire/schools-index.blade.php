@@ -14,12 +14,7 @@
                           {{$school->start_time}} - {{$school->end_time}}</span>
                             <div class="d-flex flex-wrap align-items-center">
                                 <div class="posted-by">
-                                    Maktab direktori:
-                                    @if($school->users)
-                                        @foreach($school->users as $user)
-                                            {{$user->name}}
-                                        @endforeach
-                                    @endif
+
                                 </div>
                             </div>
                         </div>
@@ -35,7 +30,7 @@
         <nav aria-label="Page navigation example">
             <ul class="pagination">
 {{--                @if((count( \App\Models\Course::where('school_id',env('SCHOOL_ID'))->get()->ToArray() )>8))--}}
-                    <li class="page-item"><a style="color:#f37335 " class="page-link" wire:click="pilus()">Yana+</a></li>
+{{--                    <li class="page-item"><a style="color:#f37335 " class="page-link" wire:click="pilus()">Yana+</a></li>--}}
 {{--                @endif--}}
             </ul>
         </nav>

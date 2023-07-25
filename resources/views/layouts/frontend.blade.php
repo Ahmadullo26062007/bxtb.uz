@@ -2,7 +2,7 @@
 <html lang="en">
 @php
     $a = \App\Models\About::find(1);
- @endphp
+@endphp
 <head>
     <meta charset="UTF-8">
     <title>Maktablar</title>
@@ -19,6 +19,7 @@
         .body {
             font-family: 'lato', sans-serif;
         }
+
         /*.container {*/
         /*    max-width: 1000px;*/
         /*    margin-left: auto;*/
@@ -46,9 +47,10 @@
             margin-bottom: 25px;
             color: black;
         }
+
         .table-row {
             background-color: #ffffff;
-            box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+            box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
             border-radius: 3px;
             padding: 25px 30px;
             display: flex;
@@ -56,18 +58,22 @@
             margin-bottom: 25px;
             color: black;
         }
+
         .col-1 {
             flex-basis: 10%;
             color: black;
         }
+
         .col-2 {
             flex-basis: 40%;
             color: black;
         }
+
         .col-3 {
             flex-basis: 25%;
             color: black;
         }
+
         .col-4 {
             flex-basis: 25%;
             color: black;
@@ -360,15 +366,6 @@
                         </ul>
                     </nav>
                     <!--nav end-->
-                    <ul class="social-links ml-auto d-flex ml-5">
-                        <li>
-                            <a href="{{ $a->facebook }}"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li>
-                            <a href="{{ $a->instagram }}"><i class="fab fa-instagram"></i></a>
-
-                        </li>
-                    </ul>
                 </div>
                 <!--navigation-bar end-->
             </div>
@@ -427,12 +424,12 @@
                                 <li>
                                     <div class="contact-info"><img src="assets/img/icon1.png" alt="">
                                         <div class="contact-tt">
-                                                 {{-- formatting phone number start --}}
-                                             @php
-                                                 $phone_number = "+998" . $a->phone_number; // example phone number
-                                                 $formatted_number = preg_replace('/^(\+998)(\d{2})(\d{3})(\d{4})$/', '$1 $2 $3 $4', $phone_number);
-                                                 // echo $formatted_number; // output: +998 90 123 4567
-                                             @endphp
+                                            {{-- formatting phone number start --}}
+                                            @php
+                                                $phone_number = "+998" . $a->phone_number; // example phone number
+                                                $formatted_number = preg_replace('/^(\+998)(\d{2})(\d{3})(\d{4})$/', '$1 $2 $3 $4', $phone_number);
+                                                // echo $formatted_number; // output: +998 90 123 4567
+                                            @endphp
                                             {{-- fromatting phone number end --}}
                                             <h4>Call</h4><span> {{ $formatted_number }}</span>
                                         </div>
