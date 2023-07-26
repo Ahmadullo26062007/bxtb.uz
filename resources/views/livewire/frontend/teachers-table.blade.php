@@ -2,21 +2,30 @@
     <div class="container">
         <div class="teachers-section p-0">
             <div class="teachers">
-                <div class="row">
+                <div class="row griddd">
                     @foreach ($teachers as $teacher)
-                        <div class="col-lg-3 col-md-3 col-sm-6 col-6 full-wdth">
+                        <div>
                             <div class="teacher">
-                                <div class="teacher-img"><img style="width: 235px; height: 425px;"
-                                                              src="{{ asset("images/$teacher->image") }}" alt="" class="w-100">
+                                <div class="teacher-img">
+                                    <div style="height: 300px">
+
+                                        <img style="width: 235px; height: 300px;" src="{{ asset("images/$teacher->image") }}" alt="" class="w-100">
+                                    </div>
 
                                     <div class="teacher-info">
+                                        <p>
+                                            @php
+                                                $a=\App\Models\About::find($teacher->school_id);
+                                            @endphp
+                                            {{$a->name}} O'qtuvchisi:
+                                        </p>
                                         <h3><a href="#" title="">{{ $teacher->firstname }}
                                                 {{ $teacher->lastname }}</a></h3>
                                         <span>{{ $teacher->category }}
                                             O'qituvchisi</span>
                                         @if (empty($teacher->degrees[0]))
                                             <span class="text-dark">
-                                                Yangi toifa
+                                                Birinchi toifa
                                             </span>
                                         @else
                                             @foreach ($teacher->degrees as $degree)

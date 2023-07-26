@@ -19,7 +19,7 @@ class TeachersTable extends Component
     public function render()
     {
 
-        $teachers = Teacher::take($this->count)->orderByDesc('id')->get();
+        $teachers = Teacher::take($this->count)->get();
         return view('livewire.frontend.teachers-table', compact('teachers'));
     }
 }

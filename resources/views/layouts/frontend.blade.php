@@ -111,7 +111,7 @@
             <div class="container">
                 <div class="header-content d-flex flex-wrap align-items-center">
                     <div class="logo"><a href="{{ route('home') }}" title=""><img
-                                width=200px" src="{{ asset('assets/img/webking2.png') }}" alt=""
+                                width=200px" src="{{ asset('images/logo.png') }}" alt=""
                                 srcset="assets/img/webking.jpg 2x"></a>
                     </div>
                     @php
@@ -341,6 +341,9 @@
                                    title="">Bosh sahifa</a>
                             </li>
 
+                            <li><a class="{{ request()->is('about*') ? 'active' : '' }}"
+                                   href="{{ route('about') }}" title="">Biz haqimizda</a>
+                            </li>
                             <li><a class="{{ request()->is('schools*') ? 'active' : '' }}"
                                    href="{{ route('schools.index') }}" title="">Maktablar</a>
                             </li>
@@ -359,9 +362,6 @@
                                    href="{{ route('blog.index') }}" title="">Blog</a>
                             </li>
 
-                            <li><a class="{{ request()->is('about*') ? 'active' : '' }}"
-                                   href="{{ route('about') }}" title="">Biz haqimizda</a>
-                            </li>
 
                         </ul>
                     </nav>
@@ -412,9 +412,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="widget widget-about"><img src="{{ asset('images/logo.png') }}" alt="">
-                            <p>Vivamus porta efficitur nibh nec convallis. Vestibulum egestas eleifend justo. Ut
-                                tellus ipsum,
-                                accumsan</p>
+                            <p>{{$a->description}}</p>
                         </div>
                         <!--widget-about end-->
                     </div>
@@ -479,17 +477,11 @@
             <div class="bottom-footer">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <p>© Copyrights 2020 Shelly All rights reserved</p>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <ul class="social-links">
-                            <li><a title=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a title=""><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a title=""><i class="fab fa-instagram"></i></a></li>
-
-                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="https://www.instagram.com/ahmadullorahmatullayev/"><i
+                            <li><a href="{{$a->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="{{$a->instagram}}"><i
                                         class="fab fa-instagram"></i></a></li>
 
                         </ul>
@@ -504,30 +496,58 @@
 
 @livewireScripts()
 <script src="{{ asset('assets/js/bundle.min.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+{{--<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>--}}
+{{--<script>--}}
+{{--    var options = {--}}
+{{--        chart: {--}}
+{{--            type: "bar"--}}
+{{--        },--}}
+{{--        series: [--}}
+{{--            {--}}
+{{--                name: "sales",--}}
+{{--                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}, {{EmptyStudentsProsent($a)}}, {{EmptyTeachersProsent($a)}}]--}}
+{{--            }--}}
+{{--        ],--}}
+{{--        xaxis: {--}}
+{{--            categories: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar', 'Bo`sh o`quvchilar', 'yangi o`qtuvchilar']--}}
+{{--        },--}}
+{{--        yaxis: {--}}
+{{--            tickAmount: 10,--}}
+{{--        }--}}
+{{--    };--}}
+
+{{--    var chart = new ApexCharts(document.querySelector("#chart"), options);--}}
+
+{{--    chart.render();--}}
+{{--</script>--}}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    var options = {
-        chart: {
-            type: "bar"
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            colors: ['#000', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar', 'Bo`sh o`quvchilar', 'yangi o`qtuvchilar'],
+            datasets: [{
+                label: "",
+                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}, {{EmptyStudentsProsent($a)}}, {{EmptyTeachersProsent($a)}}],
+
+                backgroundColor: ['green', 'red', 'blue', '#5bbe00', '#2dff00', 'gold', 'gold'],
+
+                borderWidth: 2,
+            }],
         },
-        series: [
-            {
-                name: "sales",
-                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}, {{EmptyStudentsProsent($a)}}, {{EmptyTeachersProsent($a)}}]
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
-        ],
-        xaxis: {
-            categories: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar', 'Bo`sh o`quvchilar', 'yangi o`qtuvchilar']
-        },
-        yaxis: {
-            tickAmount: 10,
         }
-    };
-
-    var chart = new ApexCharts(document.querySelector("#chart"), options);
-
-    chart.render();
+    });
 </script>
+
 <script src="{{ asset('assets/js/button.min.js') }}"></script><!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180910402-1"></script>
     <script>

@@ -10,7 +10,7 @@
             <div class="pager-content text-center">
                 <h2>O'quvchilar</h2>
                 <ul>
-                    <li><a href="{{ route('front.students') }}" title="">Bosh sahifa</a></li>
+                    <li><a href="{{ route('home') }}" title="">Bosh sahifa</a></li>
                     <li><span>O'quvchilar</span></li>
                 </ul>
             </div>

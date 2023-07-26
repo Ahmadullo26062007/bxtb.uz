@@ -16,7 +16,7 @@ class SchoolsIndex extends Component
 
     public function render()
     {
-        $schools = About::with('users')->orderByDesc('id')->get();
+        $schools = About::with('users')->get();
         return view('livewire.schools-index', compact('schools'));
     }
 }

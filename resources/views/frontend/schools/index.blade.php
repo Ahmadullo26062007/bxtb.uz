@@ -20,7 +20,7 @@
     <!--pager-section end-->
     <section class="classes-page">
         <div class="container">
-            <div class="classes-banner"><span>Try now</span>
+            <div class="classes-banner"><span>Hozir urinib ko'ring</span>
                 <h2>Ozingizga mos maktabni tanlang va biz bilan bog`laning</h2><a href="{{route('about')}}" title="" class="btn-default">Biz Haqimizda <i
                         class="fa fa-long-arrow-alt-right"></i></a>
             </div>

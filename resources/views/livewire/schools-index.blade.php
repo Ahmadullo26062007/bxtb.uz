@@ -2,6 +2,7 @@
     <div class="classes-sec">
         <div class="row">
             @foreach($schools as $school)
+                @if(empty($school->id==1))
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="classes-col">
                         <div class="class-thumb"><img src="{{asset('images/'.$school->image)}}" alt="" class="w-100">
@@ -21,6 +22,7 @@
                     </div>
                     <!--classes-col end-->
                 </div>
+                @endif
             @endforeach
         </div>
 

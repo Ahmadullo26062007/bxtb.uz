@@ -15,7 +15,7 @@
                             <p class="mw-100">
                                 Bu yerda siz Andijon viloyatida baliqchi tumanidagi maktablarni topishingiz mumkin
                             </p><a href="{{ route('schools.index') }}" title=""
-                                   class="btn-default">Maktablar <i class="fa fa-long-arrow-alt-right"></i></a>
+                                   class="btn-default">Maktablar <i class="fa fa-long-arrow-alt-right"></i></a></h2>
                         </div>
                         <!--section-title end-->
                     </div>
@@ -42,6 +42,7 @@
             <div class="classes-sec">
                 <div class="row classes-carousel">
                     @foreach ($schools as $school)
+                        @if(empty($school->id==1))
                         <div class="col-lg-3 ">
                             <div class="classes-col wow fadeInUp slider-card" data-wow-duration="1000ms">
                                 <div class="class-thumb card-img">
@@ -64,6 +65,7 @@
                             </div>
                             <!--classes-col end-->
                         </div>
+                        @endif
                     @endforeach
                 </div>
                 <div class="lnk-dv text-center"><a href="{{ route('schools.index') }}" title=""

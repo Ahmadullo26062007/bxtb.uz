@@ -75,7 +75,8 @@
     @endphp
     <div class="row">
         <div class="col-9">
-            <div id="chart">
+            <div>
+                <canvas id="myChart"></canvas>
             </div>
         </div>
 
@@ -91,10 +92,13 @@
                                     $a2=\App\Models\About::find($c);
                                 if($count++ == 1) continue;
                                 @endphp
+                                @if(empty($a2->id==1))
                                 <li><a  title=""> {{$a2->name}}</a> <span>N {{$count}}</span></li>
+                                @endif
                             @endif
                         @endforeach
-
+                            <br>
+                            <br>
 
                     </ul>
                 </div>

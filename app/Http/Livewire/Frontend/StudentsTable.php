@@ -17,7 +17,7 @@ class StudentsTable extends Component
 
     public function render()
     {
-        $students = Student::where('school_id',env('SCHOOL_ID'))->take($this->count)->orderByDesc('id')->get();
+        $students = Student::where('school_id',env('SCHOOL_ID'))->take($this->count)->get();
         return view('livewire.frontend.students-table', compact('students'));
     }
 }
