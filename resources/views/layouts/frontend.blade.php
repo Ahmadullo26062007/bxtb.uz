@@ -138,7 +138,7 @@
                      return floor($n);
                              }
                       }else{
-                          return 1;
+                          return 0;
                       }
 
                         }
@@ -168,7 +168,7 @@
                              }
                          }
                              }else{
-                            return 1;
+                            return 0;
                              }
                         }
                         function EmptyTeachersProsent($a)
@@ -190,14 +190,14 @@
                              return 1;
                          }else{
                      if($c==0){
-                                 return 1;
+                                 return 0;
                              }       else{
                            $n=$c*$p;
                      return floor($n);
                              }
                          }
                            }else{
-                           return 1;
+                           return 0;
                            }
                         }
                         function GreatStudentsProsent($a)
@@ -227,7 +227,7 @@
 
                          }
                          }else{
-                            return 1;
+                            return 0;
                          }
                         }
                         function CEFRStudentsProsent($a)
@@ -256,7 +256,7 @@
                              }
                          }
                           }else{
-                             return 1;
+                             return 0;
                           }
                         }
                         function ITStudentsProsent($a)
@@ -285,7 +285,7 @@
                              }
                          }
                       }else{
-                            return 1;
+                            return 0;
                       }
                         }
                         function EmptyStudentsProsent($a)
@@ -316,12 +316,11 @@
                              }
                          }
                        }else{
-                          return 1;
+                          return 0;
                        }
                         }
 
                     @endphp
-
                     @php
                         $phone_number = "+998" . $a->phone_number; // example phone number
                         $formatted_number = preg_replace('/^(\+998)(\d{2})(\d{3})(\d{4})$/', '$1 $2 $3 $4', $phone_number);
