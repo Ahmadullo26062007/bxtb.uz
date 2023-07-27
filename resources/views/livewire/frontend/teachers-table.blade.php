@@ -1,9 +1,26 @@
 <section class="page-content">
+    @php
+        function teacher_b($t){
+            if(!count($t->degrees->TOArray())==0){
+               if($t->degrees[0]->type_id==1){
+                 return true;
+               }else{
+                   return false;
+               }
+            }else{
+                return false;
+            }
+        }
+     $c=0;
+    @endphp
     <div class="container">
         <div class="teachers-section p-0">
             <div class="teachers">
                 <div class="row griddd">
                     @foreach ($teachers as $teacher)
+                        @if(teacher_b($teacher) )
+                            @php if($c++ == 1)continue; @endphp
+                            @if($c<=20)
                         <div>
                             <div class="teacher">
                                 <div class="teacher-img">
@@ -40,6 +57,8 @@
                                 <!--teacher end-->
                             </div>
                         </div>
+                            @endif
+                         @endif
                     @endforeach
                 </div>
                 <!--teachers end-->

@@ -41,17 +41,18 @@ class StudentController extends Controller
             'fullname.required' => 'Ismni kiriting',
             'class_id.required' => 'Sinf kiriting',
         ]);
-
+        $a=About::find(env("SCHOOL_ID"));
         $data = $request->all();
         $file = $request->file('image');
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
         $file->move(public_path('images'), $image_name);
+        $n='https://'.$a->name.'.bxtb.uz/'.$data['image'];
         if (auth()->user()->school_id == null) {
             Student::create([
                 'fullname' => $request->fullname,
                 'class_id' => $request->class_id,
-                'image' => $data['image'],
+                'image' => $n,
                 'school_id' => $request->school_id,
             ]);
         } else {
