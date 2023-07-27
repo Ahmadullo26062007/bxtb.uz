@@ -64,7 +64,7 @@ class StudentController extends Controller
             Student::create([
                 'fullname' => $request->fullname,
                 'class_id' => $request->class_id,
-                'image' => $data['image'],
+                'image' => $n,
                 'school_id' => auth()->user()->school_id,
             ]);
         }
