@@ -11,7 +11,7 @@
                 <ul>
                     <li><a href="{{route('home')}}" title="">Home</a></li>
                     <li><a href="{{route('blog.index')}}" title="">Blog</a></li>
-                    <li><span> {{$blog->title}} </span></li>
+                    <li> {{$blog->title}}</li>
                 </ul>
                 <h2>{{$blog->title}}</h2><span class="categry"> {{$blog->category->name}}, {{$a->name}}</span>
                 <ul class="meta">

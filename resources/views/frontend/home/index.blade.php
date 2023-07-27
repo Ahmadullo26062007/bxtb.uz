@@ -98,6 +98,12 @@
 
                                 </div>
                                 <div class="teacher-info">
+                                    <p>
+                                        @php
+                                            $a=\App\Models\About::find($teacher->school_id);
+                                        @endphp
+                                        {{$a->name}} O'qtuvchisi:
+                                    </p>
                                     <h3><a title="">{{ $teacher->firstname }}
                                             {{ $teacher->lastname }}</a></h3>
                                     <span>{{ $teacher->category }} O`qituvchisi</span>
@@ -188,14 +194,16 @@
                                             </div>
                                             <div class="blog-info">
                                                 <ul class="meta">
-                                                    <li><a href="assets/images/resources/bg4.jpg.html#" title=""></a>
-                                                    </li>
-                                                    <li><a href="assets/images/resources/bg4.jpg.html#" title="">by
+                                                    <li><a title=""></a>
+                                                        @php
+                                                            $a=\App\Models\About::find($teacher->school_id);
+                                                        @endphp {{$a->name}} </li>
+
+                                                    <li><a title="">by
                                                             Admin</a></li>
                                                     <li><img src="assets/img/icon13.png" alt=""><a
-                                                            href="assets/images/resources/bg4.jpg.html#"
                                                             title="">{{ $blog->category->name }},</a><a
-                                                            href="assets/images/resources/bg4.jpg.html#" title="">
+                                                            title="">
                                                             School</a></li>
                                                 </ul>
                                                 <h3><a href="{{ route('blog.show', $blog->id) }}"
