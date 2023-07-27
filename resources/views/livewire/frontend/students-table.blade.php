@@ -1,7 +1,7 @@
 <div class="classes-section">
     @php
      function student_b($s){
-         dd($s->certificate);
+
          if($s->certificate){
 
              return true;
