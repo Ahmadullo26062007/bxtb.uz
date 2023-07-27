@@ -48,6 +48,7 @@ class BlogController extends Controller
             'description'=>$data['description'],
             'category_id'=>$data['category_id'],
             'image'=>$data['image'],
+            'school_id'=>env('SCHOOL_ID')
         ]);
         return redirect()->route('blogs.index');
     }
@@ -82,21 +83,25 @@ class BlogController extends Controller
         ]);
         $data = $request->all();
         if ($request->image){
-        $file = $request->file('image');
-        $image_name = uniqid() . $file->getClientOriginalName();
-        $data['image'] = $image_name;
-        $file->move(public_path('images'), $image_name);
-       $blog->update([
-            'title'=>$data['title'],
-            'description'=>$data['description'],
-            'category_id'=>$data['category_id'],
-            'image'=>$data['image'],
-        ]);
-        }else{
-           $blog->update([
+            $file = $request->file('image');
+            $image_name = uniqid() . $file->getClientOriginalName();
+            $data['image'] = $image_name;
+            $file->move(public_path('images'), $image_name);
+            $blog->update([
                 'title'=>$data['title'],
                 'description'=>$data['description'],
                 'category_id'=>$data['category_id'],
+                'image'=>$data['image'],
+                'school_id'=>env('SCHOOL_ID')
+
+            ]);
+        }else{
+            $blog->update([
+                'title'=>$data['title'],
+                'description'=>$data['description'],
+                'category_id'=>$data['category_id'],
+                'school_id'=>env('SCHOOL_ID')
+
             ]);
         }
         return redirect()->route('blogs.index');

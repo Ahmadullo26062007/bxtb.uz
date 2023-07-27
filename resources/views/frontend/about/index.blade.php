@@ -24,6 +24,8 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="section-title">
                             <h2><span>{{$a->name}}</span> ga <br> hush kelibsiz</h2>
+                            <h3 class="mw-100 text-dark">{{$a->description}}</h3>
+                            <br>
                             <a href="{{ route('schools.index') }}" title=""
                                class="btn-default">Maktablar <i class="fa fa-long-arrow-alt-right"></i></a>
                         </div>
@@ -37,7 +39,6 @@
                 </div>
             </div>
             <!--abt-page-row end-->
-            <h3 class="mw-100 text-dark">{{$a->description}}</h3>
         </div>
     </section>
 
