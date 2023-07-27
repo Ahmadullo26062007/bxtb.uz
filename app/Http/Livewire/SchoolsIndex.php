@@ -7,12 +7,12 @@ use Livewire\Component;
 
 class SchoolsIndex extends Component
 {
-//    public $count = 8;
+    public $count = 8;
 
-//    function pilus()
-//    {
-//        $this->count = $this->count + 4;
-//    }
+    function pilus()
+    {
+        $this->count = $this->count + 4;
+    }
 
     public function render()
     {
