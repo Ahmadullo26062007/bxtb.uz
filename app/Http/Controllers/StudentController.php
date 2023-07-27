@@ -47,7 +47,12 @@ class StudentController extends Controller
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
         $file->move(public_path('images'), $image_name);
+        if (!$a->id==1){
         $n='https://'.$a->name.'.bxtb.uz/'.$data['image'];
+        }else{
+            $n='https://bxtb.uz/'.$data['image'];
+
+        }
         if (auth()->user()->school_id == null) {
             Student::create([
                 'fullname' => $request->fullname,
@@ -59,7 +64,7 @@ class StudentController extends Controller
             Student::create([
                 'fullname' => $request->fullname,
                 'class_id' => $request->class_id,
-                'image' => $data['image'],
+                'image' => $n,
                 'school_id' => auth()->user()->school_id,
             ]);
         }
