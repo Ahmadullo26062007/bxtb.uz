@@ -7,11 +7,11 @@
     @php
         $a = \App\Models\About::find(env('SCHOOL_ID'));
 
-           function GreatTeachers($a)
+           function GreatTeachers($a2)
               {
                   $c=0;
 
-                  foreach ($a->teachers as $t){
+                  foreach ($a2->teachers as $t){
                       if($t->degrees){
 
 
@@ -22,17 +22,15 @@
                    }
                     }
                   }
-                  if($c==0){
-                      return 1;
-                  }else{
+
                   return $c;
-                  }
+
               }
-              function GreatStudents($a)
+              function GreatStudents($a2)
               {
                   $c=0;
 
-                  foreach ($a->students as $s){
+                  foreach ($a2->students as $s){
                    if ($s->certificate){
                       if ($s->certificate->type==1 &&  (int) $s->certificate->ball >=5 || $s->certificate->type==2  ){
                           if ($c ++ ==1)continue;
@@ -40,17 +38,15 @@
                    }
 
                   }
-       if($c==0){
-                      return 1;
-                  }else{
+
                   return $c;
-                  }
+
               }
-        function ItStudents($a)
+        function ItStudents($a2)
               {
                   $c=0;
 
-                  foreach ($a->students as $s){
+                  foreach ($a2->students as $s){
                    if ($s->certificate){
                       if ( $s->certificate->type==3 ){
                           if ($c ++ ==1)continue;
@@ -59,131 +55,96 @@
 
                   }
 
-                    if($c==0){
-                      return 1;
-                  }else{
+
                   return $c;
-                  }
+
               }
 
                   $r=[];
-                  foreach(\App\Models\About::all() as $c=>$a){
-                      $r[$a->id]=((int) GreatTeachers($a))+((int)GreatTeachers($a))+((int)GreatTeachers($a));
+                  foreach(\App\Models\About::all() as $c=>$a3){
+                      $r[$a3->id]=((int) GreatTeachers($a3))+((int)GreatTeachers($a3))+((int)GreatTeachers($a3));
                   }
                  arsort($r);
                 $count=0;
     @endphp
-    <div class="row">
-        <div class="col-9">
+
+
+    <div class="row d-flex flex-wrap">
+        <div class="col-12">
             <div>
                 <canvas id="myChart"></canvas>
-            </div>
-        </div>
-
-        <div class="col-3">
-            <div class="sidebar">
-
-                <div class="widget widget-categories">
-                    <h3 class="widget-title">Eng yaxshi maktab</h3>
-                    <ul>
-                        @foreach($r as $c=>$b)
-                            @if($count<4)
-                                @php
-                                    $a2=\App\Models\About::find($c);
-                                if($count++ == 1) continue;
-                                @endphp
-                                @if(empty($a2->id==1))
-                                <li><a  title=""> {{$a2->name}}</a> <span>N {{$count}}</span></li>
-                                @endif
-                            @endif
-                        @endforeach
-                            <br>
-                            <br>
-
-                    </ul>
-                </div>
-
             </div>
         </div>
 
     </div>
 
 
-    <div class="row">
+    <div class="row py-5"   >
         <div class="col-12 ">
 
             <ul class="responsive-table">
-                <li class="table-header li1">
+                <li class="table-header li1 d-none d-md-flex">
                     <div class="col col-1">N#</div>
                     <div class="col col-2">Maktab</div>
                     <div class="col col-3">oliy malumotli o`qituvchilar</div>
                     <div class="col col-3">Sertifikatga ega o`quvchilar</div>
                     <div class="col col-4">IT o`quvchilar</div>
                 </li>
+                <li class="table-header li1 d-md-none">
+                    <div class="col col-1">N#</div>
+                    <div class="col col-2">Maktab</div>
+                    <div class="col col-3"><img width="30" height="30" src="{{asset('images/teacher.png')}}"></div>
+                    <div class="col col-3"><img width="30" height="30" src="{{asset('images/student.png')}}"></div>
+                    <div class="col col-4"><img width="30" height="30" src="{{asset('images/it.png')}}"></div>
+                </li>
+
                 @foreach($r as $c=>$b)
                     @php
-                        $a=\App\Models\About::find($c);
+
+                        $a1=\App\Models\About::find($c);
                     @endphp
                     <li class="table-row li1">
                         <div class="col col-1" data-label="Job Id">{{$c}}</div>
-                        <div class="col col-2" data-label="Customer Name">    {{$a->name}}</div>
-                        <div class="col col-3" data-label="Amount">{{GreatTeachers($a)}}</div>
-                        <div class="col col-4" data-label="Payment Status">{{GreatStudents($a)}}</div>
-                        <div class="col col-4" data-label="Payment Status">{{ItStudents($a)}}</div>
+                        <div class="col col-2" data-label="Customer Name">    {{$a1->name}}</div>
+                        <div class="col col-3" data-label="Amount">{{GreatTeachers($a1)}}</div>
+                        <div class="col col-4" data-label="Payment Status">{{GreatStudents($a1)}}</div>
+                        <div class="col col-4" data-label="Payment Status">{{ItStudents($a1)}}</div>
                     </li>
                 @endforeach
             </ul>
         </div>
 
-        {{--        <div class="col-9">--}}
-        {{--            <table>--}}
-        {{--                <thead>--}}
-        {{--                <tr>--}}
-        {{--                    <th>--}}
-        {{--                        N--}}
-        {{--                    </th>--}}
-        {{--                    <th>--}}
-        {{--                        Maktab--}}
-        {{--                    </th>--}}
-        {{--                    <th>--}}
-        {{--                        <span>oliy malumotli o`qituvchilar</span>--}}
-        {{--                    </th>--}}
-        {{--                    <th>--}}
-        {{--                        <span>Sertifikatga ega o`quvchilar</span>--}}
-        {{--                    </th>--}}
-        {{--                    <th>--}}
-        {{--                        <span>IT o`quvchilar</span>--}}
-        {{--                    </th>--}}
-        {{--                </tr>--}}
-        {{--                </thead>--}}
-        {{--                <tbody>--}}
-
-        {{--                @foreach($r as $c=>$b)--}}
-        {{--                    @php--}}
-        {{--                    $a=\App\Models\About::find($c);--}}
-        {{--                    @endphp--}}
-        {{--                    <tr class="text-dark">--}}
-        {{--                        <td>{{$c}}</td>--}}
-        {{--                        <td>--}}
-        {{--                            {{$a->name}}--}}
-        {{--                        </td>--}}
-        {{--                        <td>--}}
-        {{--                            <span>{{GreatTeachers($a)}}</span>--}}
-        {{--                        </td>--}}
-        {{--                        <td>--}}
-        {{--                            <span>{{GreatStudents($a)}}</span>--}}
-        {{--                        </td>--}}
-        {{--                        <td>--}}
-        {{--                            <span>{{ItStudents($a)}}</span>--}}
-        {{--                        </td>--}}
-        {{--                    </tr>--}}
-        {{--                @endforeach--}}
-
-
-
-        {{--                </tbody>--}}
-        {{--            </table>--}}
-        {{--        </div>--}}
-
     </div>
+
+    {{--    <table class="table">--}}
+    {{--        <thead>--}}
+    {{--        <tr>--}}
+
+    {{--            <th scope="col">First</th>--}}
+    {{--            <th scope="col">Last</th>--}}
+    {{--            <th scope="col">Handle</th>--}}
+    {{--        </tr>--}}
+    {{--        </thead>--}}
+    {{--        <tbody>--}}
+    {{--        <tr>--}}
+
+    {{--            <td>Mark</td>--}}
+    {{--            <td>Otto</td>--}}
+    {{--            <td>@mdo</td>--}}
+    {{--        </tr>--}}
+    {{--        <tr>--}}
+    {{--            <th scope="row">2</th>--}}
+    {{--            <td>Jacob</td>--}}
+    {{--            <td>Thornton</td>--}}
+    {{--            <td>@fat</td>--}}
+    {{--        </tr>--}}
+    {{--        <tr>--}}
+    {{--            <th scope="row">3</th>--}}
+    {{--            <td colspan="2">Larry the Bird</td>--}}
+    {{--            <td>@twitter</td>--}}
+    {{--        </tr>--}}
+    {{--        </tbody>--}}
+    {{--    </table> --}}
+
+
 </div>
