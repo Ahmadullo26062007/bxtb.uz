@@ -11,9 +11,8 @@
                 <ul>
                     <li><a href="{{route('home')}}" title="">Home</a></li>
                     <li><a href="{{route('blog.index')}}" title="">Blog</a></li>
-                    <li> {{$blog->title}}</li>
                 </ul>
-                <h2>{{$blog->title}}</h2><span class="categry"> {{$blog->category->name}}, {{$a->name}}</span>
+                <h2>{{$blog->title}}eefweifweo Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2><span class="categry"> {{$blog->category->name}}, {{$a->name}}</span>
                 <ul class="meta">
                     <li><a href="" title="">{{$blog->created_at->format('d/m/y')}}</a></li>
                     <li><a href="" title="">by Admin</a></li>
