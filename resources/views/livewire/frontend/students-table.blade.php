@@ -29,7 +29,7 @@
                                 @endphp
                        {{$a->name}} O'quvchisi:
                             </p>
-                            <h3><a title="">{{ $student->fullname }}</a>
+                            <h3>{{ $student->fullname }}
                             </h3>
                             <span>
                                 @if (!empty($student->certificate))
@@ -47,9 +47,7 @@
                                 @endif
                             </span> <span></span>
                             <div class="d-flex flex-wrap align-items-center">
-                                <div class="posted-by">
-                                    <a  title="">{{ $student->class->class }} Sinf
-                                    </a>
+                                <div class="posted-by text-dark">{{ $student->class->class }} Sinf
                                 </div>
                             </div>
                         </div>
