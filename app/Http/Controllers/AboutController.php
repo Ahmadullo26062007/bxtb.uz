@@ -92,7 +92,7 @@ class AboutController extends Controller
                 $file = $request->file('image');
                 $image_name = uniqid() . $file->getClientOriginalName();
                 $data['image'] = $image_name;
-                $file->move(public_path('../images'), $image_name);
+                $file->move(public_path('../../images'), $image_name);
                 $n='https://bxtb.uz/images/'.$data['image'];
                 $about->update([
                     'name' => $request->name,
