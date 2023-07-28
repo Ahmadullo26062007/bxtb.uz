@@ -20,7 +20,7 @@
                         <!--section-title end-->
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <div class="avt-img"><img width="500" height="500" src="{{ asset("images/$a->image") }}"
+                        <div class="avt-img"><img width="500" height="500" src="{{$a->image }}"
                                                   alt=""></div>
                         <!--avt-img end-->
                     </div>
@@ -93,7 +93,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-6 col-6 full-wdth">
                             <div class="teacher">
                                 <div class="teacher-img"><img style="width: 235px; height: 425px;"
-                                                              src="{{ asset("images/$teacher->image") }}" alt=""
+                                                              src="{{$teacher->image}}" alt=""
                                                               class="w-100">
 
                                 </div>
