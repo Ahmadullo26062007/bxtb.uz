@@ -1,14 +1,16 @@
 <div class="classes-section">
     @php
+
      function student_b($s){
 
          if($s->certificate){
-
              return true;
          }else{
              return false;
          }
      }
+
+
 
  @endphp
     <div class="classes-sec">
