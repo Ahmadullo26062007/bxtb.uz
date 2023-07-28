@@ -547,7 +547,7 @@
 
 {{--    chart.render();--}}
 {{--</script>--}}
-{{$id=\App\Models\About::find(1)}}
+{{$id=\App\Models\About::find(2)}}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     const ctx = document.getElementById('myChart');
