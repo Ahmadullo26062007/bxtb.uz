@@ -12,7 +12,7 @@
                     <li><a href="{{route('home')}}" title="">Home</a></li>
                     <li><a href="{{route('blog.index')}}" title="">Blog</a></li>
                 </ul>
-                <h2>{{$blog->title}}</h2><span class="categry"> {{$blog->category->name}}, {{$a->name}}</span>
+                <h2>{{substr($blog->title,0,30)}}...</h2><span class="categry"> {{$blog->category->name}}, {{$a->name}}</span>
                 <ul class="meta">
                     <li><a href="" title="">{{$blog->created_at->format('d/m/y')}}</a></li>
                     <li><a href="" title="">by Admin</a></li>
@@ -26,17 +26,18 @@
         <div class="row">
             <div class="col-lg-9">
                 <div class="blog-post single">
+
                     <p>{{$blog->description}}</p>
 
 
                     <div class="row">
                         <div class="col-md-6">
                             <div class="oderd">
-                                <h3>Tartibsiz jadval</h3>
+                                <h3>Tartibli jadval</h3>
                                 <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
+                                    <li>Darslarni o`z vaqtida qatiy bo`lish</li>
+                                    <li>Masuliyatli va Malakali O`qtuvchilar</li>
+                                    <li>Yangilangan jadval tartiblari</li>
                                 </ul>
                             </div>
                             <!--ordrd end-->
@@ -45,9 +46,9 @@
                             <div class="oderd">
                                 <h3>Tartibsiz jadval</h3>
                                 <ol>
-                                    <li>1. Etiam ante nisl, maximus vitae sem non, dignissim</li>
-                                    <li>2. Donec blandit, sapien eu porttitor blandit</li>
-                                    <li>3. Sed at urna at massa viverra feugiat non</li>
+                                    <li>1. Darslarni o`z vaqtida bo`lishga etiborsizlik</li>
+                                    <li>2. O`qtuvchilarning Darsga va O`quvchilarga etiborsizligi</li>
+                                    <li>3. O`quvchilarning Dars jadvaliga Etiborsizligi</li>
                                 </ol>
                             </div>
                             <!--ordrd end-->
