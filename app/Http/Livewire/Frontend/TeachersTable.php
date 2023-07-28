@@ -9,7 +9,7 @@ class TeachersTable extends Component
 {
 
     protected $listeners = ['render_teachers_table' => 'render'];
-    public $count = 8;
+    public $count = 16;
 
     public function viewMore()
     {

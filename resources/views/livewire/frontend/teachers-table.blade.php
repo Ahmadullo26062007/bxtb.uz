@@ -1,7 +1,7 @@
 <section class="page-content">
     @php
         function teacher_b($t){
-            if(!count($t->degrees->TOArray())==0){
+            if(!count($t->degrees->ToArray())==0){
                if($t->degrees[0]->type_id==1){
                  return true;
                }else{
@@ -19,14 +19,15 @@
                 <div class="row griddd">
                     @foreach ($teachers as $teacher)
                         @if(teacher_b($teacher) )
-                            @php if($c++ == 1)continue; @endphp
-                            @if($c<=20)
+
+{{--                            @php if($c++ == 1)continue; @endphp--}}
+{{--                            @if($c<=20)--}}
                         <div>
                             <div class="teacher">
                                 <div class="teacher-img">
                                     <div style="height: 300px">
 
-                                        <img style="width: 235px; height: 300px;" src="{{ asset("images/$teacher->image") }}" alt="" class="w-100">
+                                        <img style="width: 235px; height: 300px;" src="{{ $teacher->image }}" alt="" class="w-100">
                                     </div>
 
                                     <div class="teacher-info">
@@ -57,7 +58,7 @@
                                 <!--teacher end-->
                             </div>
                         </div>
-                            @endif
+{{--                            @endif--}}
                          @endif
                     @endforeach
                 </div>
