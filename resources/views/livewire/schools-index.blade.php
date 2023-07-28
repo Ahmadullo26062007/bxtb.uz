@@ -31,9 +31,9 @@
     <div class="mdp-pagiation">
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-                @if((count( \App\Models\About::where('id',env('SCHOOL_ID'))->get()->ToArray() )>$count))
-                    <li class="page-item"><a style="color:#f37335 " class="page-link" wire:click="pilus()">Yana+</a></li>
-                @endif
+{{--                @if((count( \App\Models\About::where('school_id',env('SCHOOL_ID'))->get()->ToArray() )>$count))--}}
+{{--                    <li class="page-item"><a style="color:#f37335 " class="page-link" wire:click="pilus()">Yana+</a></li>--}}
+{{--                @endif--}}
             </ul>
         </nav>
     </div>
