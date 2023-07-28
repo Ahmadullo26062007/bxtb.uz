@@ -41,18 +41,13 @@ class StudentController extends Controller
             'fullname.required' => 'Ismni kiriting',
             'class_id.required' => 'Sinf kiriting',
         ]);
-        $a=About::find(env("SCHOOL_ID"));
         $data = $request->all();
         $file = $request->file('image');
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
         $file->move(public_path('../../images'), $image_name);
-        if (!$a->id==1){
-        $n='https://'.$a->name.'.bxtb.uz/'.$data['image'];
-        }else{
-            $n='https://bxtb.uz/images/'.$data['image'];
+        $n='https://bxtb.uz/images/'.$data['image'];
 
-        }
         if (auth()->user()->school_id == null) {
             Student::create([
                 'fullname' => $request->fullname,
@@ -107,17 +102,11 @@ class StudentController extends Controller
             // removing old image
 //            unlink(public_path("../../images/$student->image"));
             // get image
-            $a=About::find(env("SCHOOL_ID"));
             $data = $request->all();
             $file = $request->file('image');
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
-            if (!$a->id==1){
-                $n='https://'.$a->name.'.bxtb.uz/'.$data['image'];
-            }else{
-                $n='https://bxtb.uz/images/'.$data['image'];
-
-            }
+            $n='https://bxtb.uz/images/'.$data['image'];
             if (auth()->user()->school_id == null) {
                 $student->update([
                     'fullname' => $request->fullname,
