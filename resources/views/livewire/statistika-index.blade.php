@@ -100,16 +100,17 @@
 
                 @foreach($r as $c=>$b)
                     @php
-
                         $a1=\App\Models\About::find($c);
                     @endphp
-                    <li class="table-row li1">
+                @if(empty($a1->id==1))
+                        <li class="table-row li1">
                         <div class="col col-1" data-label="Job Id">{{$c}}</div>
                         <div class="col col-2" data-label="Customer Name">    {{$a1->name}}</div>
                         <div class="col col-3" data-label="Amount">{{GreatTeachers($a1)}}</div>
                         <div class="col col-4" data-label="Payment Status">{{GreatStudents($a1)}}</div>
                         <div class="col col-4" data-label="Payment Status">{{ItStudents($a1)}}</div>
                     </li>
+                    @endif
                 @endforeach
             </ul>
         </div>
