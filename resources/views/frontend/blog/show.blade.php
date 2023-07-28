@@ -43,7 +43,7 @@
                         <h3 class="widget-title">Categories</h3>
                         <ul>
                             @foreach(\App\Models\Category::all() as $c)
-                                <li><a href="blog.html#" title="">{{$c->name}}</a> <span>{{count($c->blogs->ToArray())}}</span></li>
+                                <li><a title="">{{$c->name}}</a> <span>{{count($c->blogs->ToArray())}}</span></li>
 
                             @endforeach
 
@@ -55,7 +55,7 @@
                         <div class="wd-posts">
                             @foreach(\App\Models\Blog::where('school_id',env('SCHOOL_ID'))->take(3)->orderByDesc('id')->get() as $b)
                                 <div class="wd-post d-flex flex-wrap">
-                                    <div class="wd-thumb"><img style="width: 52px;height: 52px;border-radius: 18%" src="{{asset('images/'.$b->image)}}" alt=""></div>
+                                    <div class="wd-thumb"><img style="width: 52px;height: 52px;border-radius: 18%" src="{{$b->image}}" alt=""></div>
                                     <div class="wd-info">
                                         <h3><a href="{{route('blog.show',$b->id)}}" title="">{{$b->title}}</a></h3>
                                         <span>{{$b->created_at->format('d/m/y')}}</span>
