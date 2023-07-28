@@ -29,31 +29,6 @@
                     <p>{{$blog->description}}</p>
 
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="oderd">
-                                <h3>Tartibli jadval</h3>
-                                <ul>
-                                    <li>Darslarni o`z vaqtida qatiy bo`lish</li>
-                                    <li>Masuliyatli va Malakali O`qtuvchilar</li>
-                                    <li>Yangilangan jadval tartiblari</li>
-                                </ul>
-                            </div>
-                            <!--ordrd end-->
-                        </div>
-                        <div class="col-md-6">
-                            <div class="oderd">
-                                <h3>Tartibsiz jadval</h3>
-                                <ol>
-                                    <li>1. Darslarni o`z vaqtida bo`lishga etiborsizlik</li>
-                                    <li>2. O`qtuvchilarning Darsga va O`quvchilarga etiborsizligi</li>
-                                    <li>3. O`quvchilarning Dars jadvaliga Etiborsizligi</li>
-                                </ol>
-                            </div>
-                            <!--ordrd end-->
-                        </div>
-                    </div>
-
 
                 </div>
                 <!--blog-post single end-->
