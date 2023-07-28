@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class SchoolsIndex extends Component
 {
-    public $count = 8;
+    public $count = 16;
 
     function pilus()
     {
@@ -16,7 +16,7 @@ class SchoolsIndex extends Component
 
     public function render()
     {
-        $schools = About::with('users')->get();
+        $schools = About::with('users')->take($this->count)->get();
         return view('livewire.schools-index', compact('schools'));
     }
 }
