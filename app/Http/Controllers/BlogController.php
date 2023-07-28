@@ -84,12 +84,11 @@ class BlogController extends Controller
             'description' => 'required',
         ]);
         $data = $request->all();
-        $n = 'https://bxtb.uz/images/' . $data['image'];
-
         if ($request->image) {
             $file = $request->file('image');
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
+        $n = 'https://bxtb.uz/images/' . $data['image'];
             $file->move(public_path('../../images'), $image_name);
 
             $blog->update([
