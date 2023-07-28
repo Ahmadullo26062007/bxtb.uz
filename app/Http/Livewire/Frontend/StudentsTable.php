@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class StudentsTable extends Component
 {
-    public $count = 8;
+    public $count = 16;
 
 
     public function viewMore()
@@ -17,7 +17,8 @@ class StudentsTable extends Component
 
     public function render()
     {
-        $students = Student::all()->take($this->count);
+        $students = Student::take($this->count)->get();
+
         return view('livewire.frontend.students-table', compact('students'));
     }
 }
