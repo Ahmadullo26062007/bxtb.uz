@@ -111,7 +111,7 @@
             <div class="container">
                 <div class="header-content d-flex flex-wrap align-items-center">
                     <div class="logo"><a href="{{ route('home') }}" title=""><img
-                                width=200px" src="{{ asset('images/logo.png') }}" alt=""
+                                width=200px" src="{{ '../../images/webking.png' }}" alt=""
                                 srcset="assets/img/webking.jpg 2x"></a>
                     </div>
                     @php
@@ -438,7 +438,7 @@
             <div class="top-footer">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="widget widget-about"><img src="{{ asset('images/logo.png') }}" alt="">
+                        <div class="widget widget-about"><img src="{{ '../../images/webking.png' }}" alt="">
                             <p>{{$a->description}}</p>
                         </div>
                         <!--widget-about end-->
