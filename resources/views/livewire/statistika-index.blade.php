@@ -5,7 +5,7 @@
 
 <div class="container ">
     @php
-        $a = \App\Models\About::find(1);
+        $a = \App\Models\About::find(env('SCHOOL_ID'));
 
            function GreatTeachers($a2)
               {

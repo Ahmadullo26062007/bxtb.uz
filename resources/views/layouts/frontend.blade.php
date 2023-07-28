@@ -547,6 +547,7 @@
 
 {{--    chart.render();--}}
 {{--</script>--}}
+{{$id=\App\Models\About::find(1)}}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     const ctx = document.getElementById('myChart');
@@ -558,7 +559,7 @@
             labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar'],
             datasets: [{
                 label: "",
-                data: [{{GreatTeachersProsent($a)}}, {{GoodTeachersProsent($a)}}, {{GreatStudentsProsent($a)}}, {{CEFRStudentsProsent($a)}}, {{ITStudentsProsent($a)}}],
+                data: [{{GreatTeachersProsent($id)}}, {{GoodTeachersProsent($id)}}, {{GreatStudentsProsent($id)}}, {{CEFRStudentsProsent($id)}}, {{ITStudentsProsent($id)}}],
 
                 backgroundColor: ['green', 'red', 'blue', '#5bbe00', '#2dff00', 'gold', 'gold'],
 
