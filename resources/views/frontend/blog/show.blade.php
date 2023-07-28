@@ -26,7 +26,6 @@
         <div class="row">
             <div class="col-lg-9">
                 <div class="blog-post single">
-
                     <p>{{$blog->description}}</p>
 
 
