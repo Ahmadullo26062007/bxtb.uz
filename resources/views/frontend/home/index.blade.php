@@ -142,7 +142,7 @@
                                                                              src="{{ asset('images/' . $blog->image) }}"
                                                                              alt="" class="w-100">
 
-                                                <span class="category">{{ $blog->title }}</span>
+                                                <span class="category">{{$blog->category->name}}, {{$a->name}}</span>
                                             </div>
                                             <div class="blog-info">
                                                 <ul class="meta">
