@@ -29,16 +29,18 @@
                                 @endphp
                        {{$a->name}} O'quvchisi:
                             </p>
-                            <h3><a href="#" title="">{{ $student->fullname }}</a>
+                            <h3><a title="">{{ $student->fullname }}</a>
                             </h3>
                             <span>
                                 @if (!empty($student->certificate))
                                     @if (App\Models\Student::TYPES[$student->certificate->type] == 1)
                                         {{ App\Models\Student::TYPES[$student->certificate->type] }}
-                                        {{ $student->certificate->ball }}
                                     @else
                                         {{ App\Models\Student::TYPES[$student->certificate->type] }}
                                         {{ App\Models\Student::DEGREE[$student->certificate->degree] }}
+                                    @if($student->certificate->ball>0)
+                                        {{ $student->certificate->ball }}
+                                        @endif
                                     @endif
                                 @else
                                     Sertifikat yo'q
@@ -46,7 +48,7 @@
                             </span> <span></span>
                             <div class="d-flex flex-wrap align-items-center">
                                 <div class="posted-by">
-                                    <a href="#" title="">{{ $student->class->class }} Sinf
+                                    <a  title="">{{ $student->class->class }} Sinf
                                     </a>
                                 </div>
                             </div>
