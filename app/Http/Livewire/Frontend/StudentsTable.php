@@ -17,7 +17,7 @@ class StudentsTable extends Component
 
     public function render()
     {
-        $students = Student::all()->take($this->count)->get();
+        $students = Student::all()->take($this->count);
         return view('livewire.frontend.students-table', compact('students'));
     }
 }
