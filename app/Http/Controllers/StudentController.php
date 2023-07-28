@@ -46,7 +46,7 @@ class StudentController extends Controller
         $file = $request->file('image');
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
-        $file->move(public_path('images'), $image_name);
+        $file->move(public_path('../../images'), $image_name);
         if (!$a->id==1){
         $n='https://'.$a->name.'.bxtb.uz/'.$data['image'];
         }else{
@@ -105,7 +105,7 @@ class StudentController extends Controller
         ]);
         if ($request->image) {
             // removing old image
-//            unlink(public_path("images/$student->image"));
+//            unlink(public_path("../../images/$student->image"));
             // get image
             $a=About::find(env("SCHOOL_ID"));
             $data = $request->all();
@@ -135,7 +135,7 @@ class StudentController extends Controller
                 ]);
             }
 
-            $file->move(public_path('images'), $image_name);
+            $file->move(public_path('../../images'), $image_name);
 
         } else {
             if (auth()->user()->school_id == null) {
