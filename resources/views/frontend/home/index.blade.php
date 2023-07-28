@@ -46,7 +46,7 @@
                         <div class="col-lg-3 ">
                             <div class="classes-col wow fadeInUp slider-card" data-wow-duration="1000ms">
                                 <div class="class-thumb card-img">
-                                    <img src="{{ asset('images/' . $school->image) }}" alt=""
+                                    <img src="{{ $school->image }}" alt=""
                                                               class="w-100">
                                 </div>
                                 <div class="class-info card-info">
@@ -139,7 +139,7 @@
 
 
                                             <div class="blog-thumbnail"><img style="width: 369px; height: 246px"
-                                                                             src="{{ asset('images/' . $blog->image) }}"
+                                                                             src="{{ $blog->image }}"
                                                                              alt="" class="w-100">
 
                                                 <span class="category">{{$blog->category->name}}, {{$a->name}}</span>
