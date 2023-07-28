@@ -120,57 +120,9 @@
     <section class="course-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="find-course">
-                        <div class="sec-title">
-                            <h2>Kursingizni toping</h2>
-                            <p>Qaysi fan, kurs turi yoki universitet yoki kollej sizga mos kelishini hal qilmayapsizmi?
-                                Ushbu muhim qarorni hal qilish bo'yicha maslahatlarimiz va maslahatlarimizni o'qing</p>
-                            <h3><img src="assets/img/icon11.png" alt="">Bog'lanish uchun: <strong>+998
-                                    {{ $a->phone_number }}
-                                </strong></h3>
-                        </div>
-                        <!--sec-title end-->
-                        <div class="course-img"><img src="assets/img/course-img.png" alt=""></div>
-                        <!--schools-img end-->
-                    </div>
-                    <a href="{{ route('schools.index') }}" title=""
-                       style="color: #044e7c
-                                 " class="read-more text-bg-primary">Ko`proq
-                        <i class="fa fa-long-arrow-alt-right"></i></a>
-                    <!--find-schools end-->
-                </div>
-                {{-- Ma'lumot yo' --}}
-                <div class="col-lg-6">
-                    <div class="courses-list">
-                        <!--schools-card end-->
-                        @foreach ($courses as $course)
-                            <div class="course-card wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="400ms">
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <ul class="course-meta">
-                                        <li><img src="assets/img/icon12.png" alt="">
-                                        {{-- {{ $schools->created_at->format('d/m/Y') }}</li> --}}
-                                        <li>{{ $course->start_time }} - {{ $course->end_time }}</li>
-                                    </ul>
-                                    <span>{{ $course->price }} UZS </span>
-                                </div>
-                                <h3><a href="{{ route('schools.detail', $course->id) }}"
-                                       title="">{{ $course->name }}</a></h3>
-                                <div class="d-flex flex-wrap">
-                                    <div class="posted-by"><img style="width: 10%"
-                                                                src="{{ asset("images/$course->image") }}"
-                                                                alt="Class image"> <a
-                                            title="">{{ $course->teacher->firstname }}
-                                            {{ $course->teacher->firstname }}</a></div>
-                                    <span class="locat"><img
-                                            src="assets/img/loct.png" alt="">{{ $a->name }}
-                                    </span>
-                                </div>
-                            </div>
-                        @endforeach
 
-                    </div>
-                </div>
+                {{-- Ma'lumot yo' --}}
+
                 <!--schools-section end-->
                 <section class="blog-section">
                     <div class="container">
