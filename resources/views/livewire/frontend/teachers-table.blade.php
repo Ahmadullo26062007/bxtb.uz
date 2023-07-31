@@ -19,7 +19,7 @@
                 <div class="row griddd">
                     @foreach ($teachers as $teacher)
                         {{--                        @if(teacher_b($teacher) )--}}
-                        @if($teacher->greate_teacher==1)
+                        @if($teacher->great_teacher==1)
                             {{--                            @php if($c++ == 1)continue; @endphp--}}
                             {{--                            @if($c<=20)--}}
                             {{--                        <div>--}}
@@ -74,7 +74,7 @@
                                             @endphp
                                             {{$a->name}} O'qtuvchisi:
                                         </p>
-                                        <h3><a title="">{{ $teacher->firstname }}
+                                        <h3><a>{{ $teacher->firstname }}
                                                 {{ $teacher->lastname }}</a></h3>
                                         <span>{{ $teacher->category }} O`qituvchisi</span>
                                     </div>
