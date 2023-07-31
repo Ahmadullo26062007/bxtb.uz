@@ -438,7 +438,7 @@
             <div class="top-footer">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="widget widget-about"><img src="{{ '../../images/webking.png' }}" alt="">
+                        <div class="widget widget-about"><img width="150px" src="{{ '../../images/webking.png' }}" alt="">
                             <p>{{$a->description}}</p>
                         </div>
                         <!--widget-about end-->
