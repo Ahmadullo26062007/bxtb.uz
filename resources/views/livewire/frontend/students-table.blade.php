@@ -17,7 +17,8 @@
         <div class="row">
             @foreach ($students as $student)
 
-                @if(student_b($student))
+{{--                @if(student_b($student))--}}
+            @if($student->great_student==1)
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="classes-col">
                         {{-- @dd($student)--}}
