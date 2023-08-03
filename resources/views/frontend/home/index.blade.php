@@ -79,20 +79,7 @@
     </section>
     <!--classes-section end-->
     <section class="teachers-section">
-        @php
-            function teacher_b($t){
-                if(!count($t->degrees->ToArray())==0){
-                   if($t->degrees[0]->type_id==1){
-                     return true;
-                   }else{
-                       return false;
-                   }
-                }else{
-                    return false;
-                }
-            }
-         $c=0;
-        @endphp
+
         <div class="container">
             <div class="section-title text-center">
                 <h2>Bizning ajoyib<br>O'qtuvchilar</h2>
@@ -104,7 +91,7 @@
             <div class="teachers">
                 <div class="row">
                     @foreach ($teachers as $teacher)
-                            @if(teacher_b($teacher) )
+                        @if($teacher->great_teacher==1)
 
                             <div class="col-lg-3 col-md-3 col-sm-6 col-6 full-wdth">
                             <div class="teacher">
