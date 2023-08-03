@@ -35,7 +35,7 @@
     <section class="classes-section">
         <div class="container">
             <div class="sec-title">
-                <h2>Bizning Maktablar</h2>
+                <h2>Bizning Maktablar 1</h2>
 
             </div>
             <!--sec-title end-->
