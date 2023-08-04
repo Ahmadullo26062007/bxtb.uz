@@ -12,10 +12,10 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="section-title">
                             <h2><span>Andijon viloyati Baliqchi tumani Xalq talimi bo'limi</span>
-                            <p class="mw-100">
-                                Bu yerda siz Andijon viloyatida baliqchi tumanidagi maktablarni topishingiz mumkin
-                            </p><a href="{{ route('schools.index') }}" title=""
-                                   class="btn-default">Maktablar <i class="fa fa-long-arrow-alt-right"></i></a></h2>
+                                <p class="mw-100">
+                                    Bu yerda siz Andijon viloyatida baliqchi tumanidagi maktablarni topishingiz mumkin
+                                </p><a href="{{ route('schools.index') }}" title=""
+                                       class="btn-default">Maktablar <i class="fa fa-long-arrow-alt-right"></i></a></h2>
                         </div>
                         <!--section-title end-->
                     </div>
@@ -32,96 +32,52 @@
     </section>
     <!--main-banner end-->
     <!--about-us-section end-->
-{{--    <section class="classes-section">--}}
-{{--        <div class="container">--}}
-{{--            <div class="sec-title">--}}
-{{--                <h2>Bizning Maktablar </h2>--}}
-
-{{--            </div>--}}
-{{--            <!--sec-title end-->--}}
-{{--            <div class="classes-sec">--}}
-{{--                <div class="row classes-carousel">--}}
-{{--                    @foreach ($schools as $school)--}}
-{{--                        @if(empty($school->id==1))--}}
-{{--                        <div class="col-lg-3 ">--}}
-{{--                            <div class="classes-col wow fadeInUp slider-card" data-wow-duration="1000ms">--}}
-{{--                                <div class="class-thumb card-img">--}}
-{{--                                    <img src="{{ $school->image }}" alt=""--}}
-{{--                                                              class="w-100">--}}
-{{--                                </div>--}}
-{{--                                <div class="class-info card-info">--}}
-{{--                                    <h3><a href="http://{{$school->name}}.bxtb.uz"--}}
-{{--                                           title="">{{ $school->name }}--}}
-{{--                                        </a></h3>--}}
-{{--                                    <span>--}}
-{{--                            Boshlanish va tugash <br> vaqtlari:--}}
-{{--                          {{$school->start_time}} - {{$school->end_time}}</span>--}}
-{{--                                    <div class="d-flex flex-wrap align-items-center">--}}
-{{--                                        <div class="posted-by">--}}
-
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <!--classes-col end-->--}}
-{{--                        </div>--}}
-{{--                        @endif--}}
-{{--                    @endforeach--}}
-{{--                </div>--}}
-{{--                <div class="lnk-dv text-center"><a href="{{ route('schools.index') }}" title=""--}}
-{{--                                                   class="btn-default">Maktablar <i--}}
-{{--                            class="fa fa-long-arrow-alt-right"></i></a></div>--}}
-{{--            </div>--}}
-{{--            <!--classes-sec end-->--}}
-{{--            @livewire('schools-index')--}}
-
-{{--        </div>--}}
-{{--    </section>--}}
     <section class="classes-section">
         <div class="container">
             <div class="sec-title">
-                <h2>Bizning sinflarimiz</h2>
-                <p>Bizning kichik sinflarimiz guruhlar ichida jonli muloqot qilish imkonini beradi va shu bilan
+                <h2>Bizning Maktablar </h2>
+                <p>Bizning Maktablarimiz ichida jonli muloqot qilish imkonini beradi va shu bilan
                     o'quvchilarimizning o'rganish natijalarini optimallashtiradigan</p>
             </div>
             <!--sec-title end-->
             <div class="classes-sec">
                 <div class="row classes-carousel">
-                    @foreach ($classes as $class)
-                        <div class="col-lg-3">
-                            <div class="classes-col wow fadeInUp" data-wow-duration="1000ms">
-                                <div class="class-thumb"><img src="{{ asset('images/' . $class->image) }}"
-                                                              alt="" class="w-100">
+                    @foreach ($schools as $school)
+                        @if(empty($school->id==1))
+                            <div class="col-lg-3 ">
+                                <div class="classes-col wow fadeInUp slider-card" data-wow-duration="1000ms">
+                                    <div class="class-thumb card-img">
+                                        <img src="{{ $school->image }}" alt=""
+                                             class="w-100">
+                                    </div>
+                                    <div class="class-info card-info">
+                                        <h3><a href="http://{{$school->name}}.bxtb.uz"
+                                               title="">{{ $school->name }}
+                                            </a></h3>
+                                        <span>
+                            Boshlanish va tugash <br> vaqtlari:
+                          {{$school->start_time}} - {{$school->end_time}}</span>
+                                        <div class="d-flex flex-wrap align-items-center">
+                                            <div class="posted-by">
 
-                                </div>
-                                <div class="class-info">
-                                    <h3><a href="{{ route('class.detail', $class->id) }}"
-                                           title="">{{ $class->class }}-
-                                            Sinf</a></h3>
-                                    <span>Xar kuni</span> <span></span>
-                                    <div class="d-flex flex-wrap align-items-center">
-                                        <div class="posted-by"><img style="width: 30px; height: 30px"
-                                                                    src="{{ $class->teacher->image }}"
-                                                                    alt="">
-                                            <a href="assets/images/resources/bg4.jpg.html#"
-                                               title="">{{ $class->teacher->firstname }}
-                                                {{ $class->teacher->lastname }}</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!--classes-col end-->
                             </div>
-                            <!--classes-col end-->
-                        </div>
+                        @endif
                     @endforeach
                 </div>
-                <div class="lnk-dv text-center"><a href="{{ route('classes.index') }}" title=""
-                                                   class="btn-default">Classes <i
+                <div class="lnk-dv text-center"><a href="{{ route('schools.index') }}" title=""
+                                                   class="btn-default">Maktablar <i
                             class="fa fa-long-arrow-alt-right"></i></a></div>
             </div>
             <!--classes-sec end-->
+            {{--            @livewire('schools-index')--}}
+
         </div>
     </section>
-
     <!--classes-section end-->
     <section class="teachers-section">
 
@@ -139,26 +95,26 @@
                         @if($teacher->great_teacher==1)
 
                             <div class="col-lg-3 col-md-3 col-sm-6 col-6 full-wdth">
-                            <div class="teacher">
-                                <div class="teacher-img"><img style="width: 235px; height: 425px;"
-                                                              src="{{$teacher->image}}" alt=""
-                                                              class="w-100">
+                                <div class="teacher">
+                                    <div class="teacher-img"><img style="width: 235px; height: 425px;"
+                                                                  src="{{$teacher->image}}" alt=""
+                                                                  class="w-100">
 
+                                    </div>
+                                    <div class="teacher-info">
+                                        <p>
+                                            @php
+                                                $a=\App\Models\About::find($teacher->school_id);
+                                            @endphp
+                                            {{$a->name}} O'qtuvchisi:
+                                        </p>
+                                        <h3><a title="">{{ $teacher->firstname }}
+                                                {{ $teacher->lastname }}</a></h3>
+                                        <span>{{ $teacher->category }} O`qituvchisi</span>
+                                    </div>
                                 </div>
-                                <div class="teacher-info">
-                                    <p>
-                                        @php
-                                            $a=\App\Models\About::find($teacher->school_id);
-                                        @endphp
-                                        {{$a->name}} O'qtuvchisi:
-                                    </p>
-                                    <h3><a title="">{{ $teacher->firstname }}
-                                            {{ $teacher->lastname }}</a></h3>
-                                    <span>{{ $teacher->category }} O`qituvchisi</span>
-                                </div>
+                                <!--teacher end-->
                             </div>
-                            <!--teacher end-->
-                        </div>
                         @endif
                     @endforeach
                 </div>
