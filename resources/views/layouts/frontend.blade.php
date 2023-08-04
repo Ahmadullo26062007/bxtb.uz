@@ -13,6 +13,8 @@
     <link rel="icon" href="{{ asset('assets/img/webking.jpg') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/button.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
     <link rel="stylesheet" href="{{asset('st.css')}}">
     <style>
 
@@ -111,8 +113,8 @@
             <div class="container">
                 <div class="header-content d-flex flex-wrap align-items-center">
                     <div class="logo"><a href="{{ route('home') }}" title=""><img
-                                width=200px" src="{{ '../../images/webking.png' }}" alt=""
-                                srcset="assets/img/webking.jpg 2x"></a>
+                                width=150px" src="{{ '../../images/webkingpng.png' }}" alt=""
+                               ></a>
                     </div>
                     @php
 
@@ -590,6 +592,8 @@
         gtag('js', new Date());
         gtag('config', 'UA-180910402-1');
     </script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 </body>
 
 </html>

@@ -32,51 +32,96 @@
     </section>
     <!--main-banner end-->
     <!--about-us-section end-->
+{{--    <section class="classes-section">--}}
+{{--        <div class="container">--}}
+{{--            <div class="sec-title">--}}
+{{--                <h2>Bizning Maktablar </h2>--}}
+
+{{--            </div>--}}
+{{--            <!--sec-title end-->--}}
+{{--            <div class="classes-sec">--}}
+{{--                <div class="row classes-carousel">--}}
+{{--                    @foreach ($schools as $school)--}}
+{{--                        @if(empty($school->id==1))--}}
+{{--                        <div class="col-lg-3 ">--}}
+{{--                            <div class="classes-col wow fadeInUp slider-card" data-wow-duration="1000ms">--}}
+{{--                                <div class="class-thumb card-img">--}}
+{{--                                    <img src="{{ $school->image }}" alt=""--}}
+{{--                                                              class="w-100">--}}
+{{--                                </div>--}}
+{{--                                <div class="class-info card-info">--}}
+{{--                                    <h3><a href="http://{{$school->name}}.bxtb.uz"--}}
+{{--                                           title="">{{ $school->name }}--}}
+{{--                                        </a></h3>--}}
+{{--                                    <span>--}}
+{{--                            Boshlanish va tugash <br> vaqtlari:--}}
+{{--                          {{$school->start_time}} - {{$school->end_time}}</span>--}}
+{{--                                    <div class="d-flex flex-wrap align-items-center">--}}
+{{--                                        <div class="posted-by">--}}
+
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <!--classes-col end-->--}}
+{{--                        </div>--}}
+{{--                        @endif--}}
+{{--                    @endforeach--}}
+{{--                </div>--}}
+{{--                <div class="lnk-dv text-center"><a href="{{ route('schools.index') }}" title=""--}}
+{{--                                                   class="btn-default">Maktablar <i--}}
+{{--                            class="fa fa-long-arrow-alt-right"></i></a></div>--}}
+{{--            </div>--}}
+{{--            <!--classes-sec end-->--}}
+{{--            @livewire('schools-index')--}}
+
+{{--        </div>--}}
+{{--    </section>--}}
     <section class="classes-section">
         <div class="container">
             <div class="sec-title">
-                <h2>Bizning Maktablar 1</h2>
-
+                <h2>Bizning sinflarimiz</h2>
+                <p>Bizning kichik sinflarimiz guruhlar ichida jonli muloqot qilish imkonini beradi va shu bilan
+                    o'quvchilarimizning o'rganish natijalarini optimallashtiradigan</p>
             </div>
             <!--sec-title end-->
             <div class="classes-sec">
                 <div class="row classes-carousel">
-                    @foreach ($schools as $school)
-                        @if(empty($school->id==1))
-                        <div class="col-lg-3 ">
-                            <div class="classes-col wow fadeInUp slider-card" data-wow-duration="1000ms">
-                                <div class="class-thumb card-img">
-                                    <img src="{{ $school->image }}" alt=""
-                                                              class="w-100">
-                                </div>
-                                <div class="class-info card-info">
-                                    <h3><a href="http://{{$school->name}}.bxtb.uz"
-                                           title="">{{ $school->name }}
-                                        </a></h3>
-                                    <span>
-                            Boshlanish va tugash <br> vaqtlari:
-                          {{$school->start_time}} - {{$school->end_time}}</span>
-                                    <div class="d-flex flex-wrap align-items-center">
-                                        <div class="posted-by">
+                    @foreach ($classes as $class)
+                        <div class="col-lg-3">
+                            <div class="classes-col wow fadeInUp" data-wow-duration="1000ms">
+                                <div class="class-thumb"><img src="{{ asset('images/' . $class->image) }}"
+                                                              alt="" class="w-100">
 
+                                </div>
+                                <div class="class-info">
+                                    <h3><a href="{{ route('class.detail', $class->id) }}"
+                                           title="">{{ $class->class }}-
+                                            Sinf</a></h3>
+                                    <span>Xar kuni</span> <span></span>
+                                    <div class="d-flex flex-wrap align-items-center">
+                                        <div class="posted-by"><img style="width: 30px; height: 30px"
+                                                                    src="{{ $class->teacher->image }}"
+                                                                    alt="">
+                                            <a href="assets/images/resources/bg4.jpg.html#"
+                                               title="">{{ $class->teacher->firstname }}
+                                                {{ $class->teacher->lastname }}</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!--classes-col end-->
                         </div>
-                        @endif
                     @endforeach
                 </div>
-                <div class="lnk-dv text-center"><a href="{{ route('schools.index') }}" title=""
-                                                   class="btn-default">Maktablar <i
+                <div class="lnk-dv text-center"><a href="{{ route('classes.index') }}" title=""
+                                                   class="btn-default">Classes <i
                             class="fa fa-long-arrow-alt-right"></i></a></div>
             </div>
             <!--classes-sec end-->
-{{--            @livewire('schools-index')--}}
-
         </div>
     </section>
+
     <!--classes-section end-->
     <section class="teachers-section">
 
