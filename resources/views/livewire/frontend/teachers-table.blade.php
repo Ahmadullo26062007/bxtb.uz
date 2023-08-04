@@ -26,7 +26,7 @@
                                     {{-- @dd($teacher)--}}
                                     <div class="class-thumb"><img src="{{"$teacher->image"}}"
                                                                   alt="Student's class image"
-                                                                  class="w-100 h-100">
+                                                                  style="width: 200px; height: 100px">
                                     </div>
                                     <div class="class-info">
                                         <p>
