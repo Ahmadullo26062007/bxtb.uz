@@ -134,9 +134,9 @@
                        }
                                }
                              if($c==0){
-                                 return 1;
+                                 return 0;
                              }       else{
-                                 $n=$c*$p;
+                                 $n=$c;
                      return floor($n);
                              }
                       }else{
@@ -160,12 +160,12 @@
                        }
                                }
                          if($c*$p==0){
-                             return 1;
+                             return 0;
                          }else{
                     if($c==0){
-                                 return 1;
+                                 return 0;
                              }       else{
-                          $n=$c*$p;
+                          $n=$c;
                      return floor($n);
                              }
                          }
@@ -189,12 +189,12 @@
                        }
                                }
                          if($c*$p==0){
-                             return 1;
+                             return 0;
                          }else{
                      if($c==0){
                                  return 0;
                              }       else{
-                           $n=$c*$p;
+                           $n=$c;
                      return floor($n);
                              }
                          }
@@ -217,13 +217,13 @@
 
      }
                          if($c*$p==0){
-                             return 1;
+                             return 0;
                          }else{
 
                       if($c==0){
-                                 return 1;
+                                 return 0;
                              }       else{
-                           $n=$c*$p;
+                           $n=$c;
                      return floor($n);
                              }
 
@@ -247,13 +247,13 @@
 
      }
                          if($c*$p==0){
-                             return 1;
+                             return 0;
                          }else{
 
                    if($c==0){
-                                 return 1;
+                                 return 0;
                              }       else{
-                          $n=$c*$p;
+                          $n=$c;
                      return floor($n);
                              }
                          }
@@ -276,13 +276,13 @@
 
      }
                          if($c*$p==0){
-                             return 1;
+                             return 0;
                          }else{
 
                      if($c==0){
-                                 return 1;
+                                 return 0;
                              }       else{
-                          $n=$c*$p;
+                          $n=$c;
                      return floor($n);
                              }
                          }
@@ -307,13 +307,13 @@
 
      }
                          if($c*$p==0){
-                             return 1;
+                             return 0;
                          }else{
 
                      if($c==0){
-                                 return 1;
+                                 return 0;
                              }       else{
-                          $n=$c*$p;
+                          $n=$c;
                      return floor($n);
                              }
                          }
