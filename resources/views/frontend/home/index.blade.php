@@ -93,15 +93,14 @@
                 <div class="row">
                     @foreach ($teachers as $teacher)
                         @if($teacher->great_teacher==1)
-
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6 full-wdth">
-                                <div class="teacher">
-                                    <div class="teacher-img"><img style="width: 235px; height: 425px;"
-                                                                  src="{{$teacher->image}}" alt=""
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="classes-col">
+                                    {{-- @dd($student)--}}
+                                    <div class="class-thumb"><img src="{{$teacher->image}}"
+                                                                  alt="Teacher's class image"
                                                                   class="w-100">
-
                                     </div>
-                                    <div class="teacher-info">
+                                    <div class="class-info">
                                         <p>
                                             @php
                                                 $a=\App\Models\About::find($teacher->school_id);
@@ -110,10 +109,9 @@
                                         </p>
                                         <h3><a title="">{{ $teacher->firstname }}
                                                 {{ $teacher->lastname }}</a></h3>
-                                        <span>{{ $teacher->category }} O`qituvchisi</span>
                                     </div>
                                 </div>
-                                <!--teacher end-->
+                                <!--classes-col end-->
                             </div>
                         @endif
                     @endforeach
