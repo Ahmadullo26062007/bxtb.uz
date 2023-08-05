@@ -14,75 +14,36 @@
      $c=0;
     @endphp
     <div class="container">
-        <div class="teachers-section p-0">
-            <div class="teachers">
-                <div class="row griddd">
+        <!--classes-banner end-->
+        <div class="classes-section">
+            <div class="classes-sec">
+                <div class="row">
                     @foreach ($teachers as $teacher)
-                        {{--                        @if(teacher_b($teacher) )--}}
+
                         @if($teacher->great_teacher==1)
-                            {{--                            @php if($c++ == 1)continue; @endphp--}}
-                            {{--                            @if($c<=20)--}}
-                            {{--                        <div>--}}
-                            {{--                            <div class="teacher">--}}
-                            {{--                                <div class="teacher-img">--}}
-                            {{--                                    <div style="height: 300px">--}}
-
-                            {{--                                        <img style="width: 225px !important; height: 300px !important; border-radius: 18%" src="{{ $teacher->image}}" alt="" class="w-100">--}}
-                            {{--                                    </div>--}}
-
-                            {{--                                    <div class="teacher-info">--}}
-                            {{--                                        <p>--}}
-                            {{--                                            @php--}}
-                            {{--                                                $a=\App\Models\About::find($teacher->school_id);--}}
-                            {{--                                            @endphp--}}
-                            {{--                                            {{$a->name}} O'qtuvchisi:--}}
-                            {{--                                        </p>--}}
-                            {{--                                        <h3><a href="#" title="">{{ $teacher->firstname }}--}}
-                            {{--                                                {{ $teacher->lastname }}</a></h3>--}}
-                            {{--                                        <span>{{ $teacher->category }}--}}
-                            {{--                                            O'qituvchisi</span>--}}
-                            {{--                                        @if (empty($teacher->degrees[0]))--}}
-                            {{--                                            <span class="text-dark">--}}
-                            {{--                                                Birinchi toifa--}}
-                            {{--                                            </span>--}}
-                            {{--                                        @else--}}
-                            {{--                                            @foreach ($teacher->degrees as $degree)--}}
-                            {{--                                                <span class="text-dark">--}}
-                            {{--                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}--}}
-
-                            {{--                                                </span>--}}
-                            {{--                                            @endforeach--}}
-                            {{--                                        @endif--}}
-                            {{--                                    </div>--}}
-                            {{--                                </div>--}}
-                            {{--                                <!--teacher end-->--}}
-                            {{--                            </div>--}}
-                            {{--                        </div>--}}
-                            {{--                            @endif--}}
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6 full-wdth">
-                                <div class="teacher">
-                                    <div class="teacher-img"><img
-                                            style="width: 235px !important; height: 425px; !important;"
-                                            src="{{$teacher->image }}" alt=""
-                                            class="w-100">
-
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="classes-col">
+                                    {{-- @dd($teacher)--}}
+                                    <div class="class-thumb"><img src="{{"$teacher->image"}}"
+                                                                  alt="Student's class image"
+                                                                  style="width: 277px; height: 100px">
                                     </div>
-                                    <div class="teacher-info">
+                                    <div class="class-info">
                                         <p>
                                             @php
                                                 $a=\App\Models\About::find($teacher->school_id);
                                             @endphp
-                                            {{$a->name}} O'qtuvchisi:
+                                            {{$a->name}} O'quvchisi:
                                         </p>
-                                        <h3><a>{{ $teacher->firstname }}
-                                                {{ $teacher->lastname }}</a></h3>
-                                        <span>{{ $teacher->category }} O`qituvchisi</span>
+                                        <h3>{{ $teacher->firstname }} {{$teacher->lastname}}
+                                        </h3>
+
                                     </div>
                                 </div>
-                                <!--teacher end-->
+                                <!--classes-col end-->
                             </div>
-
                         @endif
+
                     @endforeach
                 </div>
                 <!--teachers end-->
@@ -102,4 +63,5 @@
             </div>
             <!--pagination-end-->
         </div>
+    </div>
 </section>

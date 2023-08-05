@@ -79,49 +79,55 @@
         </div>
     </section>
     <!--classes-section end-->
-    <section class="teachers-section">
 
+
+    <section class="classes-page">
+        <div class="section-title text-center">
+            <h2>Bizning ajoyib<br>O'qtuvchilar</h2>
+            <p>"Yaxshi o'qituvchi umidni ilhomlantirishi, tasavvurni yoqishi va o'rganishga muhabbat uyg'otishi
+                mumkin."
+            </p>
+        </div>
         <div class="container">
-            <div class="section-title text-center">
-                <h2>Bizning ajoyib<br>O'qtuvchilar</h2>
-                <p>"Yaxshi o'qituvchi umidni ilhomlantirishi, tasavvurni yoqishi va o'rganishga muhabbat uyg'otishi
-                    mumkin."
-                </p>
-            </div>
-            <!--section-title end-->
-            <div class="teachers">
-                <div class="row">
-                    @foreach ($teachers as $teacher)
-                        @if($teacher->great_teacher==1)
+            <!--classes-banner end-->
+            <div class="classes-section">
+                <div class="classes-sec">
+                    <div class="row">
+                        @foreach ($teachers as $teacher)
 
-                            <div class="col-lg-3 col-md-3 col-sm-6 col-6 full-wdth">
-                                <div class="teacher">
-                                    <div class="teacher-img"><img style="width: 235px; height: 425px;"
-                                                                  src="{{$teacher->image}}" alt=""
-                                                                  class="w-100">
+                            {{--                @if(student_b($teacher))--}}
+                            @if($teacher->great_teacher==1)
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="classes-col">
+                                        {{-- @dd($teacher)--}}
+                                        <div class="class-thumb"><img src="{{"$teacher->image"}}"
+                                                                      alt="Student's class image"
+                                                                      style="width: 277px; height: 100px;">
+                                        </div>
+                                        <div class="class-info">
+                                            <p>
+                                                @php
+                                                    $a=\App\Models\About::find($teacher->school_id);
+                                                @endphp
+                                                {{$a->name}} O'quvchisi:
+                                            </p>
+                                            <h3>{{ $teacher->firstname }} {{$teacher->lastname}}
+                                            </h3>
 
+                                        </div>
                                     </div>
-                                    <div class="teacher-info">
-                                        <p>
-                                            @php
-                                                $a=\App\Models\About::find($teacher->school_id);
-                                            @endphp
-                                            {{$a->name}} O'qtuvchisi:
-                                        </p>
-                                        <h3><a title="">{{ $teacher->firstname }}
-                                                {{ $teacher->lastname }}</a></h3>
-                                        <span>{{ $teacher->category }} O`qituvchisi</span>
-                                    </div>
+                                    <!--classes-col end-->
                                 </div>
-                                <!--teacher end-->
-                            </div>
-                        @endif
-                    @endforeach
+                            @endif
+                        @endforeach
+                    </div>
                 </div>
+                <!--classes-sec end-->
             </div>
-            <!--teachers end-->
+
         </div>
     </section>
+
     <section class="course-section">
         <div class="container">
             <div class="row">
@@ -143,7 +149,7 @@
                                         <div class="blog-post">
 
 
-                                            <div class="blog-thumbnail"><img style="width: 369px; height: 246px"
+                                            <div class="blog-thumbnail"><img style="width: 369px; height: 246px;"
                                                                              src="{{ $blog->image }}"
                                                                              alt="" class="w-100">
 
@@ -164,7 +170,7 @@
                                                             School</a></li>
                                                 </ul>
                                                 <h3><a href="{{ route('blog.show', $blog->id) }}"
-                                                       title="">{{ $blog->title }}</a></h3>
+                                                       title="">{{substr($blog->title,0,30)}}</a></h3>
                                                 <p>{{ substr($blog->description, 0, 25) }}...
                                                 </p><a href="{{ route('blog.show', $blog->id) }}" title=""
                                                        class="read-more">Read <i class="fa fa-long-arrow-alt-right"></i></a>
