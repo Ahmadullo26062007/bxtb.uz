@@ -94,8 +94,6 @@
                 <div class="classes-sec">
                     <div class="row">
                         @foreach ($teachers as $teacher)
-
-                            {{--                @if(student_b($teacher))--}}
                             @if($teacher->great_teacher==1)
                                 <div class="col-lg-3 col-md-6 col-sm-6">
                                     <div class="classes-col">
@@ -115,8 +113,8 @@
                                             <h5>
                                                 @if (empty($teacher->degrees[0]))
                                                     <span class="text-dark">
-                                                2-toifali
-                                            </span>
+                                                            Yangi O'qtuvchi
+                                                        </span>
                                                 @else
                                                     @foreach ($teacher->degrees as $degree)
                                                         <span class="text-dark">
