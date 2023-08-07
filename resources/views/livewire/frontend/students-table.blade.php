@@ -95,7 +95,7 @@
         <div class="row d-flex flex-wrap mt-5">
 
             <div class="col-12 d-flex justify-content-center">
-                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">IELTS olganlar</h1>
+                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">SEFR olganlar</h1>
             </div>
         </div>
         <div class="row">
@@ -103,7 +103,7 @@
 
 {{--                @if(student_b($student))--}}
             @if($student->great_student==1 && $student->certificate)
-                @if($student->certificate->type==1)
+                @if($student->certificate->type==2)
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="classes-col">
                         {{-- @dd($student)--}}
@@ -171,7 +171,7 @@
         <div class="row d-flex flex-wrap mt-5">
 
             <div class="col-12 d-flex justify-content-center">
-                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">IELTS olganlar</h1>
+                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">IT o`quvchilar</h1>
             </div>
         </div>
         <div class="row">
@@ -179,7 +179,7 @@
 
 {{--                @if(student_b($student))--}}
             @if($student->great_student==1 && $student->certificate)
-                @if($student->certificate->type==1)
+                @if($student->certificate->type==3)
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="classes-col">
                         {{-- @dd($student)--}}
