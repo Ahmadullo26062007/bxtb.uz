@@ -2,11 +2,10 @@
 <div class="classes-section">
     <div class="classes-sec">
         <div class="row d-flex flex-wrap">
-            <div class="col-4"></div>
-            <div class="col-4">
+
+            <div class="col-12 d-flex justify-content-center">
                 <h2>Oliy toifalilar</h2>
             </div>
-            <div class="col-4"></div>
         </div>
         <div class="row">
             @foreach ($teachers as $teacher)
