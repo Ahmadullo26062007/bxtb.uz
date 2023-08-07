@@ -1,10 +1,10 @@
 <div class="container">
 <div class="classes-section">
     <div class="classes-sec">
-        <div class="row d-flex flex-wrap">
+        <div class="row d-flex flex-wrap mt-5">
 
             <div class="col-12 d-flex justify-content-center">
-                <h2>Oliy toifalilar</h2>
+                <h1>Oliy toifalilar</h1>
             </div>
         </div>
         <div class="row">
