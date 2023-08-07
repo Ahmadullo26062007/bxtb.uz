@@ -73,7 +73,7 @@
         <div class="row d-flex flex-wrap mt-5">
 
             <div class="col-12 d-flex justify-content-center">
-                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">1-toifaiklar toifalilar</h1>
+                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">1-toifalilar </h1>
             </div>
         </div>
         <div class="row">
