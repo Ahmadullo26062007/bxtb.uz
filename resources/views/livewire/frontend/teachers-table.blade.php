@@ -11,6 +11,7 @@
         <div class="row">
             @foreach ($teachers as $teacher)
                 @if($teacher->great_teacher==1 && $teacher->degrees )
+                    @dd($teacher->degrees)
                     @if($teacher->degrees->type_id==1 )
 
 
