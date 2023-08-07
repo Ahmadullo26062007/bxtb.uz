@@ -10,8 +10,8 @@
         </div>
         <div class="row">
             @foreach ($teachers as $teacher)
-                @if($teacher->great_teacher==1 )
-                    @if($teacher->degrees && $teacher->degrees['0']->type_id==1)
+                @if($teacher->great_teacher==1 && $teacher->degrees )
+                    @if($teacher->degrees['0']->type_id==1 )
 
 
                     <div class="col-lg-3 col-md-6 col-sm-6">
@@ -73,8 +73,8 @@
 
         <div class="row">
             @foreach ($teachers as $teacher)
-                @if($teacher->great_teacher==1)
-                    @if($teacher->degrees && $teacher->degrees['0']->type_id==1)
+                @if($teacher->great_teacher==1 && $teacher->degrees )
+                    @if( $teacher->degrees['0']->type_id==1)
 
 
                     <div class="col-lg-3 col-md-6 col-sm-6">
