@@ -120,10 +120,8 @@
 
 
                         function GreatTeachersProsent($a){
-                      if (!count($a->teachers->ToArray())==0){
+
                       $c=0;
-                    $t=count($a->teachers->ToArray());
-                     $p=100/$t;
                       foreach ($a->teachers as $t){
                           if($t->degrees){
                        if (count($t->degrees)!==0){
@@ -133,23 +131,16 @@
                              }
                        }
                                }
-                             if($c==0){
-                                 return 0;
-                             }       else{
+
                                  $n=$c;
                      return floor($n);
-                             }
-                      }else{
-                          return 0;
-                      }
+
+
 
                         }
                         function GoodTeachersProsent($a)
                                        {
-                        if (!count($a->teachers->ToArray())==0){
                       $c=0;
-                    $t=count($a->teachers->ToArray());
-                     $p=100/$t;
                       foreach ($a->teachers as $t){
                           if($t->degrees){
                        if (count($t->degrees)!==0){
@@ -159,19 +150,10 @@
                              }
                        }
                                }
-                         if($c*$p==0){
-                             return 0;
-                         }else{
-                    if($c==0){
-                                 return 0;
-                             }       else{
                           $n=$c;
                      return floor($n);
-                             }
-                         }
-                             }else{
-                            return 0;
-                             }
+
+
                         }
                         function EmptyTeachersProsent($a)
                                        {
@@ -204,10 +186,8 @@
                         }
                         function GreatStudentsProsent($a)
                                        {
-                        if (!count($a->students->ToArray())==0){
+
                       $c=0;
-                    $t=count($a->students->ToArray());
-                     $p=100/$t;
                     foreach ($a->students as $s){
       if ($s->certificate){
          if ($s->certificate->type==1 &&  (int) $s->certificate->ball >=5  ){
@@ -216,21 +196,15 @@
       }
 
      }
-                         if($c*$p==0){
+                         if($c==0){
                              return 0;
                          }else{
 
-                      if($c==0){
-                                 return 0;
-                             }       else{
+
                            $n=$c;
                      return floor($n);
-                             }
 
-                         }
-                         }else{
-                            return 0;
-                         }
+                        }
                         }
                         function CEFRStudentsProsent($a)
                                        {
@@ -561,7 +535,8 @@
         type: 'bar',
         data: {
             colors: ['#000', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar'],
+            labels: ['', '', '', '', ''],
+            // labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar'],
             datasets: [{
                 label: "",
                 data: [{{GreatTeachersProsent($id)}}, {{GoodTeachersProsent($id)}}, {{GreatStudentsProsent($id)}}, {{CEFRStudentsProsent($id)}}, {{ITStudentsProsent($id)}}],

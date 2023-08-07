@@ -68,16 +68,44 @@
                 $count=0;
     @endphp
 
+    <div class="row d-flex flex-wrap mt-5" style="color: black">
 
-    <div class="row d-flex flex-wrap">
+        <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
+            <div style=" width: 35px; height: 20px; background-color: green; margin-left: 30px"></div>
+            <h4>oliy toifali O`qtuvchilar</h4>
+        </div>
+        <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
+            <div style=" width: 35px; height: 20px; background-color: red; margin-left: 30px"></div>
+            <h4>o`rta maxsus</h4>
+        </div>
+        <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
+            <div style=" width: 35px; height: 20px; background-color: blue; margin-left: 30px"></div>
+            <h4>IELTS olganlar</h4>
+        </div>
+        <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
+            <div style=" width: 35px; height: 20px; background-color: #5bbe00; margin-left: 30px"></div>
+            <h4>CEFR olganlar</h4>
+        </div>
+        <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
+            <div style=" width: 35px; height: 20px; background-color: #2dff00; margin-left: 30px"></div>
+            <h4>IT o`quvchilar</h4>
+        </div>
+        <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
+            <div style=" width: 35px; height: 20px; background-color: gold; margin-left: 30px"></div>
+            <h4>o`rta maxsus</h4>
+        </div>
+
+
+
+    </div>
+
+    <div class="row d-flex flex-wrap mt-5">
         <div class="col-12">
             <div>
                 <canvas id="myChart"></canvas>
             </div>
         </div>
-
     </div>
-
 
     <div class="row py-5"   >
         <div class="col-12 ">
