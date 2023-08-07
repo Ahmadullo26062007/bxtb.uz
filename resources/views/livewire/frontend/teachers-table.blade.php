@@ -4,7 +4,7 @@
         <div class="row d-flex flex-wrap mt-5">
 
             <div class="col-12 d-flex justify-content-center">
-                <h1>Oliy toifalilar</h1>
+                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">Oliy toifalilar</h1>
             </div>
         </div>
         <div class="row">
@@ -70,7 +70,12 @@
 </div>
 <div class="classes-section">
     <div class="classes-sec">
+        <div class="row d-flex flex-wrap mt-5">
 
+            <div class="col-12 d-flex justify-content-center">
+                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">Oliy toifalilar</h1>
+            </div>
+        </div>
         <div class="row">
             @foreach ($teachers as $teacher)
                 @if($teacher->great_teacher==1 && $teacher->degrees )
