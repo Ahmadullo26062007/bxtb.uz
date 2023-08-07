@@ -8,7 +8,7 @@
                             {{-- @dd($teacher)--}}
                             <div class="class-thumb"><img src="{{"$teacher->image"}}"
                                                           alt="Teacher's class image"
-                                                          style="width: 100%; height: 100%">
+                                                          style="width: 100%; height: 100px">
                             </div>
                             <div class="class-info">
                                 <p>@php
