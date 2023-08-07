@@ -90,10 +90,7 @@
             <div style=" width: 35px; height: 20px; background-color: #2dff00; margin-left: 30px"></div>
             <h4>IT o`quvchilar</h4>
         </div>
-        <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
-            <div style=" width: 35px; height: 20px; background-color: gold; margin-left: 30px"></div>
-            <h4>o`rta maxsus</h4>
-        </div>
+
 
 
 
