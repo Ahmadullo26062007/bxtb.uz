@@ -409,9 +409,9 @@
     @yield('content')
 
 
-    <footer>
         <div class="container">
-            <div class="top-footer">
+    <footer>
+            <div class="top-footer" style="padding-right: 20px;padding-left: 20px;padding-bottom: 20px">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="widget widget-about"><img width="150px" src="{{ '../../images/webkingpng.png' }}"
@@ -483,7 +483,7 @@
                     <div class="col-lg-6 col-md-6 col-sm-6">
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
-                        <ul class="social-links">
+                        <ul class="social-links" style="padding-right: 20px">
                             <li><a href="{{$a->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="{{$a->instagram}}"><i
                                         class="fab fa-instagram"></i></a></li>
@@ -493,8 +493,8 @@
                 </div>
             </div>
             <!--bottom-footer end-->
-        </div>
     </footer>
+        </div>
     <!--footer end-->
 </div>
 
