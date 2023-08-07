@@ -11,8 +11,8 @@
         <div class="row">
             @foreach ($teachers as $teacher)
                 @if($teacher->great_teacher==1 )
-                    @if($teacher->degree)
-                        @dd($teacher->degree)
+                    @if($teacher->degrees)
+                        @dd($teacher->degrees)
                     @endif
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="classes-col">
@@ -73,8 +73,8 @@
         <div class="row">
             @foreach ($teachers as $teacher)
                 @if($teacher->great_teacher==1)
-                    @if($teacher->degree)
-                        @dd($teacher->degree)
+                    @if($teacher->degrees)
+                        @dd($teacher->degrees)
                     @endif
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="classes-col">
