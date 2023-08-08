@@ -104,7 +104,7 @@
     <div class="row py-5">
         <div class="col-12 ">
 
-            <ul class="responsive-table" style="width:1230px;overflow-x: scroll">
+            <ul class="responsive-table" style="overflow-x: scroll">
                 <li class="table-header li1 d-none d-md-flex">
                     <div class="col col-1">N#</div>
                     <div class="col col-2">Maktab</div>
@@ -135,7 +135,7 @@
                                 <div class="col col-4" data-label="Payment Status">{{ GreatStudents($a1) }}</div>
                                 <div class="col col-4" data-label="Payment Status">{{ ItStudents($a1) }}</div>
                             </li>
-                        
+
                         @endif
                     @endforeach
                 </div>
