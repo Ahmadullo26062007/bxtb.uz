@@ -14,14 +14,26 @@ class StudentSeeder extends Seeder
     public function run(): void
     {
         Student::insert([
-            ['fullname'=>'Tomy keyn','class_id'=>2,'school_id'=>1,'image'=>'people.png'],
-            ['fullname'=>'Tomy keyn1','class_id'=>4,'school_id'=>1,'image'=>'people.png'],
-            ['fullname'=>'Tomy keyn2','class_id'=>5,'school_id'=>1,'image'=>'people.png'],
-            ['fullname'=>'Tomy keyn3','class_id'=>6,'school_id'=>1,'image'=>'people.png'],
-            ['fullname'=>'Tomy keyn4','class_id'=>2,'school_id'=>1,'image'=>'people.png'],
-            ['fullname'=>'Tomy keyn5','class_id'=>3,'school_id'=>1,'image'=>'people.png'],
-            ['fullname'=>'Tomy keyn6','class_id'=>2,'school_id'=>1,'image'=>'people.png'],
-            ['fullname'=>'Tomy keyn7','class_id'=>5,'school_id'=>1,'image'=>'people.png'],
+            ['fullname'=>'Erkinova Dilorom','class_id'=>7,'school_id'=>2,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Zokirova Shahnoza','class_id'=>8,'school_id'=>2,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Odinova Surayyo','class_id'=>9,'school_id'=>2,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Azimova Dildora','class_id'=>10,'school_id'=>2,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+        ['fullname'=>'Erkinova Dilorom','class_id'=>7,'school_id'=>3,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Zokirova Shahnoza','class_id'=>8,'school_id'=>3,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Odinova Surayyo','class_id'=>9,'school_id'=>3,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Azimova Dildora','class_id'=>10,'school_id'=>3,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+        ['fullname'=>'Erkinova Dilorom','class_id'=>7,'school_id'=>4,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Zokirova Shahnoza','class_id'=>8,'school_id'=>4,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Odinova Surayyo','class_id'=>9,'school_id'=>4,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Azimova Dildora','class_id'=>10,'school_id'=>4,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+        ['fullname'=>'Erkinova Dilorom','class_id'=>7,'school_id'=>5,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Zokirova Shahnoza','class_id'=>8,'school_id'=>5,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Odinova Surayyo','class_id'=>9,'school_id'=>5,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Azimova Dildora','class_id'=>10,'school_id'=>5,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+        ['fullname'=>'Erkinova Dilorom','class_id'=>7,'school_id'=>6,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Zokirova Shahnoza','class_id'=>8,'school_id'=>6,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Odinova Surayyo','class_id'=>9,'school_id'=>6,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
+            ['fullname'=>'Azimova Dildora','class_id'=>10,'school_id'=>6,'image'=>'https://bxtb.uz/images/teacher.jpeg'],
         ]);
     }
 }

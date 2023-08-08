@@ -29,6 +29,9 @@
             <a class="sidebar-brand" href="{{route('admin')}}">
                 <span class="align-middle">AdminKit</span>
             </a>
+                <a class="sidebar-link" href="{{route('home')}}">
+                    <i class="align-middle" data-feather="home"></i> <span class="align-middle">Bosh sahifa</span>
+                </a>
 
             <ul class="sidebar-nav">
                 <li class="sidebar-header">
