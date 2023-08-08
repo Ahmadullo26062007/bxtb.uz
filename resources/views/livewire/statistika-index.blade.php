@@ -135,7 +135,7 @@
                                 <div class="col col-4" data-label="Payment Status">{{ GreatStudents($a1) }}</div>
                                 <div class="col col-4" data-label="Payment Status">{{ ItStudents($a1) }}</div>
                             </li>
-                        @endifF
+                        @endif
                     @endforeach
                 </div>
             </ul>
