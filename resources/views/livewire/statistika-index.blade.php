@@ -1,71 +1,64 @@
-
-
-
-
-
 <div class="container ">
     @php
         $a = \App\Models\About::find(env('SCHOOL_ID'));
-
-           function GreatTeachers($a2)
-              {
-                  $c=0;
-
-                  foreach ($a2->teachers as $t){
-                      if($t->degrees){
-
-
-                   if (count($t->degrees)!==0){
-                  if($t->degrees[0]->type_id ==1){
-                       if($c++ == 1)continue;
-                  }
-                   }
+        
+        function GreatTeachers($a2)
+        {
+            $c = 0;
+        
+            foreach ($a2->teachers as $t) {
+                if ($t->degrees) {
+                    if (count($t->degrees) !== 0) {
+                        if ($t->degrees[0]->type_id == 1) {
+                            if ($c++ == 1) {
+                                continue;
+                            }
+                        }
                     }
-                  }
-
-                  return $c;
-
-              }
-              function GreatStudents($a2)
-              {
-                  $c=0;
-
-                  foreach ($a2->students as $s){
-                   if ($s->certificate){
-                      if ($s->certificate->type==1 &&  (int) $s->certificate->ball >=5 || $s->certificate->type==2  ){
-                          if ($c ++ ==1)continue;
-                      }
-                   }
-
-                  }
-
-                  return $c;
-
-              }
+                }
+            }
+        
+            return $c;
+        }
+        function GreatStudents($a2)
+        {
+            $c = 0;
+        
+            foreach ($a2->students as $s) {
+                if ($s->certificate) {
+                    if (($s->certificate->type == 1 && (int) $s->certificate->ball >= 5) || $s->certificate->type == 2) {
+                        if ($c++ == 1) {
+                            continue;
+                        }
+                    }
+                }
+            }
+        
+            return $c;
+        }
         function ItStudents($a2)
-              {
-                  $c=0;
-
-                  foreach ($a2->students as $s){
-                   if ($s->certificate){
-                      if ( $s->certificate->type==3 ){
-                          if ($c ++ ==1)continue;
-                      }
-                   }
-
-                  }
-
-
-                  return $c;
-
-              }
-
-                  $r=[];
-                  foreach(\App\Models\About::all() as $c=>$a3){
-                      $r[$a3->id]=((int) GreatTeachers($a3))+((int)GreatTeachers($a3))+((int)GreatTeachers($a3));
-                  }
-                 arsort($r);
-                $count=0;
+        {
+            $c = 0;
+        
+            foreach ($a2->students as $s) {
+                if ($s->certificate) {
+                    if ($s->certificate->type == 3) {
+                        if ($c++ == 1) {
+                            continue;
+                        }
+                    }
+                }
+            }
+        
+            return $c;
+        }
+        
+        $r = [];
+        foreach (\App\Models\About::all() as $c => $a3) {
+            $r[$a3->id] = ((int) GreatTeachers($a3)) + ((int) GreatTeachers($a3)) + ((int) GreatTeachers($a3));
+        }
+        arsort($r);
+        $count = 0;
     @endphp
 
     <div class="row d-flex flex-wrap mt-5" style="color: black">
@@ -76,11 +69,11 @@
         </div>
         <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
             <div style=" width: 35px; height: 20px; background-color: red; margin-left: 30px"></div>
-            <h4>o`rta maxsus</h4>
+            <h4>1-toifali o`qtuvchilar</h4>
         </div>
         <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
             <div style=" width: 35px; height: 20px; background-color: yellow; margin-left: 30px"></div>
-            <h4>1-toifali o`qtuvchilar</h4>
+            <h4>2-toifali o`qtuvchilar</h4>
         </div>
         <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
             <div style=" width: 35px; height: 20px; background-color: blue; margin-left: 30px"></div>
@@ -108,7 +101,7 @@
         </div>
     </div>
 
-    <div class="row py-5"   >
+    <div class="row py-5">
         <div class="col-12 ">
 
             <ul class="responsive-table">
@@ -122,58 +115,62 @@
                 <li class="table-header li1 d-md-none">
                     <div class="col col-1">N#</div>
                     <div class="col col-2">Maktab</div>
-                    <div class="col col-3"><img width="30" height="30" src="{{asset('images/teacher.png')}}"></div>
-                    <div class="col col-3"><img width="30" height="30" src="{{asset('images/student.png')}}"></div>
-                    <div class="col col-4"><img width="30" height="30" src="{{asset('images/it.png')}}"></div>
+                    <div class="col col-3"><img width="30" height="30" src="{{ asset('images/teacher.png') }}">
+                    </div>
+                    <div class="col col-3"><img width="30" height="30" src="{{ asset('images/student.png') }}">
+                    </div>
+                    <div class="col col-4"><img width="30" height="30" src="{{ asset('images/it.png') }}"></div>
                 </li>
 
-                @foreach($r as $c=>$b)
-                    @php
-                        $a1=\App\Models\About::find($c);
-                    @endphp
-                @if(empty($a1->id==1))
-                        <li class="table-row li1">
-                        <div class="col col-1" data-label="Job Id">{{$c}}</div>
-                        <div class="col col-2" data-label="Customer Name">    {{$a1->name}}</div>
-                        <div class="col col-3" data-label="Amount">{{GreatTeachers($a1)}}</div>
-                        <div class="col col-4" data-label="Payment Status">{{GreatStudents($a1)}}</div>
-                        <div class="col col-4" data-label="Payment Status">{{ItStudents($a1)}}</div>
-                    </li>
-                    @endif
-                @endforeach
+                <div style="overflow-x: auto">
+                    @foreach ($r as $c => $b)
+                        @php
+                            $a1 = \App\Models\About::find($c);
+                        @endphp
+                        @if (empty($a1->id == 1))
+                            <li class="table-row li1">
+                                <div class="col col-1" data-label="Job Id">{{ $c }}</div>
+                                <div class="col col-2" data-label="Customer Name"> {{ $a1->name }}</div>
+                                <div class="col col-3" data-label="Amount">{{ GreatTeachers($a1) }}</div>
+                                <div class="col col-4" data-label="Payment Status">{{ GreatStudents($a1) }}</div>
+                                <div class="col col-4" data-label="Payment Status">{{ ItStudents($a1) }}</div>
+                            </li>
+                        @endifF
+                    @endforeach
+                </div>
             </ul>
         </div>
 
     </div>
 
-    {{--    <table class="table">--}}
-    {{--        <thead>--}}
-    {{--        <tr>--}}
+    {{--    <table class="table"> --}}
+    {{--        <thead> --}}
+    {{--        <tr> --}}
 
-    {{--            <th scope="col">First</th>--}}
-    {{--            <th scope="col">Last</th>--}}
-    {{--            <th scope="col">Handle</th>--}}
-    {{--        </tr>--}}
-    {{--        </thead>--}}
-    {{--        <tbody>--}}
-    {{--        <tr>--}}
+    {{--            <th scope="col">First</th> --}}
+    {{--            <th scope="col">Last</th> --}}
+    {{--            <th scope="col">Handle</th> --}}
+    {{--        </tr> --}}
+    {{--        </thead> --}}
+    {{--        <tbody> --}}
+    {{--        <tr> --}}
 
-    {{--            <td>Mark</td>--}}
-    {{--            <td>Otto</td>--}}
-    {{--            <td>@mdo</td>--}}
-    {{--        </tr>--}}
-    {{--        <tr>--}}
-    {{--            <th scope="row">2</th>--}}
-    {{--            <td>Jacob</td>--}}
-    {{--            <td>Thornton</td>--}}
-    {{--            <td>@fat</td>--}}
-    {{--        </tr>--}}
-    {{--        <tr>--}}
-    {{--            <th scope="row">3</th>--}}
-    {{--            <td colspan="2">Larry the Bird</td>--}}
-    {{--            <td>@twitter</td>--}}
-    {{--        </tr>--}}
-    {{--        </tbody>--}}
+    {{--            <td>Mark</td> --}}
+    {{--            <td>Otto</td> --}}
+    {{--            <td>@mdo</td> --}}
+    {{--        </tr> --}}
+    {{--        <tr> --}}
+    {{--            <th scope="row">2</th> --}}
+    {{--            <td>Jacob</td> --}}
+    {{--            <td>Thornton</td> --}}
+    {{--            <td>@fat</td> --}}
+    {{--        </tr> --}}
+    {{--        <tr> --}}
+    {{--            <th scope="row">3</th> --}}
+    {{--            <td colspan="2">Larry the Bird</td> --}}
+    {{--            <td>@twitter</td> --}}
+    {{--        </tr> --}}
+    {{--        </tbody> --}}
     {{--    </table> --}}
 
 
