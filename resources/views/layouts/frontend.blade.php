@@ -122,7 +122,7 @@
                         function GreatTeachersProsent($a){
 
                       $c=0;
-                      foreach ($a->teachers as $t){
+                      foreach (\App\Models\Teacher::all() as $t){
                           if($t->degrees){
                        if (count($t->degrees)!==0){
                        if($t->degrees[0]->type_id ==1){
@@ -141,7 +141,7 @@
                         function GoodTeachersProsent($a)
                                        {
                       $c=0;
-                      foreach ($a->teachers as $t){
+                      foreach (\App\Models\Teacher::all() as $t){
                           if($t->degrees){
                        if (count($t->degrees)!==0){
                        if($t->degrees[0]->type_id ==2){
@@ -157,11 +157,11 @@
                         }
                         function EmptyTeachersProsent($a)
                                        {
-                       if (!count($a->teachers->ToArray())==0){
+                       if (!count(\App\Models\Teacher::all()->ToArray())==0){
                       $c=0;
-                    $t=count($a->teachers->ToArray());
+                    $t=count(\App\Models\Teacher::all()->ToArray());
                      $p=100/$t;
-                      foreach ($a->teachers as $t){
+                      foreach (\App\Models\Teacher::all() as $t){
                           if($t->degrees){
                        if (count($t->degrees)==0){
 
@@ -188,7 +188,7 @@
                                        {
 
                       $c=0;
-                    foreach ($a->students as $s){
+                    foreach (\App\Models\Student::all() as $s){
       if ($s->certificate){
          if ($s->certificate->type==1 &&  (int) $s->certificate->ball >=5  ){
              if ($c ++ ==1)continue;
@@ -208,11 +208,11 @@
                         }
                         function CEFRStudentsProsent($a)
                                        {
-                         if (!count($a->students->ToArray())==0){
+                         if (!count(\App\Models\Student::all()->ToArray())==0){
                       $c=0;
-                    $t=count($a->students->ToArray());
+                    $t=count(\App\Models\Student::all()->ToArray());
                      $p=100/$t;
-                    foreach ($a->students as $s){
+                    foreach (\App\Models\Student::all() as $s){
       if ($s->certificate){
          if ($s->certificate->type==2 ){
              if ($c ++ ==1)continue;
@@ -237,11 +237,11 @@
                         }
                         function ITStudentsProsent($a)
                                        {
-                        if (!count($a->students->ToArray())==0){
+                        if (!count(\App\Models\Student::all()->ToArray())==0){
                       $c=0;
-                    $t=count($a->students->ToArray());
+                    $t=count(\App\Models\Student::all()->ToArray());
                      $p=100/$t;
-                    foreach ($a->students as $s){
+                    foreach (\App\Models\Student::all() as $s){
       if ($s->certificate){
          if ($s->certificate->type==3){
              if ($c ++ ==1)continue;
@@ -266,11 +266,11 @@
                         }
                         function EmptyStudentsProsent($a)
                                        {
-                      if (!count($a->students->ToArray())==0){
+                      if (!count(\App\Models\Student::all()->ToArray())==0){
                       $c=0;
-                    $t=count($a->students->ToArray());
+                    $t=count(\App\Models\Student::all()->ToArray());
                      $p=100/$t;
-                    foreach ($a->students as $s){
+                    foreach (\App\Models\Student::all() as $s){
       if (!$s->certificate){
              if ($c ++ ==1)continue;
       }else{
