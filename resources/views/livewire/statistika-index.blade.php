@@ -1,11 +1,11 @@
 <div class="container ">
     @php
         $a = \App\Models\About::find(env('SCHOOL_ID'));
-        
+
         function GreatTeachers($a2)
         {
             $c = 0;
-        
+
             foreach ($a2->teachers as $t) {
                 if ($t->degrees) {
                     if (count($t->degrees) !== 0) {
@@ -17,13 +17,13 @@
                     }
                 }
             }
-        
+
             return $c;
         }
         function GreatStudents($a2)
         {
             $c = 0;
-        
+
             foreach ($a2->students as $s) {
                 if ($s->certificate) {
                     if (($s->certificate->type == 1 && (int) $s->certificate->ball >= 5) || $s->certificate->type == 2) {
@@ -33,13 +33,13 @@
                     }
                 }
             }
-        
+
             return $c;
         }
         function ItStudents($a2)
         {
             $c = 0;
-        
+
             foreach ($a2->students as $s) {
                 if ($s->certificate) {
                     if ($s->certificate->type == 3) {
@@ -49,10 +49,10 @@
                     }
                 }
             }
-        
+
             return $c;
         }
-        
+
         $r = [];
         foreach (\App\Models\About::all() as $c => $a3) {
             $r[$a3->id] = ((int) GreatTeachers($a3)) + ((int) GreatTeachers($a3)) + ((int) GreatTeachers($a3));
@@ -104,7 +104,7 @@
     <div class="row py-5">
         <div class="col-12 ">
 
-            <ul class="responsive-table">
+            <ul class="responsive-table" style="width:1230px;overflow-x: scroll">
                 <li class="table-header li1 d-none d-md-flex">
                     <div class="col col-1">N#</div>
                     <div class="col col-2">Maktab</div>
@@ -122,7 +122,7 @@
                     <div class="col col-4"><img width="30" height="30" src="{{ asset('images/it.png') }}"></div>
                 </li>
 
-                <div style="overflow-x: auto">
+                <div >
                     @foreach ($r as $c => $b)
                         @php
                             $a1 = \App\Models\About::find($c);
