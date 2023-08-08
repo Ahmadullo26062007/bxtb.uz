@@ -541,7 +541,7 @@
                 label: "",
                 data: [{{GreatTeachersProsent($id)}}, {{GoodTeachersProsent($id)}}, {{GreatStudentsProsent($id)}},{{EmptyTeachersProsent($a)}}, {{CEFRStudentsProsent($id)}}, {{ITStudentsProsent($id)}}],
 
-                backgroundColor: ['green', 'red','yellow', 'blue', '#faf500', '#2dff00', 'gold'],
+                backgroundColor: ['green', 'red','yellow', 'blue', '#1cffca', '#2dff00', 'gold'],
 
                 borderWidth: 2,
             }],
