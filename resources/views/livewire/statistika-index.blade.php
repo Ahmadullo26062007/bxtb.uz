@@ -87,7 +87,7 @@
                                        {
 
                       $c=0;
-                    foreach (\App\Models\Student::all() as $s){
+                    foreach ($a->students as $s){
       if ($s->certificate){
          if ($s->certificate->type==1 &&  (int) $s->certificate->ball >=5  ){
              if ($c ++ ==1)continue;
@@ -107,11 +107,11 @@
                         }
                         function CEFRStudents($a)
                                        {
-                         if (!count(\App\Models\Student::all()->ToArray())==0){
+                         if (!count($a->students->ToArray())==0){
                       $c=0;
-                    $t=count(\App\Models\Student::all()->ToArray());
+                    $t=count($a->students->ToArray());
                      $p=100/$t;
-                    foreach (\App\Models\Student::all() as $s){
+                    foreach ($a->students as $s){
       if ($s->certificate){
          if ($s->certificate->type==2 ){
              if ($c ++ ==1)continue;
@@ -136,11 +136,11 @@
                         }
                         function ITStudents($a)
                                        {
-                        if (!count(\App\Models\Student::all()->ToArray())==0){
+                        if (!count($a->students->ToArray())==0){
                       $c=0;
-                    $t=count(\App\Models\Student::all()->ToArray());
+                    $t=count($a->students->ToArray());
                      $p=100/$t;
-                    foreach (\App\Models\Student::all() as $s){
+                    foreach ($a->students as $s){
       if ($s->certificate){
          if ($s->certificate->type==3){
              if ($c ++ ==1)continue;
@@ -165,11 +165,11 @@
                         }
                         function EmptyStudents($a)
                                        {
-                      if (!count(\App\Models\Student::all()->ToArray())==0){
+                      if (!count($a->students->ToArray())==0){
                       $c=0;
-                    $t=count(\App\Models\Student::all()->ToArray());
+                    $t=count($a->students->ToArray());
                      $p=100/$t;
-                    foreach (\App\Models\Student::all() as $s){
+                    foreach ($a->students as $s){
       if (!$s->certificate){
              if ($c ++ ==1)continue;
       }else{
