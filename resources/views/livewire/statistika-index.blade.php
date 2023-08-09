@@ -283,7 +283,7 @@
 
                         <tr class="t-row">
                         <td class="headcol">{{$count}}</td>
-                        <td class="headcol">1-maktab</td>
+                        <td class="headcol">{{$a1->name}}</td>
                         <td>{{ GreatTeachers($a1) }}</td>
                         <td>{{GoodTeachers($a1)}}</td>
                         <td>{{WellTeachers($a1)}}</td>
