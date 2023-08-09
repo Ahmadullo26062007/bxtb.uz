@@ -109,8 +109,7 @@
                                        {
                          if (!count($a->students->ToArray())==0){
                       $c=0;
-                    $t=count($a->students->ToArray());
-                     $p=100/$t;
+
                     foreach ($a->students as $s){
       if ($s->certificate){
          if ($s->certificate->type==2 ){
@@ -119,17 +118,10 @@
       }
 
      }
-                         if($c*$p==0){
-                             return 0;
-                         }else{
 
-                   if($c==0){
-                                 return 0;
-                             }       else{
                           $n=$c;
-                     return floor($n);
-                             }
-                         }
+                     return $n;
+
                           }else{
                              return 0;
                           }
@@ -138,8 +130,6 @@
                                        {
                         if (!count($a->students->ToArray())==0){
                       $c=0;
-                    $t=count($a->students->ToArray());
-                     $p=100/$t;
                     foreach ($a->students as $s){
       if ($s->certificate){
          if ($s->certificate->type==3){
@@ -148,17 +138,10 @@
       }
 
      }
-                         if($c*$p==0){
-                             return 0;
-                         }else{
 
-                     if($c==0){
-                                 return 0;
-                             }       else{
                           $n=$c;
-                     return floor($n);
-                             }
-                         }
+                     return $n;
+
                       }else{
                             return 0;
                       }
@@ -194,10 +177,32 @@
                           return 0;
                        }
                         }
+                         function GreatStudentsadd($a)
+                                       {
+
+                      $c=0;
+                    foreach ($a->students as $s){
+      if ($s->certificate){
+         if ($s->certificate->type==1 &&  (int) $s->certificate->ball >=5 || $s->certificate->type==2 ||$s->certificate->type==3){
+             if ($c ++ ==1)continue;
+         }
+      }
+
+     }
+                         if($c==0){
+                             return 0;
+                         }else{
+
+
+                           $n=$c;
+                     return floor($n);
+
+                        }
+                        }
 
         $r = [];
         foreach (\App\Models\About::all() as $c => $a3) {
-            $r[$a3->id] = ((int) GreatTeachers($a3)) + ((int) GreatTeachers($a3)) + ((int) GreatTeachers($a3));
+            $r[$a3->id] = (((int) GreatTeachers($a3)) + ((int) GreatStudentsadd($a3)));
         }
         arsort($r);
         $count = 0;
@@ -283,8 +288,8 @@
                         <td>{{GoodTeachers($a1)}}</td>
                         <td>{{WellTeachers($a1)}}</td>
                         <td>{{EmptyTeachers($a1)}}</td>
-                        <td>{{ITStudents($a)}}</td>
-                        <td>{{CEFRStudents($a)}}</td>
+                        <td>{{ITStudents($a1)}}</td>
+                        <td>{{CEFRStudents($a1)}}</td>
                         <td>{{GreatStudents($a1)}}</td>
 
                     </tr>
