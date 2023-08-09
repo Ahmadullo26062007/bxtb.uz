@@ -80,6 +80,36 @@
             flex-basis: 25%;
             color: black;
         }
+        th {
+            vertical-align: middle !important;
+            border: 1px solid rgb(200, 195, 195) !important;
+        }
+
+        .table {
+            min-width: 800px;
+            position: relative;
+            border-collapse: separate; /* Don't collapse */
+            border-spacing: 0;
+        }
+
+        .table th:first-child,
+        .table td:first-child {
+            position: -webkit-sticky;
+            position: sticky;
+            left: 0px;
+        }
+
+        .table th:nth-child(2),
+        .table td:nth-child(2) {
+            position: -webkit-sticky;
+            position: sticky;
+            left: 57.5px;
+        }
+
+        .not {
+            position: static !important;
+            background: transparent !important;
+        }
 
         /*@media all and (max-width: 766px) {*/
         /*    .table-header {*/
@@ -145,6 +175,23 @@
                           if($t->degrees){
                        if (count($t->degrees)!==0){
                        if($t->degrees[0]->type_id ==2){
+                       if($c++ == 1)continue;
+                           }
+                             }
+                       }
+                               }
+                          $n=$c;
+                     return floor($n);
+
+
+                        }
+                        function WellTeachersProsent($a)
+                                       {
+                      $c=0;
+                      foreach (\App\Models\Teacher::all() as $t){
+                          if($t->degrees){
+                       if (count($t->degrees)!==0){
+                       if($t->degrees[0]->type_id ==3){
                        if($c++ == 1)continue;
                            }
                              }
@@ -535,13 +582,13 @@
         type: 'bar',
         data: {
             colors: ['#000', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            labels: ['', '', '', '', '',''],
+            labels: ['', '', '', '', '','',''],
             // labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar'],
             datasets: [{
                 label: "",
-                data: [{{GreatTeachersProsent($id)}}, {{GoodTeachersProsent($id)}},{{EmptyTeachersProsent($a)}}, {{GreatStudentsProsent($id)}}, {{CEFRStudentsProsent($id)}}, {{ITStudentsProsent($id)}}],
+                data: [{{GreatTeachersProsent($id)}}, {{GoodTeachersProsent($id)}}, {{WellTeachersProsent($id)}},{{EmptyTeachersProsent($a)}}, {{GreatStudentsProsent($id)}}, {{CEFRStudentsProsent($id)}}, {{ITStudentsProsent($id)}}],
 
-                backgroundColor: ['green', 'red','yellow', 'blue', '#1cffca', '#2dff00', 'gold'],
+                backgroundColor: ['green', 'red','#ff8016','yellow', 'blue', '#1cffca', '#2dff00', 'gold'],
 
                 borderWidth: 2,
             }],
