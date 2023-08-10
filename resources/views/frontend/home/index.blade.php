@@ -93,8 +93,8 @@
             <div class="classes-section">
                 <div class="classes-sec">
                     <div class="row">
+                            @dd($teachers)
                         @foreach ($teachers as $teacher)
-                            @dd(1)
                             @if($teacher->great_teacher==1)
                             @dd(1)
                                 <div class="col-lg-3 col-md-6 col-sm-6">
