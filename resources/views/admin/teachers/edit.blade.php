@@ -67,7 +67,7 @@
                                         <img width="300px" src="{{$teacher->image}}" alt="">
                                     </div>
                                 </div>
-                                @if(auth()->user()->school_id==1)
+                                @if(auth()->user()->school_id==null)
                                     <div class="col-6 ">
                                         <h5 class="card-title mb-0">Maktabi</h5>
                                         <div class="card-body">

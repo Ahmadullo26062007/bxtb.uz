@@ -21,6 +21,16 @@
                                 <th>Fani</th>
                                 <td>{{$teacher->category}}</td>
                             </tr>
+                            @if(env('SCHOOL_ID')==1)
+                                <tr>
+                                    <th>Maktabi</th>
+                                    <td>@php
+                                            $a=\App\Models\About::find($teacher->school_id);
+                                        @endphp
+                                        {{$a->name}} O'qtuvchisi
+                                    </td>
+                                </tr>
+                            @endif
                             <tr>
                                 <th>Rasimi</th>
                                 <td><img width="100px" src="{{$teacher->image}}"
