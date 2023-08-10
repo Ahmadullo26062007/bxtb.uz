@@ -95,7 +95,7 @@
                     <div class="row">
                         @foreach ($teachers as $teacher)
                             @foreach($teacher->degrees as $deg)
-                                @if($teacher->great_teacher==1 && $deg->type_id==1)
+                                @if($deg->type_id==1 && $teacher->great_teacher==1 )
                                     <div class="col-lg-3 col-md-6 col-sm-6">
                                         <div class="classes-col">
                                             <div class="class-thumb"><img src="{{"$teacher->image"}}"
