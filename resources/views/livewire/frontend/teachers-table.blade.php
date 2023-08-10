@@ -10,7 +10,6 @@
         <div class="row">
             @foreach ($teachers as $teacher)
                 @if($teacher->great_teacher==1 && $teacher->degrees )
-
                     @if($teacher->degrees[0]->type_id==1 )
 
 

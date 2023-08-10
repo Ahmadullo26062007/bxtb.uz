@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Classes;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
@@ -33,15 +34,12 @@ class ClassesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'number'=>'required',
-           'name'=>'required',
+           'class'=>'required',
            'teacher_id'=>'required',
            'description'=>'required|min:10',
         ],[
-            'number.required'=>'Sinf raqami kiritilmadi',
-            'name.required'=>'Sinf Harifi kiritilmadi',
+            'class.required'=>'Sinf Nomi kiritilmadi',
             'teacher_id.required'=>'Sinf Raxbari tanlanmadi',
-
             'description.required'=>'Sinf Haqida ma\'lumot kiritilmadi',
             'description.min'=>'Sinf haqida ma\'lumot 10 ta so\'zdan kam b\'lmasligi kerak',
         ]);
@@ -50,7 +48,13 @@ class ClassesController extends Controller
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
         $file->move(public_path('images'), $image_name);
-        Classes::create($data);
+        $class=Classes::create([
+            'class'=>$data['class'],
+            'teacher_id'=>$data['teacher_id'],
+            'description'=>$data['description'],
+            'image'=>$data['image'],
+            'school_id'=>env('SCHOOL_ID')
+        ]);
         return redirect()->route('class.index');
     }
 
@@ -97,9 +101,20 @@ class ClassesController extends Controller
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
             $file->move(public_path('images'), $image_name);
-            $classes->update($data);
+            $classes->update([
+                'class'=>$data['class'],
+                'teacher_id'=>$data['teacher_id'],
+                'description'=>$data['description'],
+                'image'=>$data['image'],
+                'school_id'=>env('SCHOOL_ID')
+            ]);
         }else{
-            $classes->update($data);
+            $classes->update([
+                'class'=>$data['class'],
+                'teacher_id'=>$data['teacher_id'],
+                'description'=>$data['description'],
+                'school_id'=>env('SCHOOL_ID')
+            ]);
         }
         return redirect()->route('class.index');
     }

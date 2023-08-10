@@ -90,7 +90,7 @@
                                     <tr>
 
                                         <td>{{$class->id}}</td>
-                                        <td>{{$class->number}}"<sup>{{$class->name}}</sup>"</td>
+                                        <td>{{$class->class}}</td>
                                         @php
                                             $teacher=\App\Models\Teacher::find($class->teacher_id);
                                         @endphp
@@ -99,7 +99,7 @@
                                             {{$class->description}}
                                         </td>
                                         <td class="d-none d-xl-table-cell">
-                                            <img width="100px" src="{{'images/'.$class->image}}"
+                                            <img width="100px" height="100px" src="{{'images/'.$class->image}}"
                                                  alt="{{$class->number}} {{$class->name}} sinf rasimi">
                                         </td>
                                         @php

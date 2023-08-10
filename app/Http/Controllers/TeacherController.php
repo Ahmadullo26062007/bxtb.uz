@@ -50,7 +50,7 @@ class TeacherController extends Controller
         $file->move(public_path('../../images'), $image_name);
         $n = 'https://bxtb.uz/images/' . $data['image'];
 
-        if (auth()->user()->school_id == null) {
+        if (auth()->user()->school_id == 1) {
             Teacher::create([
                 'firstname' => $request->firstname,
                 'lastname' => $request->lastname,
@@ -65,7 +65,7 @@ class TeacherController extends Controller
                 'lastname' => $request->lastname,
                 'category' => $request->category,
                 'image' => $n,
-                'school_id' => auth()->user()->school_id,
+                'school_id' => env('SCHOOL_ID'),
                 'great_teacher'=>$request->great_teacher
             ]);
         }
