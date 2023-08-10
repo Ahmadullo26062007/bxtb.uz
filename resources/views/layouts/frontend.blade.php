@@ -80,6 +80,36 @@
             flex-basis: 25%;
             color: black;
         }
+        th {
+            vertical-align: middle !important;
+            border: 1px solid rgb(200, 195, 195) !important;
+        }
+
+        .table {
+            min-width: 800px;
+            position: relative;
+            border-collapse: separate; /* Don't collapse */
+            border-spacing: 0;
+        }
+
+        .table th:first-child,
+        .table td:first-child {
+            position: -webkit-sticky;
+            position: sticky;
+            left: 0px;
+        }
+
+        .table th:nth-child(2),
+        .table td:nth-child(2) {
+            position: -webkit-sticky;
+            position: sticky;
+            left: 57.5px;
+        }
+
+        .not {
+            position: static !important;
+            background: transparent !important;
+        }
 
         /*@media all and (max-width: 766px) {*/
         /*    .table-header {*/
@@ -122,7 +152,7 @@
                         function GreatTeachersProsent($a){
 
                       $c=0;
-                      foreach ($a->teachers as $t){
+                      foreach (\App\Models\Teacher::all() as $t){
                           if($t->degrees){
                        if (count($t->degrees)!==0){
                        if($t->degrees[0]->type_id ==1){
@@ -141,7 +171,7 @@
                         function GoodTeachersProsent($a)
                                        {
                       $c=0;
-                      foreach ($a->teachers as $t){
+                      foreach (\App\Models\Teacher::all() as $t){
                           if($t->degrees){
                        if (count($t->degrees)!==0){
                        if($t->degrees[0]->type_id ==2){
@@ -155,13 +185,30 @@
 
 
                         }
+                        function WellTeachersProsent($a)
+                                       {
+                      $c=0;
+                      foreach (\App\Models\Teacher::all() as $t){
+                          if($t->degrees){
+                       if (count($t->degrees)!==0){
+                       if($t->degrees[0]->type_id ==3){
+                       if($c++ == 1)continue;
+                           }
+                             }
+                       }
+                               }
+                          $n=$c;
+                     return floor($n);
+
+
+                        }
                         function EmptyTeachersProsent($a)
                                        {
-                       if (!count($a->teachers->ToArray())==0){
+                       if (!count(\App\Models\Teacher::all()->ToArray())==0){
                       $c=0;
-                    $t=count($a->teachers->ToArray());
+                    $t=count(\App\Models\Teacher::all()->ToArray());
                      $p=100/$t;
-                      foreach ($a->teachers as $t){
+                      foreach (\App\Models\Teacher::all() as $t){
                           if($t->degrees){
                        if (count($t->degrees)==0){
 
@@ -188,7 +235,7 @@
                                        {
 
                       $c=0;
-                    foreach ($a->students as $s){
+                    foreach (\App\Models\Student::all() as $s){
       if ($s->certificate){
          if ($s->certificate->type==1 &&  (int) $s->certificate->ball >=5  ){
              if ($c ++ ==1)continue;
@@ -208,11 +255,11 @@
                         }
                         function CEFRStudentsProsent($a)
                                        {
-                         if (!count($a->students->ToArray())==0){
+                         if (!count(\App\Models\Student::all()->ToArray())==0){
                       $c=0;
-                    $t=count($a->students->ToArray());
+                    $t=count(\App\Models\Student::all()->ToArray());
                      $p=100/$t;
-                    foreach ($a->students as $s){
+                    foreach (\App\Models\Student::all() as $s){
       if ($s->certificate){
          if ($s->certificate->type==2 ){
              if ($c ++ ==1)continue;
@@ -237,11 +284,11 @@
                         }
                         function ITStudentsProsent($a)
                                        {
-                        if (!count($a->students->ToArray())==0){
+                        if (!count(\App\Models\Student::all()->ToArray())==0){
                       $c=0;
-                    $t=count($a->students->ToArray());
+                    $t=count(\App\Models\Student::all()->ToArray());
                      $p=100/$t;
-                    foreach ($a->students as $s){
+                    foreach (\App\Models\Student::all() as $s){
       if ($s->certificate){
          if ($s->certificate->type==3){
              if ($c ++ ==1)continue;
@@ -266,11 +313,11 @@
                         }
                         function EmptyStudentsProsent($a)
                                        {
-                      if (!count($a->students->ToArray())==0){
+                      if (!count(\App\Models\Student::all()->ToArray())==0){
                       $c=0;
-                    $t=count($a->students->ToArray());
+                    $t=count(\App\Models\Student::all()->ToArray());
                      $p=100/$t;
-                    foreach ($a->students as $s){
+                    foreach (\App\Models\Student::all() as $s){
       if (!$s->certificate){
              if ($c ++ ==1)continue;
       }else{
@@ -535,13 +582,13 @@
         type: 'bar',
         data: {
             colors: ['#000', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            labels: ['', '', '', '', '',''],
+            labels: ['', '', '', '', '','',''],
             // labels: ['oliy toifali O`qtuvchilar', 'o`rta maxsus', 'IELTS olganlar', 'CEFR olganlar', 'IT o`quvchilar'],
             datasets: [{
                 label: "",
-                data: [{{GreatTeachersProsent($id)}}, {{GoodTeachersProsent($id)}}, {{GreatStudentsProsent($id)}},{{EmptyTeachersProsent($a)}}, {{CEFRStudentsProsent($id)}}, {{ITStudentsProsent($id)}}],
+                data: [{{GreatTeachersProsent($id)}}, {{GoodTeachersProsent($id)}}, {{WellTeachersProsent($id)}},{{EmptyTeachersProsent($a)}}, {{GreatStudentsProsent($id)}}, {{CEFRStudentsProsent($id)}}, {{ITStudentsProsent($id)}}],
 
-                backgroundColor: ['green', 'red','yellow', 'blue', '#5bbe00', '#2dff00', 'gold'],
+                backgroundColor: ['green', 'red','#ff8016','yellow', 'blue', '#1cffca', '#2dff00', 'gold'],
 
                 borderWidth: 2,
             }],
