@@ -276,6 +276,7 @@
 
                     <tbody>
                     @foreach ($r as $c => $b)
+                        @if(!$c==1)
                         @php
                             $a1 = \App\Models\About::find($c);
                             if($count++ == 1);
@@ -293,7 +294,7 @@
                         <td>{{GreatStudents($a1)}}</td>
 
                     </tr>
-
+                        @endif
                     @endforeach
                     </tbody>
                 </table>
