@@ -33,7 +33,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @if(auth()->user()->school_id==null)
+                            @if(auth()->user()->school_id==1)
                                 @foreach($teachers as $teacher)
                                     <tr>
                                         <td>{{$teacher->id}}</td>
