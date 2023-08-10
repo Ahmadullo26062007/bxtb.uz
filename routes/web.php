@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 // Front
 Route::get('/', function () {
     $blogs = Blog::take(3)->where('school_id', env('SCHOOL_ID'))->orderByDesc('id')->get();
-    $teachers = Teacher::with('about')->take(4);
+    $teachers = Teacher::with('about')->take(4)->get();
     $classes = Classes::take(7)->where('school_id', env('SCHOOL_ID'))->orderByDesc('id')->get();
     $schools = About::with('teachers')->get();
     $allClasses = Classes::take(7)->where('school_id', env('SCHOOL_ID'))->orderByDesc('id')->get();
