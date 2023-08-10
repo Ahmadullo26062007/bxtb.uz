@@ -93,10 +93,8 @@
             <div class="classes-section">
                 <div class="classes-sec">
                     <div class="row">
-                            @dd($teachers)
                         @foreach ($teachers as $teacher)
                             @if($teacher->great_teacher==1)
-                            @dd(1)
                                 <div class="col-lg-3 col-md-6 col-sm-6">
                                     <div class="classes-col">
                                         <div class="class-thumb"><img src="{{"$teacher->image"}}"
