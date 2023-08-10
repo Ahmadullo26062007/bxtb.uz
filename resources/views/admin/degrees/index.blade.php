@@ -31,7 +31,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @if(auth()->user()->school_id==1)
+                            @if(env('SCHOOL_ID')==1)
                                 @foreach($degree as $deg)
                                     <tr>
                                         @php

@@ -95,6 +95,7 @@
                     <div class="row">
                         @foreach ($teachers as $teacher)
                             @if($teacher->great_teacher==1)
+                            @dd(1)
                                 <div class="col-lg-3 col-md-6 col-sm-6">
                                     <div class="classes-col">
                                         <div class="class-thumb"><img src="{{"$teacher->image"}}"
@@ -113,7 +114,7 @@
                                             <h5>
                                                 @if (empty($teacher->degrees[0]))
                                                     <span class="text-dark">
-                                                            Yangi O'qtuvchi
+                                                            2-foifali O'qtuvchi
                                                         </span>
                                                 @else
                                                     @foreach ($teacher->degrees as $degree)
