@@ -276,7 +276,7 @@
 
                     <tbody>
                     @foreach ($r as $c => $b)
-                        @if(!$c==1)
+                        @if(empty($c==1))
                         @php
                             $a1 = \App\Models\About::find($c);
                             if($count++ == 1);
