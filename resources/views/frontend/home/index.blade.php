@@ -93,9 +93,14 @@
             <div class="classes-section">
                 <div class="classes-sec">
                     <div class="row">
+                        @php
+                            $count=1;
+                        @endphp
                         @foreach ($teachers as $teacher)
                             @foreach($teacher->degrees as $deg)
                                 @if($deg->type_id==1 && $teacher->great_teacher==1 )
+                                    @if($count<=4)
+
                                     <div class="col-lg-3 col-md-6 col-sm-6">
                                         <div class="classes-col">
                                             <div class="class-thumb"><img src="{{"$teacher->image"}}"
@@ -128,6 +133,10 @@
                                         </div>
                                         <!--classes-col end-->
                                     </div>
+                                        @php
+                                        $count=$count+1;
+                                         @endphp
+                                    @endif
                                 @endif
                             @endforeach
                         @endforeach
