@@ -454,94 +454,94 @@
     </div>
     <!--main-section end-->
 
-    @yield('content')
+        @yield('content')
 
 
         <div class="container">
-    <footer>
-            <div class="top-footer" style="padding-right: 20px;padding-left: 20px;padding-bottom: 20px">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="widget widget-about"><img width="120px" src="{{ '../../images/inkubatsiya.png' }}"
-                                                              alt="">
-                            <p>{{$a->description}}</p>
-                        </div>
-                        <!--widget-about end-->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="widget widget-contact">
-                            <ul class="contact-add">
-                                <li>
-                                    <div class="contact-info"><img src="assets/img/icon1.png" alt="">
-                                        <div class="contact-tt">
-                                            {{-- formatting phone number start --}}
-                                            @php
-                                                $phone_number = "+998" . $a->phone_number; // example phone number
-                                                $formatted_number = preg_replace('/^(\+998)(\d{2})(\d{3})(\d{4})$/', '$1 $2 $3 $4', $phone_number);
-                                                // echo $formatted_number; // output: +998 90 123 4567
-                                            @endphp
-                                            {{-- fromatting phone number end --}}
-                                            <h4>Call</h4><span> {{ $formatted_number }}</span>
-                                        </div>
-                                    </div>
-                                    <!--contact-info end-->
-                                </li>
-                                <li>
-                                    <div class="contact-info"><img src="assets/img/icon2.png" alt="">
-                                        <div class="contact-tt">
-                                            <h4>O`qish vaqti</h4><span>Duy - Shan {{ $a->start_time }} -
-                                                    {{ $a->end_time }}</span>
-                                        </div>
-                                    </div>
-                                    <!--contact-info end-->
-                                </li>
-                                <li>
-                                    <div class="contact-info"><img src="assets/img/icon3.png" alt="">
-                                        <div class="contact-tt">
-                                            <h4>Manzil</h4><span>{{ $a->viloyat }}, {{ $a->tuman }}
-                                                    tumani</span>
-                                        </div>
-                                    </div>
-                                    <!--contact-info end-->
-                                </li>
-                            </ul>
-                        </div>
-                        <!--widget-contact end-->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="widget widget-links">
-                            <h3 class="widget-title">Hamkorlar va malumotlar</h3>
-                            <ul>
-                                <li><a href="https://webking.uz" title="">Webking Uz</a></li>
-                                <li><a href="https://mexnatkash.uz" title="">Mexnatkash Uz</a></li>
-                                <li><a href="" title="">Dasturchilar</a></li>
-                                <li><a href="" title="">Abduraxmon</a></li>
-                                <li><a href="" title="">Ahmadullo</a></li>
-                                <li><a href="" title="">Yaxyobek</a></li>
+            <footer>
+                    <div class="top-footer" style="padding-right: 20px;padding-left: 20px;padding-bottom: 20px">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="widget widget-about"><img width="120px" src="{{ '../../images/inkubatsiya.png' }}"
+                                                                    alt="">
+                                    <p>{{$a->description}}</p>
+                                </div>
+                                <!--widget-about end-->
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="widget widget-contact">
+                                    <ul class="contact-add">
+                                        <li>
+                                            <div class="contact-info"><img src="assets/img/icon1.png" alt="">
+                                                <div class="contact-tt">
+                                                    {{-- formatting phone number start --}}
+                                                    @php
+                                                        $phone_number = "+998" . $a->phone_number; // example phone number
+                                                        $formatted_number = preg_replace('/^(\+998)(\d{2})(\d{3})(\d{4})$/', '$1 $2 $3 $4', $phone_number);
+                                                        // echo $formatted_number; // output: +998 90 123 4567
+                                                    @endphp
+                                                    {{-- fromatting phone number end --}}
+                                                    <h4>Call</h4><span> {{ $formatted_number }}</span>
+                                                </div>
+                                            </div>
+                                            <!--contact-info end-->
+                                        </li>
+                                        <li>
+                                            <div class="contact-info"><img src="assets/img/icon2.png" alt="">
+                                                <div class="contact-tt">
+                                                    <h4>O`qish vaqti</h4><span>Duy - Shan {{ $a->start_time }} -
+                                                            {{ $a->end_time }}</span>
+                                                </div>
+                                            </div>
+                                            <!--contact-info end-->
+                                        </li>
+                                        <li>
+                                            <div class="contact-info"><img src="assets/img/icon3.png" alt="">
+                                                <div class="contact-tt">
+                                                    <h4>Manzil</h4><span>{{ $a->viloyat }}, {{ $a->tuman }}
+                                                            tumani</span>
+                                                </div>
+                                            </div>
+                                            <!--contact-info end-->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--widget-contact end-->
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="widget widget-links">
+                                    <h3 class="widget-title">Hamkorlar va malumotlar</h3>
+                                    <ul>
+                                        <li><a href="https://webking.uz" title="">Webking Uz</a></li>
+                                        <li><a href="https://mexnatkash.uz" title="">Mexnatkash Uz</a></li>
+                                        <li><a href="" title="">Dasturchilar</a></li>
+                                        <li><a href="" title="">Abduraxmon</a></li>
+                                        <li><a href="" title="">Ahmadullo</a></li>
+                                        <li><a href="" title="">Yaxyobek</a></li>
 
-                            </ul>
+                                    </ul>
+                                </div>
+                                <!--widget-links end-->
+                            </div>
                         </div>
-                        <!--widget-links end-->
                     </div>
-                </div>
-            </div>
-            <!--top-footer end-->
-            <div class="bottom-footer">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <ul class="social-links" style="padding-right: 20px">
-                            <li><a href="{{$a->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="{{$a->instagram}}"><i
-                                        class="fab fa-instagram"></i></a></li>
+                    <!--top-footer end-->
+                    <div class="bottom-footer">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <ul class="social-links" style="padding-right: 20px">
+                                    <li><a href="{{$a->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="{{$a->instagram}}"><i
+                                                class="fab fa-instagram"></i></a></li>
 
-                        </ul>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!--bottom-footer end-->
-    </footer>
+                    <!--bottom-footer end-->
+            </footer>
         </div>
     <!--footer end-->
 </div>

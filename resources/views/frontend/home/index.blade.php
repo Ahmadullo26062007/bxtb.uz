@@ -148,7 +148,7 @@
         </div>
     </section>
 
-    <section class="course-section">
+    <section class="course-section" style="background-color: #f2f7fd;">
         <div class="container">
             <div class="row">
 
