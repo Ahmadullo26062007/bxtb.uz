@@ -19390,7 +19390,7 @@ footer .bottom-footer .social-links {
 }
 
 .classes-page .classes-section {
-    padding-top: 80px;
+    padding-top: 0;
     padding-bottom: 0
 }
 
@@ -21488,7 +21488,7 @@ footer .bottom-footer .social-links {
     }
 
     footer {
-        padding: 219px 0 40px
+        padding: 20px
     }
 
     .meta li {
@@ -21716,7 +21716,7 @@ footer .bottom-footer .social-links {
     }
 
     .classes-page {
-        padding: 100px 0 ;
+        padding: 0;
     }
 
     .classes-page .classes-banner {

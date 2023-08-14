@@ -143,7 +143,7 @@
             <div class="container">
                 <div class="header-content d-flex flex-wrap align-items-center">
                     <div class="logo"><a href="{{ route('home') }}" title=""><img
-                                width=250px" src="{{ '../../images/inkubatsiya.png' }}" alt=""
+                                width=120px" src="{{ '../../images/inkubatsiya.png' }}" alt=""
                             ></a>
                     </div>
                     @php
@@ -424,6 +424,9 @@
         <div class="responsive-menu">
             <ul>
                 <li><a href="{{ route('home') }}" title="">Bosh sahifa</a></li>
+                <li><a class="{{ request()->is('about*') ? 'active' : '' }}"
+                       href="{{ route('about') }}" title="">Biz haqimizda</a>
+                </li>
                 <li><a class="{{ request()->is('schools*') ? 'active' : '' }}"
                        href="{{ route('schools.index') }}" title="">Maktablar</a>
                 </li>
@@ -442,9 +445,7 @@
                        href="{{ route('blog.index') }}" title="">Blog</a>
                 </li>
 
-                <li><a class="{{ request()->is('about*') ? 'active' : '' }}"
-                       href="{{ route('about') }}" title="">Biz haqimizda</a>
-                </li>
+
             </ul>
         </div>
         <!--responsive-menu end-->
@@ -461,7 +462,7 @@
             <div class="top-footer" style="padding-right: 20px;padding-left: 20px;padding-bottom: 20px">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="widget widget-about"><img width="250px" src="{{ '../../images/inkubatsiya.png' }}"
+                        <div class="widget widget-about"><img width="120px" src="{{ '../../images/inkubatsiya.png' }}"
                                                               alt="">
                             <p>{{$a->description}}</p>
                         </div>
