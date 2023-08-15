@@ -128,4 +128,115 @@
             <!--mdp-contact end-->
         </div>
     </section>
+
+    <div class="classes-section">
+        <div class="classes-sec">
+            <div class="row d-flex flex-wrap mt-5">
+
+                <div class="col-12 d-flex justify-content-center">
+                    <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">Hodimlar</h1>
+                </div>
+            </div>
+            <div class="row mt-5 d-flex justify-content-center flex-wrap">
+                 <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="classes-col">
+                                    {{-- @dd($teacher)--}}
+                                    <div class="class-thumb"><img src="https://bxtb.uz/images/teacher.jpeg"
+                                                                  alt="Teacher's class image"
+                                                                  style="width: 100%; height: 100px">
+                                    </div>
+                                    <div class="class-info">
+                                        <p>
+
+                                        </p>
+                                        <h3>
+                                        </h3>
+                                        <span>Fani O'qtuvchisi</span>
+                                        <h5>
+{{--                                            @if (empty($teacher->degrees[0]))--}}
+{{--                                                <span class="text-dark">--}}
+{{--                                                O`rta maxsus--}}
+{{--                                            </span>--}}
+{{--                                            @else--}}
+{{--                                                @foreach ($teacher->degrees as $degree)--}}
+{{--                                                    <span class="text-dark">--}}
+{{--                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}--}}
+{{--                                                </span>--}}
+{{--                                                @endforeach--}}
+{{--                                            @endif--}}
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!--classes-col end-->
+                            </div>
+                 <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="classes-col">
+                                    {{-- @dd($teacher)--}}
+                                    <div class="class-thumb"><img src="https://bxtb.uz/images/teacher.jpeg"
+                                                                  alt="Teacher's class image"
+                                                                  style="width: 100%; height: 100px">
+                                    </div>
+                                    <div class="class-info">
+                                        <p>
+
+                                        </p>
+                                        <h3>
+                                        </h3>
+                                        <span>Fani O'qtuvchisi</span>
+                                        <h5>
+{{--                                            @if (empty($teacher->degrees[0]))--}}
+{{--                                                <span class="text-dark">--}}
+{{--                                                O`rta maxsus--}}
+{{--                                            </span>--}}
+{{--                                            @else--}}
+{{--                                                @foreach ($teacher->degrees as $degree)--}}
+{{--                                                    <span class="text-dark">--}}
+{{--                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}--}}
+{{--                                                </span>--}}
+{{--                                                @endforeach--}}
+{{--                                            @endif--}}
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!--classes-col end-->
+                            </div>
+                 <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="classes-col">
+                                    {{-- @dd($teacher)--}}
+                                    <div class="class-thumb"><img src="https://bxtb.uz/images/teacher.jpeg"
+                                                                  alt="Teacher's class image"
+                                                                  style="width: 100%; height: 100px">
+                                    </div>
+                                    <div class="class-info">
+                                        <p>
+
+                                        </p>
+                                        <h3>
+                                        </h3>
+                                        <span>Fani O'qtuvchisi</span>
+                                        <h5>
+{{--                                            @if (empty($teacher->degrees[0]))--}}
+{{--                                                <span class="text-dark">--}}
+{{--                                                O`rta maxsus--}}
+{{--                                            </span>--}}
+{{--                                            @else--}}
+{{--                                                @foreach ($teacher->degrees as $degree)--}}
+{{--                                                    <span class="text-dark">--}}
+{{--                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}--}}
+{{--                                                </span>--}}
+{{--                                                @endforeach--}}
+{{--                                            @endif--}}
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!--classes-col end-->
+                            </div>
+
+            </div>
+            <!--teachers end-->
+        </div>
+        <!--teachers-section end-->
+
+        <!--pagination-end-->
+    </div>
 @endsection
