@@ -280,7 +280,7 @@
 
                                 <tr class="t-row">
                                     <td class="headcol">{{ $count }}</td>
-                                    <td class="headcol"><a href="https://{{$a1->name}}.bxtbb.uz">{{ $a1->name }}</a></td>
+                                    <td class="headcol"><a href="https://{{$a1->name}}.bxtb.uz">{{ $a1->name }}</a></td>
                                     <td>{{ GreatTeachers($a1) }}</td>
                                     <td>{{ GoodTeachers($a1) }}</td>
                                     <td>{{ WellTeachers($a1) }}</td>
