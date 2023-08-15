@@ -220,7 +220,7 @@
         </div>
         <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
             <div style=" width: 35px; height: 20px; background-color: yellow; margin-left: 30px"></div>
-            <h4>Mutaxasis</h4>
+            <h4>Mutahasis</h4>
         </div>
         <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
             <div style=" width: 35px; height: 20px; background-color: blue; margin-left: 30px"></div>
@@ -280,7 +280,7 @@
 
                                 <tr class="t-row">
                                     <td class="headcol">{{ $count }}</td>
-                                    <td class="headcol"><a href="http://{{$a1->name}}.bxtb.uz">{{ $a1->name }}</a></td>
+                                    <td class="headcol">{{ $a1->name }}</td>
                                     <td>{{ GreatTeachers($a1) }}</td>
                                     <td>{{ GoodTeachers($a1) }}</td>
                                     <td>{{ WellTeachers($a1) }}</td>
