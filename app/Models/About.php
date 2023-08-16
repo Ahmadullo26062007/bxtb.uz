@@ -52,10 +52,6 @@ class About extends Model
         return $this->hasMany(Workers::class,'school_id');
     }
 
-    public function direktor(){
-
-    }
-
 
 
 
