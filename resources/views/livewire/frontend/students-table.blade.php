@@ -19,12 +19,6 @@
                 <div class="col-12 d-flex justify-content-center">
                     <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500; margin-bottom:5%;">IELTS olganlar</h1>
                 </div>
-                @if (!$student->great_student)
-                <div class="col-12 d-flex justify-content-center">
-                    <h1 style="color: #fc0000;font-size: 30px; font-weight: 500; margin-bottom: 5%;">Malumot mavjud emas
-                    </h1>
-                </div>
-            @endif
             </div>
             <div class="row">
                 @foreach ($students as $student)
@@ -89,13 +83,6 @@
                 <div class="col-12 d-flex justify-content-center">
                     <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500; margin-bottom: 5%;">SEFR olganlar</h1>
                 </div>
-                @if (!$student->great_student)
-                    <div class="col-12 d-flex justify-content-center">
-                        <h1 style="color: #fc0000;font-size: 30px; font-weight: 500; margin-bottom: 5%;">Malumot mavjud
-                            emas
-                        </h1>
-                    </div>
-                @endif
             </div>
             <div class="row">
                 @foreach ($students as $student)
@@ -160,13 +147,6 @@
                 <div class="col-12 d-flex justify-content-center">
                     <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500; margin-bottom: 5%;">IT o`quvchilar</h1>
                 </div>
-                @if (!$student->great_student)
-                    <div class="col-12 d-flex justify-content-center">
-                        <h1 style="color: #fc0000;font-size: 30px; font-weight: 500; margin-bottom: 5%;">Malumot mavjud
-                            emas
-                        </h1>
-                    </div>
-                @endif
             </div>
             <div class="row">
                 @foreach ($students as $student)
