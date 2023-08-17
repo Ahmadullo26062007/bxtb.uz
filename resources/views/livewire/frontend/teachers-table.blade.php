@@ -57,7 +57,7 @@
         <div class="classes-sec">
             <div class="row d-flex flex-wrap mt-5">
                 @if (!$teacher->great_teacher)
-                    Mavjud emas
+                    {{-- Mavjud emas --}}
                 @else
                     <div class="col-12 d-flex justify-content-center">
                         <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500;  margin-bottom:5%;">1-toifalilar
