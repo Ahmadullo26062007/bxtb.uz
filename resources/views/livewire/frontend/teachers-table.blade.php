@@ -56,13 +56,16 @@
     <div class="classes-section">
         <div class="classes-sec">
             <div class="row d-flex flex-wrap mt-5">
+
+                <div class="col-12 d-flex justify-content-center">
+                    <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500;  margin-bottom:5%;">1-toifalilar
+                    </h1>
+                </div>
                 @if (!$teacher->great_teacher)
-                    {{-- Mavjud emas --}}
-                @else
                     <div class="col-12 d-flex justify-content-center">
-                        <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500;  margin-bottom:5%;">1-toifalilar
+                        <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud emas
                         </h1>
-                    </div>
+                    </div>  
                 @endif
             </div>
             <div class="row">
