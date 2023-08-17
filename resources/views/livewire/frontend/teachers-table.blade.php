@@ -32,7 +32,7 @@
                                 <h5>
                                     @if (empty($teacher->degrees[0]))
                                         <span class="text-dark">
-                                                Yangi O'qtuvchi
+                                                O`rta maxsus
                                             </span>
                                     @else
                                         @foreach ($teacher->degrees as $degree)
@@ -53,18 +53,7 @@
         <!--teachers end-->
     </div>
     <!--teachers-section end-->
-    <div class="mdp-pagiation">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                @if((count( \App\Models\Teacher::where('school_id',env('SCHOOL_ID'))->get()->ToArray() )>$count))
-                    <li class="page-item"><a wire:click="viewMore" role="button" type="button"
-                                             class="page-link">Yana</a>
-                    </li>
-                @endif
 
-            </ul>
-        </nav>
-    </div>
     <!--pagination-end-->
 </div>
 <div class="classes-section">

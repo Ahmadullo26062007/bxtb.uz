@@ -1,11 +1,11 @@
 <div class="container ">
     @php
         $a = \App\Models\About::find(env('SCHOOL_ID'));
-        
+
         function GreatTeachers($a2)
         {
             $c = 0;
-        
+
             foreach ($a2->teachers as $t) {
                 if ($t->degrees) {
                     if (count($t->degrees) !== 0) {
@@ -17,7 +17,7 @@
                     }
                 }
             }
-        
+
             return $c;
         }
         function GoodTeachers($a)
@@ -106,7 +106,7 @@
         {
             if (!count($a->students->ToArray()) == 0) {
                 $c = 0;
-        
+
                 foreach ($a->students as $s) {
                     if ($s->certificate) {
                         if ($s->certificate->type == 2) {
@@ -116,7 +116,7 @@
                         }
                     }
                 }
-        
+
                 $n = $c;
                 return $n;
             } else {
@@ -136,7 +136,7 @@
                         }
                     }
                 }
-        
+
                 $n = $c;
                 return $n;
             } else {
@@ -195,7 +195,7 @@
                 return floor($n);
             }
         }
-        
+
         $r = [];
         foreach (\App\Models\About::all() as $c => $a3) {
             $r[$a3->id] = ((int) GreatTeachers($a3)) + ((int) GreatStudentsadd($a3));
@@ -220,7 +220,7 @@
         </div>
         <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
             <div style=" width: 35px; height: 20px; background-color: yellow; margin-left: 30px"></div>
-            <h4>O`rta maxsus</h4>
+            <h4>Mutahasis</h4>
         </div>
         <div class="col-6 d-flex justify-content-start " style="gap: 10px; height: 40px;">
             <div style=" width: 35px; height: 20px; background-color: blue; margin-left: 30px"></div>
@@ -280,7 +280,7 @@
 
                                 <tr class="t-row">
                                     <td class="headcol">{{ $count }}</td>
-                                    <td class="headcol">{{ $a1->name }}</td>
+                                    <td class="headcol"><a href="https://{{$a1->name}}.bxtb.uz">{{ $a1->name }}</a></td>
                                     <td>{{ GreatTeachers($a1) }}</td>
                                     <td>{{ GoodTeachers($a1) }}</td>
                                     <td>{{ WellTeachers($a1) }}</td>

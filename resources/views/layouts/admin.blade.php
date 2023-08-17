@@ -7,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
     <meta name="author" content="AdminKit">
-    <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+    <meta name="keywords"
+          content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="{{asset('back/img/icons/icon-48x48.png')}}" />
+    <link rel="shortcut icon" href="{{asset('back/img/icons/icon-48x48.png')}}"/>
 
-    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+    <link rel="canonical" href="https://demo-basic.adminkit.io/"/>
 
     <title>AdminKit Demo - Bootstrap 5 Admin Template</title>
 
@@ -29,9 +30,9 @@
             <a class="sidebar-brand" href="{{route('admin')}}">
                 <span class="align-middle">AdminKit</span>
             </a>
-                <a class="sidebar-link" href="{{route('home')}}">
-                    <i class="align-middle" data-feather="home"></i> <span class="align-middle">Bosh sahifa</span>
-                </a>
+            <a class="sidebar-link" href="{{route('home')}}">
+                <i class="align-middle" data-feather="home"></i> <span class="align-middle">Bosh sahifa</span>
+            </a>
 
             <ul class="sidebar-nav">
                 <li class="sidebar-header">
@@ -56,6 +57,17 @@
                         </a>
                     </li>
                 @endif
+
+                <li class="sidebar-item {{ request()->is('roles*') ? 'active' : '' }}">
+                    <a class="sidebar-link" href="{{route('roles.index')}}">
+                        <i class="align-middle" data-feather="users"></i> <span class="align-middle">Rollar</span>
+                    </a>
+                </li>
+                <li class="sidebar-item {{ request()->is('menegers*') ? 'active' : '' }}">
+                    <a class="sidebar-link" href="{{route('menegers.index')}}">
+                        <i class="align-middle" data-feather="users"></i> <span class="align-middle">Menejirlar</span>
+                    </a>
+                </li>
                 <li class="sidebar-item {{ request()->is('teacher*') ? 'active' : '' }}">
                     <a class="sidebar-link" href="{{route('teacher.index')}}">
                         <i class="align-middle" data-feather="users"></i> <span class="align-middle">O'qtuvchilar</span>
@@ -112,7 +124,8 @@
                                 <span class="indicator">4</span>
                             </div>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+                             aria-labelledby="alertsDropdown">
                             <div class="dropdown-menu-header">
                                 4 New Notifications
                             </div>
@@ -124,7 +137,9 @@
                                         </div>
                                         <div class="col-10">
                                             <div class="text-dark">Update completed</div>
-                                            <div class="text-muted small mt-1">Restart server 12 to complete the update.</div>
+                                            <div class="text-muted small mt-1">Restart server 12 to complete the
+                                                update.
+                                            </div>
                                             <div class="text-muted small mt-1">30m ago</div>
                                         </div>
                                     </div>
@@ -136,7 +151,9 @@
                                         </div>
                                         <div class="col-10">
                                             <div class="text-dark">Lorem ipsum</div>
-                                            <div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate hendrerit et.</div>
+                                            <div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate
+                                                hendrerit et.
+                                            </div>
                                             <div class="text-muted small mt-1">2h ago</div>
                                         </div>
                                     </div>
@@ -176,7 +193,8 @@
                                 <i class="align-middle" data-feather="message-square"></i>
                             </div>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+                             aria-labelledby="messagesDropdown">
                             <div class="dropdown-menu-header">
                                 <div class="position-relative">
                                     4 New Messages
@@ -186,11 +204,14 @@
                                 <a href="#" class="list-group-item">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-2">
-                                            <img src="{{asset('back/img/avatars/avatar-5.jpg')}}" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+                                            <img src="{{asset('back/img/avatars/avatar-5.jpg')}}"
+                                                 class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
                                         </div>
                                         <div class="col-10 ps-2">
                                             <div class="text-dark">Vanessa Tucker</div>
-                                            <div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
+                                            <div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu
+                                                tortor.
+                                            </div>
                                             <div class="text-muted small mt-1">15m ago</div>
                                         </div>
                                     </div>
@@ -198,11 +219,13 @@
                                 <a href="#" class="list-group-item">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-2">
-                                            <img src="{{asset('back/img/avatars/avatar-2.jpg')}}" class="avatar img-fluid rounded-circle" alt="William Harris">
+                                            <img src="{{asset('back/img/avatars/avatar-2.jpg')}}"
+                                                 class="avatar img-fluid rounded-circle" alt="William Harris">
                                         </div>
                                         <div class="col-10 ps-2">
                                             <div class="text-dark">William Harris</div>
-                                            <div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
+                                            <div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.
+                                            </div>
                                             <div class="text-muted small mt-1">2h ago</div>
                                         </div>
                                     </div>
@@ -210,7 +233,8 @@
                                 <a href="#" class="list-group-item">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-2">
-                                            <img src="{{asset('back/img/avatars/avatar-4.jpg')}}" class="avatar img-fluid rounded-circle" alt="Christina Mason">
+                                            <img src="{{asset('back/img/avatars/avatar-4.jpg')}}"
+                                                 class="avatar img-fluid rounded-circle" alt="Christina Mason">
                                         </div>
                                         <div class="col-10 ps-2">
                                             <div class="text-dark">Christina Mason</div>
@@ -222,11 +246,14 @@
                                 <a href="#" class="list-group-item">
                                     <div class="row g-0 align-items-center">
                                         <div class="col-2">
-                                            <img src="{{asset('back/img/avatars/avatar-3.jpg')}}" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+                                            <img src="{{asset('back/img/avatars/avatar-3.jpg')}}"
+                                                 class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
                                         </div>
                                         <div class="col-10 ps-2">
                                             <div class="text-dark">Sharon Lessman</div>
-                                            <div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
+                                            <div class="text-muted small mt-1">Aenean tellus metus, bibendum sed,
+                                                posuere ac, mattis non.
+                                            </div>
                                             <div class="text-muted small mt-1">5h ago</div>
                                         </div>
                                     </div>
@@ -247,20 +274,26 @@
                             $user=\App\Models\About::find($a);
                         @endphp
 
-@php
-$a=env('SCHOOL_ID');
-$user=\App\Models\About::find($a);
- @endphp
+                        @php
+                            $a=env('SCHOOL_ID');
+                            $user=\App\Models\About::find($a);
+                        @endphp
 
                         <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                            <img src="{{$user->image}}" class="avatar img-fluid rounded me-1" alt="{{$user->name}} rasimi" /> <span class="text-dark">{{$user->name}}</span>
+                            <img src="{{$user->image}}" class="avatar img-fluid rounded me-1"
+                                 alt="{{$user->name}} rasimi"/> <span class="text-dark">{{$user->name}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-                            <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
+                            <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1"
+                                                                                  data-feather="user"></i> Profile</a>
+                            <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i>
+                                Analytics</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('admin')}}"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
-                            <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
+                            <a class="dropdown-item" href="{{route('admin')}}"><i class="align-middle me-1"
+                                                                                  data-feather="settings"></i> Settings
+                                & Privacy</a>
+                            <a class="dropdown-item" href="#"><i class="align-middle me-1"
+                                                                 data-feather="help-circle"></i> Help Center</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('logout')}}">Log out</a>
                         </div>
@@ -269,14 +302,16 @@ $user=\App\Models\About::find($a);
             </div>
         </nav>
 
-@yield('content')
+        @yield('content')
 
         <footer class="footer">
             <div class="container-fluid">
                 <div class="row text-muted">
                     <div class="col-6 text-start">
                         <p class="mb-0">
-                            <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>AdminKit</strong></a> - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Bootstrap Admin Template</strong></a>								&copy;
+                            <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>AdminKit</strong></a>
+                            - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Bootstrap Admin
+                                    Template</strong></a> &copy;
                         </p>
                     </div>
                     <div class="col-6 text-end">
@@ -305,7 +340,7 @@ $user=\App\Models\About::find($a);
 
 <script src="{{asset('back/js/app.js')}}"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
         var gradient = ctx.createLinearGradient(0, 0, 0, 225);
         gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
@@ -375,7 +410,7 @@ $user=\App\Models\About::find($a);
     });
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         // Pie chart
         new Chart(document.getElementById("chartjs-dashboard-pie"), {
             type: "pie",
@@ -403,7 +438,7 @@ $user=\App\Models\About::find($a);
     });
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         // Bar chart
         new Chart(document.getElementById("chartjs-dashboard-bar"), {
             type: "bar",
@@ -447,7 +482,7 @@ $user=\App\Models\About::find($a);
     });
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         var markers = [{
             coords: [31.230391, 121.473701],
             name: "Shanghai"
@@ -514,7 +549,7 @@ $user=\App\Models\About::find($a);
     });
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
         var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
         document.getElementById("datetimepicker-dashboard").flatpickr({

@@ -456,9 +456,8 @@
 
         @yield('content')
 
-
+            <footer style="padding-top: 80px;" >
         <div class="container">
-            <footer>
                     <div class="top-footer" style="padding-right: 20px;padding-left: 20px;padding-bottom: 20px">
                         <div class="row">
                             <div class="col-lg-4 col-md-6 col-sm-6">
@@ -474,13 +473,13 @@
                                         <li>
                                             <div class="contact-info"><img src="assets/img/icon1.png" alt="">
                                                 <div class="contact-tt">
-                                                    {{-- formatting phone number start --}}
+
                                                     @php
                                                         $phone_number = "+998" . $a->phone_number; // example phone number
                                                         $formatted_number = preg_replace('/^(\+998)(\d{2})(\d{3})(\d{4})$/', '$1 $2 $3 $4', $phone_number);
-                                                        // echo $formatted_number; // output: +998 90 123 4567
+
                                                     @endphp
-                                                    {{-- fromatting phone number end --}}
+
                                                     <h4>Call</h4><span> {{ $formatted_number }}</span>
                                                 </div>
                                             </div>
@@ -541,8 +540,8 @@
                         </div>
                     </div>
                     <!--bottom-footer end-->
-            </footer>
         </div>
+            </footer>
     <!--footer end-->
 </div>
 
