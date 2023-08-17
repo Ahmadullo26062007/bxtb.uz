@@ -88,7 +88,7 @@
         </div>
         <div class="container">
             <!--classes-banner end-->
-            <div class="classes-section">
+            <div class="classes-section" style="padding-bottom: 50px !important">
                 <div class="classes-sec">
                     <div class="row">
                         @php
