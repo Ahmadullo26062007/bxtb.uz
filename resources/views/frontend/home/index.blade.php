@@ -14,14 +14,15 @@
                             <h2><span>Andijon viloyati Baliqchi tumani Xalq talimi bo'limi</span>
                                 <p class="mw-100">
                                     Bu yerda siz Andijon viloyatida baliqchi tumanidagi maktablarni topishingiz mumkin
-                                </p><a href="{{ route('schools.index') }}" title=""
-                                       class="btn-default">Maktablar <i class="fa fa-long-arrow-alt-right"></i></a></h2>
+                                </p><a href="{{ route('schools.index') }}" title="" class="btn-default">Maktablar <i
+                                        class="fa fa-long-arrow-alt-right"></i></a>
+                            </h2>
                         </div>
                         <!--section-title end-->
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <div class="avt-img"><img width="500" height="500" src="{{$a->image }}"
-                                                  alt=""></div>
+                        <div class="avt-img"><img width="500" height="500" src="{{ $a->image }}" alt="">
+                        </div>
                         <!--avt-img end-->
                     </div>
                 </div>
@@ -43,20 +44,18 @@
             <div class="classes-sec">
                 <div class="row classes-carousel">
                     @foreach ($schools as $school)
-                        @if(empty($school->id==1))
+                        @if (empty($school->id == 1))
                             <div class="col-lg-3 ">
                                 <div class="classes-col wow fadeInUp slider-card" data-wow-duration="1000ms">
                                     <div class="class-thumb card-img">
-                                        <img src="{{ $school->image }}" alt=""
-                                             class="w-100">
+                                        <img src="{{ $school->image }}" alt="" class="w-100">
                                     </div>
                                     <div class="class-info card-info">
-                                        <h3><a href="http://{{$school->name}}.bxtb.uz"
-                                               title="">{{ $school->name }}
+                                        <h3><a href="http://{{ $school->name }}.bxtb.uz" title="">{{ $school->name }}
                                             </a></h3>
                                         <span>
-                            Boshlanish va tugash <br> vaqtlari:
-                          {{$school->start_time}} - {{$school->end_time}}</span>
+                                            Boshlanish va tugash <br> vaqtlari:
+                                            {{ $school->start_time }} - {{ $school->end_time }}</span>
                                         <div class="d-flex flex-wrap align-items-center">
                                             <div class="posted-by">
 
@@ -70,11 +69,10 @@
                     @endforeach
                 </div>
                 <div class="lnk-dv text-center"><a href="{{ route('schools.index') }}" title=""
-                                                   class="btn-default">Maktablar <i
-                            class="fa fa-long-arrow-alt-right"></i></a></div>
+                        class="btn-default">Maktablar <i class="fa fa-long-arrow-alt-right"></i></a></div>
             </div>
             <!--classes-sec end-->
-            {{--            @livewire('schools-index')--}}
+            {{--            @livewire('schools-index') --}}
 
         </div>
     </section>
@@ -94,48 +92,46 @@
                 <div class="classes-sec">
                     <div class="row">
                         @php
-                            $count=1;
+                            $count = 1;
                         @endphp
                         @foreach ($teachers as $teacher)
-                            @foreach($teacher->degrees as $deg)
-                                @if($deg->type_id==1 && $teacher->great_teacher==1 )
-                                    @if($count<=4)
-
-                                    <div class="col-lg-3 col-md-6 col-sm-6">
-                                        <div class="classes-col">
-                                            <div class="class-thumb"><img src="{{"$teacher->image"}}"
-                                                                          alt="Student's class image"
-                                                                          style="width: 100%; height: 100px;">
-                                            </div>
-                                            <div class="class-info">
-                                                <p>@php
-                                                        $ab=\App\Models\About::find($teacher->school_id);
+                            @foreach ($teacher->degrees as $deg)
+                                @if ($deg->type_id == 1 && $teacher->great_teacher == 1)
+                                    @if ($count <= 4)
+                                        <div class="col-lg-3 col-md-6 col-sm-6">
+                                            <div class="classes-col">
+                                                <div class="class-thumb"><img src="{{ "$teacher->image" }}"
+                                                        alt="Student's class image" style="width: 100%; height: 100px;">
+                                                </div>
+                                                <div class="class-info">
+                                                    <p>@php
+                                                        $ab = \App\Models\About::find($teacher->school_id);
                                                     @endphp
-                                                    {{$ab->name}} O'qtuvchisi
-                                                </p>
-                                                <h3>{{ $teacher->firstname }} {{$teacher->lastname}}
-                                                </h3>
-                                                <span>{{$teacher->category}} O'qtuvchisi</span>
-                                                <h5>
-                                                    @if (empty($teacher->degrees[0]))
-                                                        <span class="text-dark">
-                                                            2-foifali O'qtuvchi
-                                                        </span>
-                                                    @else
-                                                        @foreach ($teacher->degrees as $degree)
+                                                        {{ $ab->name }} O'qtuvchisi
+                                                    </p>
+                                                    <h3>{{ $teacher->firstname }} {{ $teacher->lastname }}
+                                                    </h3>
+                                                    <span>{{ $teacher->category }} O'qtuvchisi</span>
+                                                    <h5>
+                                                        @if (empty($teacher->degrees[0]))
                                                             <span class="text-dark">
-                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}
-                                                </span>
-                                                        @endforeach
-                                                    @endif
-                                                </h5>
+                                                                2-foifali O'qtuvchi
+                                                            </span>
+                                                        @else
+                                                            @foreach ($teacher->degrees as $degree)
+                                                                <span class="text-dark">
+                                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}
+                                                                </span>
+                                                            @endforeach
+                                                        @endif
+                                                    </h5>
+                                                </div>
                                             </div>
+                                            <!--classes-col end-->
                                         </div>
-                                        <!--classes-col end-->
-                                    </div>
                                         @php
-                                        $count=$count+1;
-                                         @endphp
+                                            $count = $count + 1;
+                                        @endphp
                                     @endif
                                 @endif
                             @endforeach
@@ -148,62 +144,56 @@
         </div>
     </section>
 
-    <section class="course-section" style="background-color: #f2f7fd;">
+    {{-- Ma'lumot yo' --}}
+
+    <!--schools-section end-->
+    <section class="blog-section">
         <div class="container">
-            <div class="row">
-
-                {{-- Ma'lumot yo' --}}
-
-                <!--schools-section end-->
-                <section class="blog-section">
-                    <div class="container">
-                        <div class="section-title text-center">
-                            <h2>So'nggi yangiliklar</h2>
-                            <p>Biz haqimizdagi eng sara so'nggi yangiliklar haqida bilib oling</p>
-                        </div>
-                        <!--section-title end-->
-                        <div class="blog-posts">
-                            <div class="row">
-                                @foreach ($blogs as $blog)
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="blog-post">
+            <div class="section-title text-center">
+                <h2>So'nggi yangiliklar</h2>
+                <p>Biz haqimizdagi eng sara so'nggi yangiliklar haqida bilib oling</p>
+            </div>
+            <!--section-title end-->
+            <div class="blog-posts">
+                <div class="row">
+                    @foreach ($blogs as $blog)
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="blog-post">
 
 
-                                            <div class="blog-thumbnail"><img style="width: 369px; height: 246px;"
-                                                                             src="{{ $blog->image }}"
-                                                                             alt="" class="w-100">
+                                <div class="blog-thumbnail"><img style="width: 369px; height: 246px;"
+                                        src="{{ $blog->image }}" alt="" class="w-100">
 
-                                                <span class="category">{{$blog->category->name}}, {{$a->name}}</span>
-                                            </div>
-                                            <div class="blog-info">
-                                                <ul class="meta">
-                                                    <li><a title=""></a>
-                                                        @php
-                                                            $a=\App\Models\About::find($teacher->school_id);
-                                                        @endphp {{$a->name}} </li>
+                                    <span class="category">{{ $blog->category->name }}, {{ $a->name }}</span>
+                                </div>
+                                <div class="blog-info">
+                                    <ul class="meta">
+                                        <li><a title=""></a>
+                                            @php
+                                                $a = \App\Models\About::find($teacher->school_id);
+                                            @endphp {{ $a->name }} </li>
 
-                                                    <li><a title="">by
-                                                            Admin</a></li>
-                                                    <li><img src="assets/img/icon13.png" alt=""><a
-                                                            title="">{{ $blog->category->name }},</a><a
-                                                            title="">
-                                                            School</a></li>
-                                                </ul>
-                                                <h3><a href="{{ route('blog.show', $blog->id) }}"
-                                                       title="">{{substr($blog->title,0,30)}}</a></h3>
-                                                <p>{{ substr($blog->description, 0, 25) }}...
-                                                </p><a href="{{ route('blog.show', $blog->id) }}" title=""
-                                                       class="read-more">Read <i class="fa fa-long-arrow-alt-right"></i></a>
-                                            </div>
-                                        </div>
-                                        <!--blog-post end-->
-                                    </div>
-                                @endforeach
+                                        <li><a title="">by
+                                                Admin</a></li>
+                                        <li><img src="assets/img/icon13.png" alt=""><a
+                                                title="">{{ $blog->category->name }},</a><a title="">
+                                                School</a></li>
+                                    </ul>
+                                    <h3><a href="{{ route('blog.show', $blog->id) }}"
+                                            title="">{{ substr($blog->title, 0, 30) }}</a></h3>
+                                    <p>{{ substr($blog->description, 0, 25) }}...
+                                    </p><a href="{{ route('blog.show', $blog->id) }}" title="" class="read-more">Read
+                                        <i class="fa fa-long-arrow-alt-right"></i></a>
+                                </div>
                             </div>
+                            <!--blog-post end-->
                         </div>
-                        <!--blog-posts end-->
-                    </div>
-                </section>
-                <!--blog-section end-->
-                <!--newsletter-sec end-->
+                    @endforeach
+                </div>
+            </div>
+            <!--blog-posts end-->
+        </div>
+    </section>
+    <!--blog-section end-->
+    <!--newsletter-sec end-->
 @endsection
