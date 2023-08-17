@@ -19,7 +19,7 @@
         <div class="row d-flex flex-wrap mt-5">
 
             <div class="col-12 d-flex justify-content-center">
-                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">IELTS olganlar</h1>
+                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500; margin-bottom:5%;">IELTS olganlar</h1>
             </div>
         </div>
         <div class="row">
@@ -84,7 +84,7 @@
         <div class="row d-flex flex-wrap mt-5">
 
             <div class="col-12 d-flex justify-content-center">
-                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">SEFR olganlar</h1>
+                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500; margin-bottom: 5%;">SEFR olganlar</h1>
             </div>
         </div>
         <div class="row">
@@ -149,7 +149,7 @@
         <div class="row d-flex flex-wrap mt-5">
 
             <div class="col-12 d-flex justify-content-center">
-                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">IT o`quvchilar</h1>
+                <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500; margin-bottom: 5%;">IT o`quvchilar</h1>
             </div>
         </div>
         <div class="row">
