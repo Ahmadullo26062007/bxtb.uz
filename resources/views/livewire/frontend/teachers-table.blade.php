@@ -63,7 +63,7 @@
                 </div>
                 @if (!$teacher->great_teacher)
                     <div class="col-12 d-flex justify-content-center">
-                        <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud emas
+                        <h1 style="color: #ff0000;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud emas
                         </h1>
                     </div>  
                 @endif
