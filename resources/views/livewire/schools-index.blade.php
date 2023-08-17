@@ -1,4 +1,4 @@
-<div class="classes-section">
+<div class="classes-section" style="margin-top: 50px">
     <div class="classes-sec">
         <div class="row">
             @foreach($schools as $school)
