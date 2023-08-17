@@ -456,7 +456,7 @@
 
         @yield('content')
 
-            <footer style="padding-top: 80px;" >
+            <footer style="padding-top: 80px; padding-bottom: 20px" >
         <div class="container">
                     <div class="top-footer" style="padding-right: 20px;padding-left: 20px;padding-bottom: 20px">
                         <div class="row">
