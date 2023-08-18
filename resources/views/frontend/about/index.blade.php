@@ -42,15 +42,49 @@
         </div>
     </section>
 
+    <section class="classes-section">
+        <div class="section-title text-center">
+            <h2>Boshqaruvchilar</h2>
+
+        </div>
+        <div class="container">
+            <!--classes-banner end-->
+            <div class="classes-section">
+                <div class="classes-sec">
+                    <div class="row d-flex justify-content-center gap-5">
+                        @foreach($a->menegers as $m)
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="classes-col">
+                                <div class="class-thumb"><img src="{{$m->image}}"
+                                                              alt="Student's class image"
+                                                              style="width: 100%; height: 100px;">
+                                </div>
+                                <div class="class-info">
+                                    <p>scadfa  O'qtuvchisi</p>
+                                    <h3>{{$m->fullname}}</h3>
+                                    <span></span>
+                                    <h5>
+                                       <span class="text-dark">
+                                         {{$m->role->title}}
+                                           </span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <!--classes-col end-->
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                <!--classes-sec end-->
+            </div>
+
+        </div>
+    </section>
+
     <!--pager-section end-->
     <section class="page-content">
         <div class="container">
-            <div class="mdp-map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d477.9651760676301!2d71.97734725308199!3d40.8765122093165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bca0b64ef43357%3A0x8d7798d2806477f0!2zQ2hpbm9ib2QsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e1!3m2!1sru!2s!4v1687605922962!5m2!1sru!2s"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+
             <!--mdp-map end-->
             <div class="mdp-contact">
                 <div class="row">
@@ -126,117 +160,13 @@
                 </div>
             </div>
             <!--mdp-contact end-->
+            <div class="mdp-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d477.9651760676301!2d71.97734725308199!3d40.8765122093165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bca0b64ef43357%3A0x8d7798d2806477f0!2zQ2hpbm9ib2QsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e1!3m2!1sru!2s!4v1687605922962!5m2!1sru!2s"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </section>
 
-    <div class="classes-section">
-        <div class="classes-sec">
-            <div class="row d-flex flex-wrap mt-5">
-
-                <div class="col-12 d-flex justify-content-center">
-                    <h1 style="color: #0a0a0a;font-size: 30px; font-weight: 500">Hodimlar</h1>
-                </div>
-            </div>
-            <div class="row mt-5 d-flex justify-content-center flex-wrap">
-                 <div class="col-lg-3 col-md-6 col-sm-6">
-                                <div class="classes-col">
-                                    {{-- @dd($teacher)--}}
-                                    <div class="class-thumb"><img src="https://bxtb.uz/images/teacher.jpeg"
-                                                                  alt="Teacher's class image"
-                                                                  style="width: 100%; height: 100px">
-                                    </div>
-                                    <div class="class-info">
-                                        <p>
-
-                                        </p>
-                                        <h3>
-                                        </h3>
-                                        <span>Fani O'qtuvchisi</span>
-                                        <h5>
-{{--                                            @if (empty($teacher->degrees[0]))--}}
-{{--                                                <span class="text-dark">--}}
-{{--                                                O`rta maxsus--}}
-{{--                                            </span>--}}
-{{--                                            @else--}}
-{{--                                                @foreach ($teacher->degrees as $degree)--}}
-{{--                                                    <span class="text-dark">--}}
-{{--                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}--}}
-{{--                                                </span>--}}
-{{--                                                @endforeach--}}
-{{--                                            @endif--}}
-                                        </h5>
-                                    </div>
-                                </div>
-                                <!--classes-col end-->
-                            </div>
-                 <div class="col-lg-3 col-md-6 col-sm-6">
-                                <div class="classes-col">
-                                    {{-- @dd($teacher)--}}
-                                    <div class="class-thumb"><img src="https://bxtb.uz/images/teacher.jpeg"
-                                                                  alt="Teacher's class image"
-                                                                  style="width: 100%; height: 100px">
-                                    </div>
-                                    <div class="class-info">
-                                        <p>
-
-                                        </p>
-                                        <h3>
-                                        </h3>
-                                        <span>Fani O'qtuvchisi</span>
-                                        <h5>
-{{--                                            @if (empty($teacher->degrees[0]))--}}
-{{--                                                <span class="text-dark">--}}
-{{--                                                O`rta maxsus--}}
-{{--                                            </span>--}}
-{{--                                            @else--}}
-{{--                                                @foreach ($teacher->degrees as $degree)--}}
-{{--                                                    <span class="text-dark">--}}
-{{--                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}--}}
-{{--                                                </span>--}}
-{{--                                                @endforeach--}}
-{{--                                            @endif--}}
-                                        </h5>
-                                    </div>
-                                </div>
-                                <!--classes-col end-->
-                            </div>
-                 <div class="col-lg-3 col-md-6 col-sm-6">
-                                <div class="classes-col">
-                                    {{-- @dd($teacher)--}}
-                                    <div class="class-thumb"><img src="https://bxtb.uz/images/teacher.jpeg"
-                                                                  alt="Teacher's class image"
-                                                                  style="width: 100%; height: 100px">
-                                    </div>
-                                    <div class="class-info">
-                                        <p>
-
-                                        </p>
-                                        <h3>
-                                        </h3>
-                                        <span>Fani O'qtuvchisi</span>
-                                        <h5>
-{{--                                            @if (empty($teacher->degrees[0]))--}}
-{{--                                                <span class="text-dark">--}}
-{{--                                                O`rta maxsus--}}
-{{--                                            </span>--}}
-{{--                                            @else--}}
-{{--                                                @foreach ($teacher->degrees as $degree)--}}
-{{--                                                    <span class="text-dark">--}}
-{{--                                                    {{ App\Models\Degree::TYPES[$degree->type_id] }}--}}
-{{--                                                </span>--}}
-{{--                                                @endforeach--}}
-{{--                                            @endif--}}
-                                        </h5>
-                                    </div>
-                                </div>
-                                <!--classes-col end-->
-                            </div>
-
-            </div>
-            <!--teachers end-->
-        </div>
-        <!--teachers-section end-->
-
-        <!--pagination-end-->
-    </div>
 @endsection
