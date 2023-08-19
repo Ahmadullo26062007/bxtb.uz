@@ -62,13 +62,7 @@
                     </h1>
                 </div>
 
-                @dd($teachers)
-                @if (!$teachers)
-                    <div class="col-12 d-flex justify-content-center">
-                        <h1 style="color: #ff0000;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud emas
-                        </h1>
-                    </div>
-                @endif
+
             </div>
             <div class="row">
                 @foreach ($teachers as $teacher)
@@ -106,6 +100,12 @@
                                     </div>
                                 </div>
                                 <!--classes-col end-->
+                            </div>
+                        @else
+                            <div class="col-12 d-flex justify-content-center">
+                                <h1 style="color: #ff0000;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud
+                                    emas
+                                </h1>
                             </div>
                         @endif
                     @endif
