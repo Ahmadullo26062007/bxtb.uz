@@ -71,7 +71,7 @@
                 @foreach ($teachers as $teacher)
                     @if ($teacher->great_teacher == 1 && $teacher->degrees)
 
-                        @if ($teacher->degrees[0]->type_id == 2)
+                        @if ($teacher->degrees[0]->type_id == 2 )
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <div class="classes-col">
                                     {{-- @dd($teacher) --}}
@@ -104,11 +104,11 @@
                                 </div>
                                 <!--classes-col end-->
                             </div>
-                        @else
-                            @php
-                                $count = 1;
-                            @endphp
                         @endif
+                    @else
+                        @php
+                            $count = 1;
+                        @endphp
                     @endif
                 @endforeach
                 @if ($count == 1)
