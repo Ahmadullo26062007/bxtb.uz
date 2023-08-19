@@ -117,6 +117,10 @@
                             emas
                         </h1>
                     </div>
+                @else
+                    @php
+                        return $count = 0;
+                    @endphp
                 @endif
             </div>
             <!--teachers end-->
