@@ -66,7 +66,7 @@
             </div>
             <div class="row">
                 @php
-                    $count = 0;
+                    $count_teacher = 0;
                 @endphp
                 @foreach ($teachers as $teacher)
                     @if ($teacher->great_teacher == 1 && $teacher->degrees)
@@ -104,14 +104,14 @@
                                 </div>
                                 <!--classes-col end-->
                             </div>
+                            @else
+                                @php
+                                    $count_teacher = 1;
+                                @endphp
+                            @endif
                         @endif
-                    @else
-                        @php
-                            $count = 1;
-                        @endphp
-                    @endif
                 @endforeach
-                @if ($count == 1)
+                @if ($count_teacher == 1)
                     <div class="col-12 d-flex justify-content-center">
                         <h1 style="color: #ff0000;font-size: 30px; font-weight: 500;  margin-bottom:5%;">Mavjud
                             emas
@@ -119,7 +119,7 @@
                     </div>
                 @else
                     @php
-                        $count = 0;
+                        $count_teacher = 0;
                     @endphp
                 @endif
             </div>
