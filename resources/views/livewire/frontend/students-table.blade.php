@@ -1,6 +1,6 @@
 <div class="container">
     @php
-        
+
         function student_b($s)
         {
             if ($s->certificate) {
@@ -9,7 +9,7 @@
                 return false;
             }
         }
-        
+
     @endphp
     <div class="classes-section">
 
@@ -222,7 +222,7 @@
                                 <!--classes-col end-->
                             </div>
                             @php
-                                $count_it_student = 0;
+                                $count_it_student = 1;
                             @endphp
                         @endif
                     @endif
