@@ -119,7 +119,7 @@
                     </div>
                 @else
                     @php
-                        return $count = 0;
+                        $count = 0;
                     @endphp
                 @endif
             </div>
