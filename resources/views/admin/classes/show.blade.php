@@ -26,7 +26,7 @@
                             </tr>
                             <tr>
                                 <th>Rasimi</th>
-                                <td><img width="250px" src="{{asset('images/'.$classes->image)}}" alt="{{$classes->class}} rasimi"></td>
+                                <td><img width="250px" src="{{$classes->image}}" alt="{{$classes->class}} rasimi"></td>
                             </tr>
                         </table>
                     </div>
