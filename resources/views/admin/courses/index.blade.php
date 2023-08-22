@@ -35,7 +35,7 @@
                                             $teacher=\App\Models\Teacher::find($course->teacher_id);
                                         @endphp
                                         <td>{{$teacher->firstname}} {{$teacher->lastname}}</td>
-                                        <td  class="d-none d-xl-table-cell"><img width="100px" src="{{'images/'.$course->image}}"
+                                        <td  class="d-none d-xl-table-cell"><img width="100px" src="{{$course->image}}"
                                                  alt="{{$course->name}} rasimi"></td>
                                         @php
                                             $school=App\Models\About::find($course->school_id);
