@@ -18,13 +18,13 @@
                                 <td>{{$blog->description}}</td>
                             </tr>
                             <tr>
-                                <th>Fani</th>
+                                <th>Yanglik Turi</th>
                                 <td>{{$blog->category->name}}</td>
                             </tr>
                             <tr>
                                 <th>Rasimi</th>
-                                <td><img width="100px" src="{{$blog->image}}"
-                                         alt="O'qtuvchi rasimi"></td>
+                                <td><img width="350px" src="{{$blog->image}}"
+                                         alt="Yanglik rasimi"></td>
                             </tr>
                         </table>
                     </div>

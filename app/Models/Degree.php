@@ -16,9 +16,9 @@ class Degree extends Model
     ];
 
     const TYPES = [
-        '1' => 'oliy malumotli',
-        '2' => '1-toifali',
-        '3' => '2-toifali'
+        '1' => 'Oliy Malumotli',
+        '2' => '1-Toifali',
+        '3' => '2-Toifali'
     ];
 
     public function teacher()

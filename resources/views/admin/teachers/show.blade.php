@@ -21,7 +21,6 @@
                                 <th>Fani</th>
                                 <td>{{$teacher->category}}</td>
                             </tr>
-                            @if(env('SCHOOL_ID')==1)
                                 <tr>
                                     <th>Maktabi</th>
                                     <td>@php
@@ -30,10 +29,9 @@
                                         {{$a->name}} O'qtuvchisi
                                     </td>
                                 </tr>
-                            @endif
                             <tr>
                                 <th>Rasimi</th>
-                                <td><img width="100px" src="{{$teacher->image}}"
+                                <td><img width="330px" src="{{$teacher->image}}"
                                          alt="O'qtuvchi rasimi"></td>
                             </tr>
                         </table>

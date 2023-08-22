@@ -42,6 +42,15 @@
 
                                 </div>
                             </div>
+                            <div class="col-6 ">
+
+                                <h5 class="card-title mb-0">Parol</h5>
+
+                                <div class="card-body">
+                                    <input type="text" name="password" class="form-control"  placeholder="Foydalanuchi Paroli">
+
+                                </div>
+                            </div>
                         </div>
                         <div>
                             <button class="btn btn-success mt-3" type="submit">

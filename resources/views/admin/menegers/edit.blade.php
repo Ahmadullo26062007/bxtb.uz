@@ -48,8 +48,6 @@
                                     </div>
                                 </div>
 
-
-                                @if(auth()->user()->school_id==null)
                                     <div class="col-6 ">
                                         <h5 class="card-title mb-0">Maktabi</h5>
                                         <div class="card-body">
@@ -61,7 +59,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                @endif
                                 <div class="col-6">
 
                                     <h5 class="card-title mb-0">Menejerni rasimi</h5>

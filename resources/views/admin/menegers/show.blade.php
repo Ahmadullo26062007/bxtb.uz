@@ -27,7 +27,7 @@
                             </tr>
                             <tr>
                                 <th>Rasimi</th>
-                                <td><img width="400px" src="{{$meneger->image}}"
+                                <td><img width="350px" src="{{$meneger->image}}"
                                          alt="Menejer rasimi"></td>
                             </tr>
                         </table>

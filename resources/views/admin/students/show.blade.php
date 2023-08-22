@@ -20,7 +20,7 @@
                                 @endphp
                                 <td>{{$class->class}}</td>
                             </tr>
-                            @if(auth()->user()->school_id==null)
+
                                 <tr>
                                     <th>Maktabi</th>
                                     @php
@@ -28,7 +28,6 @@
                                     @endphp
                                     <td>{{$school->name}}</td>
                                 </tr>
-                            @endif
                             <tr>
                                 <th>Rasimi</th>
 

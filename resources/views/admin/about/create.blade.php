@@ -69,30 +69,30 @@
                                 </div>
                                 <div class="col-6">
 
-                                    <h5 class="card-title mb-0">Maktab joylashgan tuman</h5>
+                                    <h5 class="card-title mb-0">Maktab joylashgan Joyi</h5>
 
                                     <div class="card-body">
-                                        <input type="text" class="form-control" name="tuman" placeholder="Maktab joylashgan tuman"
+                                        <input type="text" class="form-control" name="tuman" placeholder="Maktab joylashgan Joyi"
                                                value="">
                                     </div>
                                 </div>
                                 <div class="col-6">
 
-                                    <h5 class="card-title mb-0">Maktab ijtimoiy tarmoqlari--->Facebook</h5>
+                                    <h5 class="card-title mb-0">Maktab ijtimoiy tarmoqlari--->Facebook(Majburiy emas)</h5>
 
                                     <div class="card-body">
                                         <input type="text" name="facebook" class="form-control"
-                                               placeholder="Maktab ijtimoiy tarmoqlari Facebook"
+                                               placeholder="Maktab ijtimoiy tarmoqlari Facebook(Majburiy emas)"
                                                value="">
                                     </div>
                                 </div>
                                 <div class="col-6">
 
-                                    <h5 class="card-title mb-0">Maktab ijtimoiy tarmoqlari--->Instagram</h5>
+                                    <h5 class="card-title mb-0">Maktab ijtimoiy tarmoqlari--->Instagram(Majburiy emas)</h5>
 
                                     <div class="card-body">
                                         <input type="text" class="form-control" name="instagram"
-                                               placeholder="Maktab ijtimoiy tarmoqlari Instagram"
+                                               placeholder="Maktab ijtimoiy tarmoqlari Instagram(Majburiy emas)"
                                                value="">
                                     </div>
                                 </div>

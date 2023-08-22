@@ -92,11 +92,11 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h5 class="card-title mb-0">Sinf haqida</h5>
+                                    <h5 class="card-title mb-0">Kurs haqida</h5>
                                     <div class="card-body">
                                         <label class="form-label">
                                             <textarea class="form-control" rows="5" cols="100" name="description"
-                                                      placeholder="Sinf haqida">
+                                                      placeholder="Kurs haqida">
 
                                             </textarea>
                                         </label>

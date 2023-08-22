@@ -53,7 +53,7 @@
 
             <!--widget-search end-->
             <div class="widget widget-categories">
-                <h3 class="widget-title">Categories</h3>
+                <h3 class="widget-title">Turlar</h3>
                 <ul>
                     @foreach(\App\Models\Category::all() as $c)
                         <li><a title="">{{$c->name}}</a> <span>{{count($c->blogs->ToArray())}}</span></li>

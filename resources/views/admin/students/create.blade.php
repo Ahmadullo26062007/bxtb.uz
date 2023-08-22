@@ -43,7 +43,6 @@
                                         </select>
                                     </div>
                                 </div>
-                                @if(auth()->user()->school_id==null)
                                     <div class="col-6">
                                         <div class="card-body">
                                             <h5 class="card-title ">Maktabi</h5>
@@ -55,7 +54,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                @endif
                                 <div class="col-6">
                                     <div class="card-body">
                                         <h5 class="card-title ">Rasimi</h5>

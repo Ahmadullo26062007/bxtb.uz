@@ -49,14 +49,12 @@
                         <i class="align-middle" data-feather="user"></i> <span class="align-middle">Maktab haqida</span>
                     </a>
                 </li>
-                @if(auth()->user()->school_id==null)
 
                     <li class="sidebar-item {{ request()->is('users*') ? 'active' : '' }}">
                         <a class="sidebar-link" href="{{route('users.index')}}">
                             <i class="align-middle" data-feather="users"></i> <span class="align-middle">Maktab adminlari</span>
                         </a>
                     </li>
-                @endif
 
                 <li class="sidebar-item {{ request()->is('roles*') ? 'active' : '' }}">
                     <a class="sidebar-link" href="{{route('roles.index')}}">

@@ -109,7 +109,7 @@
                                     <div class="card-body">
                                         <label class="form-label">
                                             <textarea class="form-control" rows="5" cols="100" name="description"
-                                                      placeholder="Sinf haqida">
+                                                      placeholder="Kurs haqida">
                                                 {{$course->description}}
                                             </textarea>
                                         </label>

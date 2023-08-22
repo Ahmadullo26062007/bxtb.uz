@@ -7,7 +7,7 @@
                     <div class="card flex-fill">
                         <div class="card-header">
 
-                            <h5 class="card-title 0">Maktablar haqida</h5>
+                            <h5 class="card-title 0">Maktab adminlari haqida</h5>
                                 <a href="{{route('users.create')}}"
                                    class="btn btn-success">Yaratish</a>
 

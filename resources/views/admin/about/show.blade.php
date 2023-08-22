@@ -26,7 +26,7 @@
                                 <td>{{$about->viloyat}}</td>
                             </tr>
                             <tr>
-                                <th>Joylashgan tumani</th>
+                                <th>Joylashgan Joyi </th>
                                 <td>{{$about->tuman}}</td>
                             </tr>
                             <tr>

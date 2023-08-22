@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'SeniorAdmin',
             'username' => 'owner',
             'password'=>bcrypt('owner1505'),
-            'school_id'=>null
+            'school_id'=>1
         ]);
 //        \App\Models\User::create([
 //            'name' => 'Admin',

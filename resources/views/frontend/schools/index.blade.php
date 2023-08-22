@@ -10,7 +10,7 @@
                 <h2>maktablar</h2>
                 <ul>
                     <li><a href="{{route('home')}}" title="">Bosh sahifa</a></li>
-                    <li><span>Kaktablar</span></li>
+                    <li><span>Maktablar</span></li>
                 </ul>
             </div>
             <!--pager-content end-->

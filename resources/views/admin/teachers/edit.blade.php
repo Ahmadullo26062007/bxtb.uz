@@ -67,7 +67,6 @@
                                         <img width="300px" src="{{$teacher->image}}" alt="">
                                     </div>
                                 </div>
-                                @if(auth()->user()->school_id==null)
                                     <div class="col-6 ">
                                         <h5 class="card-title mb-0">Maktabi</h5>
                                         <div class="card-body">
@@ -79,7 +78,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                @endif
                                 <div class="col-6 ">
                                     <h5 class="card-title mb-0">To'p o'qtuvchi</h5>
                                     <div class="card-body">

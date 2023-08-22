@@ -25,7 +25,7 @@
                             <div class="row">
                                 <div class="col-6 ">
 
-                                    <h5 class="card-title mb-0">Sinf harifi</h5>
+                                    <h5 class="card-title mb-0">Sinf nomi</h5>
 
                                     <div class="card-body">
                                         <input type="text" name="class" class="form-control"

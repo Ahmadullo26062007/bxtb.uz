@@ -75,7 +75,20 @@ class UserController extends Controller
             'username'=>'required',
         ]);
         $user=User::find($id);
-        $user->update($request->all());
+        if ($request->password){
+        $user->update([
+            'name' => $request->name,
+            'username' => $request->username,
+            'password' => bcrypt($request->password),
+            'school_id' => $request->school_id
+        ]);
+        }else{
+            $user->update([
+                'name' => $request->name,
+                'username' => $request->username,
+                'school_id' => $request->school_id
+            ]);
+        }
         return redirect()->route('users.index');
     }
 
