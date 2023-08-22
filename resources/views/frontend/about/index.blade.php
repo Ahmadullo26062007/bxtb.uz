@@ -51,16 +51,15 @@
             <!--classes-banner end-->
             <div class="classes-section">
                 <div class="classes-sec">
-                    <div class="row d-flex justify-content-center gap-5">
+                    <div class="row d-flex gap-5">
                         @foreach($a->menegers as $m)
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="classes-col">
                                 <div class="class-thumb"><img src="{{$m->image}}"
                                                               alt="Student's class image"
                                                               style="width: 100%; height: 100px;">
                                 </div>
                                 <div class="class-info">
-                                    <p>scadfa  O'qtuvchisi</p>
                                     <h3>{{$m->fullname}}</h3>
                                     <span></span>
                                     <h5>
