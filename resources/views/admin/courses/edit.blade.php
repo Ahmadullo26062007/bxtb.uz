@@ -123,7 +123,7 @@
                                         <select class="form-select" name="school_id">
                                             <option disabled selected>Maktabni tanlang</option>
                                             @foreach($school as $id=> $item)
-                                                <option @if($course->school_id==$id) @endif value="{{$id}}">{{$item}}</option>
+                                                <option @if($course->school_id==$id) selected @endif value="{{$id}}">{{$item}}</option>
                                             @endforeach
                                         </select>
                                     </div>
