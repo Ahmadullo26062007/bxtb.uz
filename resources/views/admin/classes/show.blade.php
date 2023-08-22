@@ -11,7 +11,7 @@
                         <table class="table table-hover my-0">
                             <tr>
                                 <th>Sinf</th>
-                                <td>{{$classes->class}}</td>
+                                <td>{{$classes->class}} Sinf</td>
                             </tr>
                             <tr>
                                 <th>Sinf raxbari</th>
