@@ -23,7 +23,11 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-6">
                         <div class="section-title">
-                            <h2><span>{{$a->name}}</span> ga <br> hush kelibsiz</h2>
+                            @if(env('SCHOOL_ID')==1)
+                            <h2><span>Andijon viloyati Baliqchi tumani Xalq talimi bo'limi</span> ga <br> hush kelibsiz</h2>
+                            @else
+                                <h2><span>{{$a->name}}</span> ga <br> hush kelibsiz</h2>
+                            @endif
                             <h3 class="mw-100 text-dark">{{$a->description}}</h3>
                             <br>
                             <a href="{{ route('schools.index') }}" title=""
