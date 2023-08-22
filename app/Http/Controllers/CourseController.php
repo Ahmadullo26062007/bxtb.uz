@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Course;
 use App\Models\Teacher;
 use App\Models\week;
@@ -25,7 +26,8 @@ class CourseController extends Controller
     {
         $teacher = Teacher::pluck('firstname', 'id');
         $weeks = week::pluck('name', 'id');
-        return view('admin.courses.create', compact('teacher', 'weeks'));
+        $school=About::pluck('name','id');
+        return view('admin.courses.create', compact('teacher', 'weeks','school'));
     }
 
     /**
@@ -41,6 +43,8 @@ class CourseController extends Controller
             'weeks' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
+            'school_id' => 'required'
+
         ]);
         $data = $request->all();
 
@@ -58,7 +62,7 @@ class CourseController extends Controller
             'price'=>$data['price'],
             'description'=>$data['description'],
             'image'=>$n,
-            'school_id'=>env('SCHOOL_ID')
+            'school_id'=>$data['school_id']
         ]);
         $c->weeks()->sync($request->weeks);
         return redirect()->route('courses.index');
@@ -79,7 +83,8 @@ class CourseController extends Controller
     {
         $teacher = Teacher::pluck('firstname', 'id');
         $weeks = week::pluck('name', 'id');
-        return view('admin.courses.edit', compact('course', 'teacher', 'weeks'));
+        $school=About::pluck('name','id');
+        return view('admin.courses.edit', compact('course', 'teacher', 'weeks','school'));
     }
 
     /**
@@ -102,10 +107,28 @@ class CourseController extends Controller
             $file = $request->file('image');
             $image_name = uniqid() . $file->getClientOriginalName();
             $data['image'] = $image_name;
-            $file->move(public_path('images'), $image_name);
-            $course->update($data);
+            $file->move(public_path('../../images'), $image_name);
+            $n = 'https://bxtb.uz/images/' . $data['image'];
+            $course->update([
+                'name'=>$data['name'],
+                'start_time'=>$data['start_time'],
+                'end_time'=>$data['end_time'],
+                'teacher_id'=>$data['teacher_id'],
+                'price'=>$data['price'],
+                'description'=>$data['description'],
+                'image'=>$n,
+                'school_id'=>$data['school_id']
+            ]);
         }else{
-            $course->update($data);
+            $course->update([
+                'name'=>$data['name'],
+                'start_time'=>$data['start_time'],
+                'end_time'=>$data['end_time'],
+                'teacher_id'=>$data['teacher_id'],
+                'price'=>$data['price'],
+                'description'=>$data['description'],
+                'school_id'=>$data['school_id']
+            ]);
         }
         $course->weeks()->sync($request->weeks);
         return redirect()->route('courses.index');

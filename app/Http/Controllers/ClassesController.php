@@ -79,7 +79,9 @@ class ClassesController extends Controller
     {
         $classes=Classes::find($id);
         $teacher=Teacher::pluck('firstname','id');
-        return view('admin.classes.edit',compact('classes','teacher'));
+        $school=About::pluck('name','id');
+
+        return view('admin.classes.edit',compact('classes','teacher','school'));
     }
 
     /**
