@@ -42,7 +42,7 @@
         </div>
     </section>
 
-    <section class="classes-section">
+    <section class="classes-section" style="padding-bottom: 0px">
         <div class="section-title text-center">
             <h2>Boshqaruvchilar</h2>
 
@@ -53,7 +53,7 @@
                 <div class="classes-sec">
                     <div class="row d-flex gap-5">
                         @foreach($a->menegers as $m)
-                        <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-md-6 col-sm-6" style="padding-bottom: 20px">
                             <div class="classes-col">
                                 <div class="class-thumb"><img src="{{$m->image}}"
                                                               alt="Student's class image"
@@ -81,7 +81,7 @@
     </section>
 
     <!--pager-section end-->
-    <section class="page-content">
+    <section class="page-content" style="padding-top: 0px">
         <div class="container">
 
             <!--mdp-map end-->
