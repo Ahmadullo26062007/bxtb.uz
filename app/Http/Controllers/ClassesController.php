@@ -25,7 +25,8 @@ class ClassesController extends Controller
     public function create()
     {
         $teacher=Teacher::pluck('firstname','id');
-        return view('admin.classes.create',compact('teacher'));
+        $school=About::pluck('name','id');
+        return view('admin.classes.create',compact('teacher','school'));
     }
 
     /**
@@ -37,8 +38,10 @@ class ClassesController extends Controller
            'class'=>'required',
            'teacher_id'=>'required',
            'description'=>'required|min:10',
+            'school_id' => 'required'
         ],[
             'class.required'=>'Sinf Nomi kiritilmadi',
+            'school_id.required'=>'Maktab tanlanmadi',
             'teacher_id.required'=>'Sinf Raxbari tanlanmadi',
             'description.required'=>'Sinf Haqida ma\'lumot kiritilmadi',
             'description.min'=>'Sinf haqida ma\'lumot 10 ta so\'zdan kam b\'lmasligi kerak',
@@ -55,7 +58,7 @@ class ClassesController extends Controller
             'teacher_id'=>$data['teacher_id'],
             'description'=>$data['description'],
             'image'=>$n,
-            'school_id'=>env('SCHOOL_ID')
+            'school_id'=>$data['school_id']
         ]);
         return redirect()->route('class.index');
     }
@@ -88,10 +91,11 @@ class ClassesController extends Controller
         $request->validate([
             'class'=>'required',
             'teacher_id'=>'required',
-            'description'=>'required',
-
+            'description'=>'required|min:10',
+            'school_id' => 'required'
         ],[
-            'class.required'=>'Sinf nomi kiritilmadi',
+            'class.required'=>'Sinf Nomi kiritilmadi',
+            'school_id.required'=>'Maktab tanlanmadi',
             'teacher_id.required'=>'Sinf Raxbari tanlanmadi',
             'description.required'=>'Sinf Haqida ma\'lumot kiritilmadi',
             'description.min'=>'Sinf haqida ma\'lumot 10 ta so\'zdan kam b\'lmasligi kerak',
@@ -110,14 +114,14 @@ class ClassesController extends Controller
                 'teacher_id'=>$data['teacher_id'],
                 'description'=>$data['description'],
                 'image'=>$n,
-                'school_id'=>env('SCHOOL_ID')
+                'school_id'=>$data['school_id']
             ]);
         }else{
             $classes->update([
                 'class'=>$data['class'],
                 'teacher_id'=>$data['teacher_id'],
                 'description'=>$data['description'],
-                'school_id'=>env('SCHOOL_ID')
+                'school_id'=>$data['school_id']
             ]);
         }
         return redirect()->route('class.index');

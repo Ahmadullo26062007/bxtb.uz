@@ -47,8 +47,19 @@ class CourseController extends Controller
         $file = $request->file('image');
         $image_name = uniqid() . $file->getClientOriginalName();
         $data['image'] = $image_name;
-        $file->move(public_path('images'), $image_name);
-        $c = Course::create($data);
+        $file->move(public_path('../../images'), $image_name);
+        $n = 'https://bxtb.uz/images/' . $data['image'];
+
+        $c=Course::create([
+            'name'=>$data['name'],
+            'start_time'=>$data['start_time'],
+            'end_time'=>$data['end_time'],
+            'teacher_id'=>$data['teacher_id'],
+            'price'=>$data['price'],
+            'description'=>$data['description'],
+            'image'=>$n,
+            'school_id'=>env('SCHOOL_ID')
+        ]);
         $c->weeks()->sync($request->weeks);
         return redirect()->route('courses.index');
     }
