@@ -155,7 +155,12 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
+        if ($student->certificate){
+        $student->certificate->delete();
         $student->delete();
+        }else{
+        $student->delete();
+        }
         return back();
     }
 }

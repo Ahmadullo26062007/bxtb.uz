@@ -57,7 +57,7 @@ class TeacherController extends Controller
                 'category' => $request->category,
                 'image' => $n,
                 'school_id' => $request->school_id,
-                'great_teacher'=>$request->great_teacher
+                'great_teacher' => $request->great_teacher
             ]);
         } else {
             Teacher::create([
@@ -66,7 +66,7 @@ class TeacherController extends Controller
                 'category' => $request->category,
                 'image' => $n,
                 'school_id' => env('SCHOOL_ID'),
-                'great_teacher'=>$request->great_teacher
+                'great_teacher' => $request->great_teacher
             ]);
         }
         return redirect()->route('teacher.index');
@@ -119,7 +119,7 @@ class TeacherController extends Controller
                     'category' => $request->category,
                     'image' => $n,
                     'school_id' => $request->school_id,
-                    'great_teacher'=>$request->great_teacher
+                    'great_teacher' => $request->great_teacher
                 ]);
             } else {
                 $teacher->update([
@@ -128,7 +128,7 @@ class TeacherController extends Controller
                     'category' => $request->category,
                     'image' => $n,
                     'school_id' => auth()->user()->school_id,
-                    'great_teacher'=>$request->great_teacher
+                    'great_teacher' => $request->great_teacher
                 ]);
             }
 
@@ -141,7 +141,7 @@ class TeacherController extends Controller
                     'lastname' => $request->lastname,
                     'category' => $request->category,
                     'school_id' => $request->school_id,
-                    'great_teacher'=>$request->great_teacher
+                    'great_teacher' => $request->great_teacher
                 ]);
             } else {
                 $teacher->update([
@@ -149,7 +149,7 @@ class TeacherController extends Controller
                     'lastname' => $request->lastname,
                     'category' => $request->category,
                     'school_id' => auth()->user()->school_id,
-                    'great_teacher'=>$request->great_teacher
+                    'great_teacher' => $request->great_teacher
                 ]);
             }
         }
@@ -162,14 +162,22 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-        if ($teacher->classes || $teacher->courses || $teacher->degrees){
-        $teacher->degrees[0]->delete();
-        $teacher->courses->update(['teacher_id'=>null]);
-        $teacher->classes->update(['teacher_id'=>null]);
-        $teacher->delete();
-        }else{
-        $teacher->delete();
+        if (!$teacher->classes && !$teacher->courses && !$teacher->degrees) {
+            $teacher->delete();
+        }
+        if ($teacher->classes && !$teacher->courses && !$teacher->degrees) {
+            $teacher->classes->update(['teacher_id' => null]);
+            $teacher->delete();
+        }
+        if (!$teacher->classes && $teacher->courses && !$teacher->degrees) {
+            $teacher->courses->update(['teacher_id' => null]);
+            $teacher->delete();
+        }
+        if (!$teacher->classes && !$teacher->courses && $teacher->degrees) {
+            $teacher->degrees[0]->delete();
+            $teacher->delete();
         }
         return back();
     }
+
 }
