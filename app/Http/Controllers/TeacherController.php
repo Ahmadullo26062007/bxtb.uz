@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Teacher;
 use App\Models\About;
 use Illuminate\Http\Request;
+use function Symfony\Component\String\b;
 
 class TeacherController extends Controller
 {
@@ -162,19 +163,18 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-        if (!$teacher->classes && !$teacher->courses && !$teacher->degrees) {
+        if (!$teacher->classes && !$teacher->courses && !count($teacher->degrees->ToArray())>0) {
             $teacher->delete();
-        }
-        if ($teacher->classes && !$teacher->courses && !$teacher->degrees) {
-            $teacher->classes->update(['teacher_id' => null]);
-            $teacher->delete();
-        }
-        if (!$teacher->classes && $teacher->courses && !$teacher->degrees) {
-            $teacher->courses->update(['teacher_id' => null]);
-            $teacher->delete();
-        }
-        if (!$teacher->classes && !$teacher->courses && $teacher->degrees) {
-            $teacher->degrees[0]->delete();
+        }else{
+            if ($teacher->classes) {
+                $teacher->classes->update(['teacher_id' => null]);
+            }
+            if ($teacher->courses) {
+                $teacher->courses->update(['teacher_id' => null]);
+            }
+            if (count($teacher->degrees->ToArray())>0) {
+                $teacher->degrees[0]->delete();
+            }
             $teacher->delete();
         }
         return back();
