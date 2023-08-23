@@ -162,7 +162,14 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
+        if ($teacher->classes || $teacher->courses || $teacher->degrees){
+        $teacher->degrees[0]->delete();
+        $teacher->courses->update(['teacher_id'=>null]);
+        $teacher->classes->update(['teacher_id'=>null]);
         $teacher->delete();
+        }else{
+        $teacher->delete();
+        }
         return back();
     }
 }

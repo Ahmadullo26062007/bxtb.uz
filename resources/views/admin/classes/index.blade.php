@@ -31,10 +31,14 @@
 
                                         <td>{{$class->id}}</td>
                                         <td>{{$class->class}}</td>
+                                        @if($class->teacher_id)
                                         @php
                                             $teacher=\App\Models\Teacher::find($class->teacher_id);
                                         @endphp
                                         <td>{{$teacher->firstname}} {{$teacher->lastname}}</td>
+                                        @else
+                                            <td>Hali O'qtuvchi tayinlanmagan</td>
+                                        @endif
                                         <td class="d-none d-xl-table-cell">
                                             {{$class->description}}
                                         </td>

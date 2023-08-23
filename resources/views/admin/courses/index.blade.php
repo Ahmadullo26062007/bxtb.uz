@@ -31,10 +31,14 @@
 
                                         <td>{{$course->id}}</td>
                                         <td>{{$course->name}}</td>
+                                        @if($course->teacher_id)
                                         @php
                                             $teacher=\App\Models\Teacher::find($course->teacher_id);
                                         @endphp
                                         <td>{{$teacher->firstname}} {{$teacher->lastname}}</td>
+                                            @else
+                                           <td>Hali O'qtuvchi tayinlanmagan</td>
+                                        @endif
                                         <td  class="d-none d-xl-table-cell"><img width="100px" src="{{$course->image}}"
                                                  alt="{{$course->name}} rasimi"></td>
                                         @php
