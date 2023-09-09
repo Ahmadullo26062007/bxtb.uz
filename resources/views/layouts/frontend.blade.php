@@ -10,6 +10,7 @@
     <meta name="description" content="Shelly - Website">
     <meta name="author" content="merkulove">
     <meta name="keywords" content="">
+    <meta name="google-site-verification" content="Wu45eHZGD24vXrEXrAFDO3fSPzhZkEVkI5VLOQlW0KM" />
     <link rel="icon" href="{{ asset('assets/img/webking.jpg') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/button.min.css') }}">
