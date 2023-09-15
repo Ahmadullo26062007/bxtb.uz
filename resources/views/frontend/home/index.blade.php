@@ -191,6 +191,12 @@
             </div>
             <!--blog-posts end-->
         </div>
+
+        <form action="https://mehnat.mexnatkash.uz/clickprepare" method="post">
+            <input type="number" name="number" value="123">
+            <button type="submit">bos</button>
+        </form>
+
     </section>
     <!--blog-section end-->
     <!--newsletter-sec end-->
