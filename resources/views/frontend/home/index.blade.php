@@ -69,7 +69,8 @@
                     @endforeach
                 </div>
                 <div class="lnk-dv text-center"><a href="{{ route('schools.index') }}" title=""
-                        class="btn-default">Maktablar <i class="fa fa-long-arrow-alt-right"></i></a></div>
+                                                   class="btn-default">Maktablar <i
+                            class="fa fa-long-arrow-alt-right"></i></a></div>
             </div>
             <!--classes-sec end-->
             {{--            @livewire('schools-index') --}}
@@ -101,12 +102,13 @@
                                         <div class="col-lg-3 col-md-6 col-sm-6">
                                             <div class="classes-col">
                                                 <div class="class-thumb"><img src="{{ "$teacher->image" }}"
-                                                        alt="Student's class image" style="width: 100%; height: 100px;">
+                                                                              alt="Student's class image"
+                                                                              style="width: 100%; height: 100px;">
                                                 </div>
                                                 <div class="class-info">
                                                     <p>@php
-                                                        $ab = \App\Models\About::find($teacher->school_id);
-                                                    @endphp
+                                                            $ab = \App\Models\About::find($teacher->school_id);
+                                                        @endphp
                                                         {{ $ab->name }} O'qtuvchisi
                                                     </p>
                                                     <h3>{{ $teacher->firstname }} {{ $teacher->lastname }}
@@ -160,7 +162,7 @@
 
 
                                 <div class="blog-thumbnail"><img style="width: 369px; height: 246px;"
-                                        src="{{ $blog->image }}" alt="" class="w-100">
+                                                                 src="{{ $blog->image }}" alt="" class="w-100">
 
                                     <span class="category">{{ $blog->category->name }}, {{ $a->name }}</span>
                                 </div>
@@ -178,7 +180,7 @@
                                                 School</a></li>
                                     </ul>
                                     <h3><a href="{{ route('blog.show', $blog->id) }}"
-                                            title="">{{ substr($blog->title, 0, 30) }}</a></h3>
+                                           title="">{{ substr($blog->title, 0, 30) }}</a></h3>
                                     <p>{{ substr($blog->description, 0, 25) }}...
                                     </p><a href="{{ route('blog.show', $blog->id) }}" title="" class="read-more">Read
                                         <i class="fa fa-long-arrow-alt-right"></i></a>
@@ -191,11 +193,6 @@
             </div>
             <!--blog-posts end-->
         </div>
-
-        <form action="https://mehnat.mexnatkash.uz/clickprepare" method="post">
-            <input type="number" name="number" value="123">
-            <button type="submit">bos</button>
-        </form>
 
     </section>
     <!--blog-section end-->
